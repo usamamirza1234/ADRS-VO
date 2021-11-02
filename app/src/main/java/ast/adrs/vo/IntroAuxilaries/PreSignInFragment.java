@@ -7,8 +7,13 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.armoomragames.denketa.R;
+
+import ast.adrs.vo.IntroActivity;
+import ast.adrs.vo.Utils.AppConstt;
 
 public class PreSignInFragment extends Fragment implements View.OnClickListener {
 
@@ -21,13 +26,13 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
 
 
         rlSignin = frg.findViewById(R.id.frg_presigin_rllogin);
-        rlSignUp = frg.findViewById(R.id.frg_presigin_rlregister);
-        rlForgot = frg.findViewById(R.id.frg_presigin_rlforgot);
+//        rlSignUp = frg.findViewById(R.id.frg_presigin_rlregister);
+//        rlForgot = frg.findViewById(R.id.frg_presigin_rlforgot);
 
 
         rlSignin.setOnClickListener(this);
-        rlSignUp.setOnClickListener(this);
-        rlForgot.setOnClickListener(this);
+//        rlSignUp.setOnClickListener(this);
+//        rlForgot.setOnClickListener(this);
 
         return frg;
     }
@@ -41,16 +46,17 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
         switch (v.getId()) {
 
             case R.id.frg_presigin_rllogin:
-                navToSignInFragment();
+              //  navToSignInFragment();
+
                 break;
 
-            case R.id.frg_presigin_rlregister:
-                navToSignUpFragment();
-                break;
+//            case R.id.frg_presigin_rlregister:
+//                navToSignUpFragment();
+//                break;
 
-            case R.id.frg_presigin_rlforgot:
-                navToForgotPasswordFragment();
-                break;
+//            case R.id.frg_presigin_rlforgot:
+//                navToForgotPasswordFragment();
+//                break;
         }
     }
 
@@ -67,6 +73,13 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
 //        ft.hide(this);
 //        ft.commit();
     }
+
+
+
+    private FragmentManager getSupportFragmentManager() {
+        return null;
+    }
+
 
     private void navToForgotPasswordFragment() {
 //        FragmentManager fm = getFragmentManager();

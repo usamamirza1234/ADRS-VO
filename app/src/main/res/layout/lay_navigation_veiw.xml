@@ -1,0 +1,331 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_alignParentStart="true"
+        android:gravity="start"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/shp_bottom_rounded_black"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shp_bottom_rounded_black"
+            android:gravity="start"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="15dp">
+
+<!--                <CircleImageView-->
+<!--                    android:id="@+id/lay_navigationview_imv_user"-->
+<!--                    android:layout_width="90dp"-->
+<!--                    android:layout_height="90dp"-->
+
+<!--                    android:elevation="2dp"-->
+<!--                    android:padding="2dp"-->
+<!--                    android:src="" />-->
+
+                <TextView
+                    android:id="@+id/lay_nav_txv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+
+                    android:layout_toEndOf="@+id/lay_navigationview_imv_user"
+                    android:includeFontPadding="false"
+
+                    android:paddingStart="14dp"
+                    android:paddingEnd="10dp"
+                    android:text=""
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_medium"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="15dp"
+                android:orientation="vertical">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+
+                    android:includeFontPadding="false"
+                    android:paddingEnd="10dp"
+                    android:text="Punjab Business Regulatory"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divider_height"
+                android:background="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lay_navview_ll_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Dashboard"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llRegulatoryMapping"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Regulatory Mapping - EY"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llBusinessPortal"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Punjab Business Portal Progress"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llPriority_Sector"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Prime Minister Priority Sector ( s )"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llIssuesFacedPrivate"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Issues Faced By Private Sector"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llRapid"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold"
+                    android:paddingLeft="14dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llissues"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Issues"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Public Feedback"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/lay_navigationview_llLogout"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:paddingStart="0dp">
+
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="start"
+                    android:includeFontPadding="false"
+                    android:paddingStart="14dp"
+                    android:text="Logout"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fontsize_mini"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

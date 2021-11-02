@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/act_main_drawr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true">
 
+            <include layout="@layout/lay_act_toolbar" />
         </RelativeLayout>
 
 
@@ -29,8 +29,8 @@
             android:id="@+id/act_main_content_frg"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_below="@id/act_main_rl_toolbar" />
-
+            android:layout_below="@id/act_main_rl_toolbar"
+            android:layout_marginTop="14dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,6 +44,30 @@
 
 
     </RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/act_main_rl_bttabbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btmtabbar_inner_height"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/lay_bottomtab_bar" />
+
+    </RelativeLayout>
 
 
-</RelativeLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/act_main_navview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/transparent"
+        android:fitsSystemWindows="true"
+        app:itemIconTint="@color/thm_light_gray">
+
+        <include layout="@layout/lay_navigation_veiw" />
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -39,6 +39,7 @@ public class IntroActivity extends AppCompatActivity implements IBadgeUpdateList
 
         fm = getSupportFragmentManager();
         getAppVersion();
+        navTohomefragment();
 
 
         if (AppConfig.getInstance().mLanguage.equalsIgnoreCase(AppConstt.AppLang.LANG_UR)) {
@@ -91,7 +92,7 @@ public class IntroActivity extends AppCompatActivity implements IBadgeUpdateList
 //            case R.id.act_intro_rl_toolbar_logo:
 //
 //                navToChoiceAppNatureFragment();
-//
+
 //                break;
 
 
@@ -205,6 +206,16 @@ public class IntroActivity extends AppCompatActivity implements IBadgeUpdateList
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_intro_content_frg, frg, AppConstt.FragTag.FN_PreSignInFragment);
+
+        ft.commit();
+
+    }
+    public void navTohomefragment() {
+        clearMyBackStack();
+        PreSignInFragment frg = new PreSignInFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.act_intro_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
 
         ft.commit();
 

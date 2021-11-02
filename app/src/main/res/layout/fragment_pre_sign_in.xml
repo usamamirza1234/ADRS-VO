@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/thm_yellow_1"
+    android:background="@color/white"
     android:clickable="true">
 
 
@@ -11,16 +10,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
+        <!--  donot give size to any parent layouts or try to not give size to any layout unless necessary           -->
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
             <LinearLayout
-
+                android:layout_marginBottom="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -28,28 +28,106 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@mipmap/ic_launcher_round" />
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:src="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <!--          editTextTextPersonName good but frg_signin_editTextTextPersonName is better   -->
+            <!--          donot give sizes to text field use margins  -->
+
+            <!-- 1 use this property to remove underline bydefukt -->
+            <!--2 3 use this property to add blinking cursor on edit text -->
+            <!--            android:background="@null"-->
+            <!--            android:cursorVisible="true"-->
+            <!--            android:textCursorDrawable="@null"-->
+
+            <RelativeLayout
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shp_rect_rounded_gray_stoke">
+
+                <EditText
+                    android:id="@+id/frg_signin_editTextTextPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:ems="10"
+
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:text="ADRS"
+                    android:textColor="@color/light_gray3"
+                    android:textColorHint="@color/light_gray3"
+                    android:textCursorDrawable="@null" />
+            </RelativeLayout>
+
+
+            <!--          editTextTextPassword good but frg_signin_editTextTextPassword is better   -->
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shp_rect_rounded_gray_stoke">
+
+                <EditText
+                    android:id="@+id/frg_signin_editTextTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:ems="10"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:text="test"
+                    android:textColor="@color/light_gray3"
+                    android:textColorHint="@color/light_gray3"
+                    android:textCursorDrawable="@null" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="2dp"
-                    android:text="OneBill"
-                    android:textColor="@color/white_1"
-                    android:textSize="@dimen/fontsize_large" />
+
+
+                    android:text="Forgot password /"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/fontsize_tiny" />
 
                 <TextView
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="App"
-                    android:textColor="@color/black_1"
-                    android:textSize="@dimen/fontsize_large" />
+                    android:paddingStart="5dp"
+                    android:text="Reset Now"
+                    android:textColor="@color/thm_light_blue"
+                    android:textSize="@dimen/fontsize_tiny" />
 
             </LinearLayout>
 
@@ -60,8 +138,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginEnd="20dp"
-                android:background="@drawable/shp_rect_rounded_white_mini_stoke">
+                android:background="@drawable/shp_rect_rounded_blue">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -71,48 +150,12 @@
                     android:text="Login"
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+
+                    />
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/frg_presigin_rlregister"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/shp_rect_rounded_white_mini">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:padding="10dp"
-                    android:text="Register"
-                    android:textColor="@color/black_1"
-                    android:textSize="@dimen/fontsize_mini" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/frg_presigin_rlforgot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:padding="5dp"
-                    android:text="Forgot your password?"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize_tiny"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
 
         </LinearLayout>
 
