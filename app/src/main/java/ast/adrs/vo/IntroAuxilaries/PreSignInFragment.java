@@ -95,11 +95,14 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
     private void checkErrorConditions() {
         if (checkPasswordError()) {
 
-            JsonObject jsonObject = new JsonObject();
-            jsonObject.addProperty("loginId", edtName.getText().toString());
-            jsonObject.addProperty("password", edtPassword.getText().toString());
+            AppConfig.getInstance().mUser.isLoggedIn = true;
+            AppConfig.getInstance().saveUserProfile();
+            navToMainActivity();
+//            JsonObject jsonObject = new JsonObject();
+//            jsonObject.addProperty("loginId", edtName.getText().toString());
+//            jsonObject.addProperty("password", edtPassword.getText().toString());
 
-            requestUserSigin(jsonObject.toString());
+//            requestUserSigin(jsonObject.toString());
         }
     }
 
