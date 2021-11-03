@@ -17,7 +17,11 @@ import androidx.fragment.app.FragmentTransaction;
 import com.armoomragames.denketa.R;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.Utils.IBadgeUpdateListener;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, IBadgeUpdateListener {
 
     LinearLayout llPriority_Sector, llDashboard, llRegulatoryMapping, llRapid, llissues, llFeedback, llBusinessPortal, llIssuesFacedPrivate, llLogout;
 
@@ -37,16 +41,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        AppConfig.getInstance().performLangCheck(getWindow());
         if (savedInstanceState != null) {
+            return;
+        }
 
 
             init();
             bindviews();
-            navToHomeFragment();
+          //  navToHomeFragment();
 
         }
 
 
-    }
+
+
 
     private void bindviews() {
         drawer = findViewById(R.id.act_main_drawr);
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         llLogout = findViewById(R.id.lay_navigationview_llLogout);
         llissues = findViewById(R.id.lay_navigationview_llissues);
 
-//        rlMenu.setOnClickListener(this);
+        rlMenu.setOnClickListener(this);
 //
 //        llPriority_Sector.setOnClickListener(this);
 //        llRegulatoryMapping.setOnClickListener(this);
@@ -86,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
                 // Whatever you want
-//                changeDrawerItemState();
+            //   changeDrawerItemState();
             }
 
             @Override
@@ -105,20 +112,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
 
     private void init() {
         fm = getSupportFragmentManager();
-    }
-
-    //region Navigations
-    public void navToHomeFragment() {
-//        clearMyBackStack();
-//        Fragment frg = new HomeFragment();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
-//        ft.commit();
-
     }
 
 
@@ -227,7 +227,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-   // @Override
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.act_intro_rl_toolbar_menu:
@@ -239,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.lay_navigationview_llDashboard:
                 closeDrawar();
-                navToHomeFragment();
+               // navToHomeFragment();
                 break;
 
             case R.id.lay_navigationview_llRegulatoryMapping:
@@ -278,48 +279,47 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+
     }
 
-
     //region Ibadge
-//    @Override
+    @Override
     public void setBottomTabVisiblity(int mVisibility) {
 
     }
-
-  //  @Override
+    @Override
     public void setToolbarVisiblity(int mVisibility) {
 //        rlToolbar.setVisibility(mVisibility);
     }
 
- //   @Override
+    @Override
     public void setToolbarState(byte mState) {
         switch (mState) {
-//            case AppConstt.ToolbarState.TOOLBAR_BACK_HIDDEN:
-//                closeDrawar();
-//
-//                rlMenu.setVisibility(View.VISIBLE);
-//                txvTitleBar.setVisibility(View.VISIBLE);
-//                break;
-//
-//            case AppConstt.ToolbarState.TOOLBAR_VISIBLE:
-//                closeDrawar();
-//
-//                rlMenu.setVisibility(View.VISIBLE);
-//                txvTitleBar.setVisibility(View.VISIBLE);
-//                break;
+            case AppConstt.ToolbarState.TOOLBAR_BACK_HIDDEN:
+                closeDrawar();
+
+                rlMenu.setVisibility(View.VISIBLE);
+                txvTitleBar.setVisibility(View.VISIBLE);
+                break;
+
+            case AppConstt.ToolbarState.TOOLBAR_VISIBLE:
+                closeDrawar();
+
+                rlMenu.setVisibility(View.VISIBLE);
+                txvTitleBar.setVisibility(View.VISIBLE);
+                break;
         }
     }
 
-  //  @Override
+    @Override
     public void switchStatusBarColor(boolean isDark) {
 
     }
 
-  //  @Override
+    @Override
     public boolean setHeaderTitle(String strAppTitle) {
         try {
-            txvTitleBar.setText(strAppTitle + "");
+            txvTitleBar.setText(strAppTitle + "ASRS11");
         }
         catch (Exception e)
         {
@@ -339,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void closeDrawar() {
 
-//        drawer.closeDrawer(GravityCompat.START);
+        drawer.closeDrawer(GravityCompat.START);
         if (this.drawer.isDrawerOpen(GravityCompat.START)) {
             this.drawer.closeDrawer(GravityCompat.START);
         }

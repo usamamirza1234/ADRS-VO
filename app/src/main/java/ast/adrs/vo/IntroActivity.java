@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -18,7 +19,8 @@ import java.util.Locale;
 
 import ast.adrs.vo.IntroAuxilaries.PreSignInFragment;
 import ast.adrs.vo.IntroAuxilaries.SplashFragment;
-import ast.adrs.vo.Utils.AppConstt;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
 
 import com.armoomragames.denketa.R;
 
@@ -39,7 +41,7 @@ public class IntroActivity extends AppCompatActivity implements IBadgeUpdateList
 
         fm = getSupportFragmentManager();
         getAppVersion();
-        navTohomefragment();
+
 
 
         if (AppConfig.getInstance().mLanguage.equalsIgnoreCase(AppConstt.AppLang.LANG_UR)) {
@@ -210,30 +212,25 @@ public class IntroActivity extends AppCompatActivity implements IBadgeUpdateList
         ft.commit();
 
     }
-    public void navTohomefragment() {
-        clearMyBackStack();
-        PreSignInFragment frg = new PreSignInFragment();
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.act_intro_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
 
-        ft.commit();
-
-    }
 
 
 
     public void navtoMainActivity() {
-//        Toast.makeText(this, "MainActivity", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "MainActivity", Toast.LENGTH_SHORT).show();
 
-        if (AppConfig.getInstance().mUser.isLoggedIn()) {
-            Intent intent = new Intent(this, MainActivity.class);
-            //   Intent intent = new Intent(this, MainActivityOLD.class);
-            startActivity(intent);
-            IntroActivity.this.finish();
-        } else {
-            navToSplash();
-        }
+//        if (AppConfig.getInstance().mUser.isLoggedIn()) {
+//            Intent intent = new Intent(this, MainActivity.class);
+//            //   Intent intent = new Intent(this, MainActivityOLD.class);
+//            startActivity(intent);
+//            IntroActivity.this.finish();
+//        } else {
+//            navToSplash();
+//        }
+        Intent intent = new Intent(this, MainActivity.class);
+        //   Intent intent = new Intent(this, MainActivityOLD.class);
+        startActivity(intent);
+        IntroActivity.this.finish();
     }
 
     public String returnStackFragmentTag() {

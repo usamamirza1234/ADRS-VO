@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import ast.adrs.vo.Utils.AppConstt;
-import ast.adrs.vo.AppConfig;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroActivity;
 import ast.adrs.vo.MainActivity;
 import com.armoomragames.denketa.R;

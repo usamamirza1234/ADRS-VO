@@ -20,7 +20,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Map;
 
-import ast.adrs.vo.AppConfig;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.MainActivity;
 import com.armoomragames.denketa.R;
 

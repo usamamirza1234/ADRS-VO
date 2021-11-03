@@ -1,4 +1,4 @@
-package ast.adrs.vo.Utils;
+package ast.adrs.vo.IntroAuxilaries.WebServices;
 
 /**
  * Created by bilalahmed on 04/05/2018.

@@ -1,4 +1,4 @@
-package ast.adrs.vo;
+package ast.adrs.vo.IntroAuxilaries.WebServices;
 
 import android.app.Activity;
 import android.app.NotificationManager;
@@ -26,14 +26,15 @@ import java.text.NumberFormat;
 import java.util.Iterator;
 import java.util.Random;
 
-import ast.adrs.vo.Utils.AppConstt;
-import ast.adrs.vo.Utils.IWebCallback;
+import ast.adrs.vo.DModelUser;
+import ast.adrs.vo.IntroActivity;
+import ast.adrs.vo.MyApplication;
+import ast.adrs.vo.Utils.RModel_Error;
 import ast.adrs.vo.Utils.RModel_Message;
 import ast.adrs.vo.Utils.CustomAlertConfirmationInterface;
 import ast.adrs.vo.Utils.CustomAlertDialog;
 import ast.adrs.vo.Utils.IWebIndexedCallback;
 import ast.adrs.vo.Utils.IWebPaginationCallback;
-import ast.adrs.vo.Utils.RModel_Error;
 import ast.adrs.vo.Utils.RModel_onFailureError;
 
 

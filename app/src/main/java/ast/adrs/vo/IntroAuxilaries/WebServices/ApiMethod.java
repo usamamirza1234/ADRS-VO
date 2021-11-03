@@ -1,4 +1,4 @@
-package ast.adrs.vo.Utils;
+package ast.adrs.vo.IntroAuxilaries.WebServices;
 
 
 public interface ApiMethod {
@@ -10,7 +10,7 @@ public interface ApiMethod {
 
         String logout = "logout";
         String contactus = "contactus";
-
+        String getDatabase = "getdatabasedatamodel" ;
         String getNotifications = "notificationList";
         String readNotification = "readNotification";
         String getProfile = "getProfile";
@@ -120,6 +120,7 @@ public interface ApiMethod {
     interface HEADER {
         String Authorization = "Authorization";
         String Authorization_TOKEN = "token";
+        String Bearer = "Bearer ";
         String Lang = "lang";
         String Default_Auth = "mankoosha!and$";
     }

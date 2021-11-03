@@ -4,7 +4,7 @@ package ast.adrs.vo.FCMUtils;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
-import ast.adrs.vo.AppConfig;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 
 /**
  * Created by bilalahmed on 04/05/2018.
