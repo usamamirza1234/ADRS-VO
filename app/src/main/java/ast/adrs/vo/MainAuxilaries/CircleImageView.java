@@ -1,4 +1,4 @@
-package ast.adrs.vo.Utils;
+package ast.adrs.vo.MainAuxilaries;
 
 import android.content.Context;
 import android.content.res.TypedArray;

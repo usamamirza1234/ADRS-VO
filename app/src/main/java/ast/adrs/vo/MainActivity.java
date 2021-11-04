@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -19,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, IBadgeUpdateListener {
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             init();
             bindviews();
-          //  navToHomeFragment();
+            navToHomeFragment();
 
         }
 
@@ -80,13 +82,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //
 //        llPriority_Sector.setOnClickListener(this);
 //        llRegulatoryMapping.setOnClickListener(this);
-//        llDashboard.setOnClickListener(this);
+        llDashboard.setOnClickListener(this);
 //        llRapid.setOnClickListener(this);
 //        llissues.setOnClickListener(this);
 //        llFeedback.setOnClickListener(this);
 //        llBusinessPortal.setOnClickListener(this);
 //        llIssuesFacedPrivate.setOnClickListener(this);
-//        llLogout.setOnClickListener(this);
+        llLogout.setOnClickListener(this);
 
 
         drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
@@ -113,6 +115,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
+
+    }
+    public void navToHomeFragment() {
+        clearMyBackStack();
+        Fragment frg = new HomeFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
+        ft.commit();
 
     }
 
@@ -319,7 +329,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean setHeaderTitle(String strAppTitle) {
         try {
-            txvTitleBar.setText(strAppTitle + "ASRS11");
+            txvTitleBar.setText(strAppTitle + "");
         }
         catch (Exception e)
         {

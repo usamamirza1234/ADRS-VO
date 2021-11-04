@@ -74,7 +74,7 @@
 
                     android:includeFontPadding="false"
                     android:paddingEnd="10dp"
-                    android:text="Punjab Business Regulatory"
+                    android:text="ADRS information Punjab"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="14dp"
@@ -141,7 +141,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Regulatory Mapping - EY"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />
@@ -163,7 +163,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Punjab Business Portal Progress"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />
@@ -186,7 +186,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Prime Minister Priority Sector ( s )"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />
@@ -208,7 +208,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Issues Faced By Private Sector"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />
@@ -258,7 +258,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Issues"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />
@@ -280,7 +280,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Public Feedback"
+                    android:text=""
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />

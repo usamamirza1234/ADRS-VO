@@ -27,7 +27,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/iconmenu1" />
 
         </RelativeLayout>
 
@@ -72,7 +72,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-<!--        <ast.adrs.vo.Utils.CircleImageView-->
+<!--        <ast.adrs.vo.MainAuxilaries.CircleImageView-->
 <!--            android:layout_width="50dp"-->
 
 <!--            android:layout_height="50dp"-->

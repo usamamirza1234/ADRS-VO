@@ -93,8 +93,5 @@ dependencies {
 //    //Camera/Gallery Lib
 //    implementation 'com.github.dhaval2404:imagepicker-support:1.7.1'
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
-
-
-
-
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }

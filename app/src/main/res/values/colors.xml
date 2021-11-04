@@ -25,7 +25,7 @@
     <color name="maroon">#3f0000</color>
     <color name="red">#ca2306</color>
     <color name="black_1">#3C3C3C</color>
-    <color name="white_1">#F1F1F1</color>
+    <color name="white_1">#ffffff</color>
     <color name="transparent">#00000000</color>
 
     <color name="orange">#ee8d01</color>
@@ -126,5 +126,33 @@
     <color name="thm_gray_bg_dark1">#1A707070</color>
     <color name="thm_gray_1">#99000000</color>
     <color name="thm_gray_2">#D9D9D9</color>
+
+
+
+
+
+    <color name="thm_yellow_line_graph_indicator">#FFD351</color>
+    <color name="thm_red_graph_indicator">#e62e2e</color>
+    <color name="thm_blue_graph_indicator">#0DCAF0</color>
+    <color name="thm_blue_dark_graph_indicator">#003062</color>
+    <color name="thm_yellow_graph_indicator">#FFC107</color>
+    <color name="thm_green_graph_indicator">#73BF04</color>
+    <color name="thm_app_blue">#49a8d2</color>
+    <color name="thm_light_green_dark_graph_indicator">#2A9C86</color>
+    <color name="thm_green_dark_graph_indicator">#126B27</color>
+    <color name="thm_blue_app">#1A5876</color>
+    <color name="thm_GREEN_app">#126b27</color>
+    <color name="thm_EYlightgreen_app">#2a9c86</color>
+    <color name="thm_EYred_app">#e62e2e</color>
+    <color name="thm_yellow_dark_graph_indicator">#F8C120</color>
+    <color name="pale_green">#D4F5D7</color>
+    <color name="app_green_light">#31A34B</color>
+    <color name="app_green_stoke">#1B7530</color>
+    <color name="app_green_lightest">#5FD17A</color>
+    <color name="app_blue_light">#45A6D1</color>
+    <color name="app_blue_stoke">#2F7FA3</color>
+    <color name="app_blue_lightest">#45A6D1</color>
+
+
 </resources>
 

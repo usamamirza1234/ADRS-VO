@@ -17,15 +17,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.armoomragames.denketa.R;
-import com.google.gson.JsonObject;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroActivity;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
+import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
 import ast.adrs.vo.IntroAuxilaries.WebServices.Home_WebHit_Get_Database;
+import ast.adrs.vo.IntroAuxilaries.WebServices.IWebCallback;
 import ast.adrs.vo.IntroAuxilaries.WebServices.Intro_WebHit_Post_LogIn;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-import ast.adrs.vo.IntroAuxilaries.WebServices.IWebCallback;
 
 public class PreSignInFragment extends Fragment implements View.OnClickListener {
 
@@ -74,7 +73,7 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
             case R.id.frg_presigin_rllogin:
 
                   closeKeyboard();
-                checkErrorConditions();
+                  checkErrorConditions();
 
                 break;
 
