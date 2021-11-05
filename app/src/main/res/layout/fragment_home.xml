@@ -878,143 +878,143 @@
                     android:layout_height="match_parent"
                     android:layout_below="@+id/frg_home_mpchart_sick_animal"
                     android:orientation="horizontal">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
 
-                        android:layout_below="@+id/frg_home_mpchart_sick_animal"
-                        android:layout_centerInParent="true"
-                        android:layout_gravity="center"
-                        android:layout_margin="-5dp"
-                        android:orientation="vertical">
-
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="3dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Camel"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="3dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
-
-                                <TextView
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Small Animal"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="3dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Large Animal"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="3dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Aquine"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
+<!--                        android:layout_below="@+id/frg_home_mpchart_sick_animal"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_margin="-5dp"-->
+<!--                        android:orientation="vertical">-->
 
 
-                    </LinearLayout>
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:padding="3dp">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="15dp"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:layout_marginStart="20dp"-->
+<!--                                    android:layout_marginEnd="10dp"-->
+<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="Camel"-->
+<!--                                    android:textAlignment="center"-->
+<!--                                    android:textSize="@dimen/fontsize_mini"-->
+<!--                                    android:textStyle="bold" />-->
+
+<!--                            </LinearLayout>-->
+
+<!--                        </RelativeLayout>-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:padding="3dp">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="15dp"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:layout_marginStart="20dp"-->
+<!--                                    android:layout_marginEnd="10dp"-->
+<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+<!--                                <TextView-->
+
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="Small Animal"-->
+<!--                                    android:textAlignment="center"-->
+<!--                                    android:textSize="@dimen/fontsize_mini"-->
+<!--                                    android:textStyle="bold" />-->
+
+<!--                            </LinearLayout>-->
+
+<!--                        </RelativeLayout>-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:padding="3dp">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="15dp"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:layout_marginStart="20dp"-->
+<!--                                    android:layout_marginEnd="10dp"-->
+<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="Large Animal"-->
+<!--                                    android:textAlignment="center"-->
+<!--                                    android:textSize="@dimen/fontsize_mini"-->
+<!--                                    android:textStyle="bold" />-->
+
+<!--                            </LinearLayout>-->
+
+<!--                        </RelativeLayout>-->
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:padding="3dp">-->
+
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:orientation="horizontal">-->
+
+<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
+<!--                                    android:layout_width="15dp"-->
+<!--                                    android:layout_height="15dp"-->
+<!--                                    android:layout_gravity="center"-->
+<!--                                    android:layout_marginStart="20dp"-->
+<!--                                    android:layout_marginEnd="10dp"-->
+<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="Aquine"-->
+<!--                                    android:textAlignment="center"-->
+<!--                                    android:textSize="@dimen/fontsize_mini"-->
+<!--                                    android:textStyle="bold" />-->
+
+<!--                            </LinearLayout>-->
+
+<!--                        </RelativeLayout>-->
+
+
+<!--                    </LinearLayout>-->
 
 
 
