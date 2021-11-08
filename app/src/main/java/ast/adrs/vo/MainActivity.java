@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.MainAuxilaries.ExampleFragment;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
@@ -119,7 +120,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void navToHomeFragment() {
         clearMyBackStack();
-        Fragment frg = new HomeFragment();
+//        Fragment frg = new HomeFragment();
+        Fragment frg = new ExampleFragment();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
         ft.commit();

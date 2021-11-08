@@ -241,15 +241,7 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
 //        ft.hide(this);
 //        ft.commit();
     }
-    private void navtoHomeFragment() {
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        Fragment frag = new HomeFragment();
-        ft.add(R.id.act_intro_content_frg, frag, AppConstt.FragTag.FN_HomeFragment);
-        ft.addToBackStack(AppConstt.FragTag.FN_HomeFragment);
-        ft.hide(this);
-        ft.commit();
-    }
+
 
 
 
