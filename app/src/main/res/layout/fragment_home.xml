@@ -401,7 +401,7 @@
                 android:padding="10dp"
 
 
-                android:text="Origin"
+                android:text="Total"
                 android:textColor="@color/white"
                 android:textSize="@dimen/fontsize_tiny"
                 android:textStyle="bold" />
@@ -1071,6 +1071,58 @@
             </com.github.mikephil.charting.charts.HorizontalBarChart>
 
         </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shp_stoke_thm_blue"
+                android:padding="5dp">
+
+
+                <LinearLayout
+                    android:id="@+id/heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="10dp"
+                        android:gravity="center"
+
+                        android:layout_marginLeft="60dp"
+                        android:background="@color/red"
+                        android:text="Origin/Source Wise Disease Spread"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/fontsize_mini"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Theileriosis Anthrax"
+                        android:textColor="@color/black_1"
+                        android:textSize="@dimen/fontsize_tiny" />
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_below="@+id/heading"
+                    android:id="@+id/idr_baroriginwise">
+
+                </com.github.mikephil.charting.charts.BarChart>
+
+            </RelativeLayout>
         </LinearLayout>
 
 

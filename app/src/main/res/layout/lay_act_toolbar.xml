@@ -72,17 +72,17 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-<!--        <ast.adrs.vo.MainAuxilaries.CircleImageView-->
-<!--            android:layout_width="50dp"-->
+        <ast.adrs.vo.MainAuxilaries.CircleImageView
+            android:layout_width="50dp"
 
-<!--            android:layout_height="50dp"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_centerVertical="true"-->
-<!--            android:layout_marginEnd="15dp"-->
-<!--            android:elevation="2dp"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:padding="2dp"-->
-<!--            android:src="" />-->
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:elevation="2dp"
+            android:scaleType="centerCrop"
+            android:padding="2dp"
+            android:src="@drawable/ic_adrs_logo" />
 
 
     </RelativeLayout>
