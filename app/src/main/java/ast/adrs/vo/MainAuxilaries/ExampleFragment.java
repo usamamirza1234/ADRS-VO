@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.armoomragames.denketa.R;
+import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.components.XAxis;
@@ -21,7 +21,6 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,26 +40,23 @@ public class ExampleFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_example, container, false);
 
 
-
-
         populateGraphData();
         return view;
     }
 
 
-    private void  populateGraphData() {
+    private void populateGraphData() {
 
-        HorizontalBarChart barChartView = view.findViewById(R.id.chartConsumptionGraph);
+        BarChart barChartView = view.findViewById(R.id.chartConsumptionGraph);
 
         Float barWidth;
         Float barSpace;
         Float groupSpace;
         int groupCount = 12;
 
-        barWidth = 0.30f;
+        barWidth = 0.25f;
         barSpace = 0.06f;
         groupSpace = 0.30f;
-
 
 
         List<String> xAxisValues = new ArrayList<>();
@@ -87,59 +83,55 @@ public class ExampleFragment extends Fragment {
         BarDataSet barDataSet3;
 
 
-
-        yValueGroup1.add(new BarEntry(1f,3f));
-        yValueGroup1.add(new BarEntry(1f,3f));
-        yValueGroup1.add(new BarEntry(1f,3f));
-        yValueGroup1.add(new BarEntry(1f,3f));
-        yValueGroup1.add(new BarEntry(1f,3f));
+        yValueGroup1.add(new BarEntry(1f, 3f));
+        yValueGroup1.add(new BarEntry(1f, 3f));
+        yValueGroup1.add(new BarEntry(1f, 3f));
+        yValueGroup1.add(new BarEntry(1f, 3f));
+        yValueGroup1.add(new BarEntry(1f, 3f));
 
         barDataSet1 = new BarDataSet(yValueGroup1, "");
         barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)));
         //        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)), (getResources().getColor(R.color.gray)), (getResources().getColor(R.color.orange)), (getResources().getColor(R.color.blue)));
 //        barDataSet1.label = "2016";
         barDataSet1.setDrawIcons(false);
-        barDataSet1.setDrawValues(false);
+        barDataSet1.setDrawValues(true);
 
 
 //        <-------------->
 
 
-        yValueGroup2.add(new BarEntry(2f,4f));
-        yValueGroup2.add(new BarEntry(2f,4f));
-        yValueGroup2.add(new BarEntry(2f,4f));
-        yValueGroup2.add(new BarEntry(2f,4f));
-        yValueGroup2.add(new BarEntry(2f,4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
 
         barDataSet2 = new BarDataSet(yValueGroup2, "");
 
 //        barDataSet2.label = "2017"
-        barDataSet2.setColors( (getResources().getColor(R.color.gray)));
+        barDataSet2.setColors((getResources().getColor(R.color.gray)));
 
         barDataSet2.setDrawIcons(false);
-        barDataSet2.setDrawValues(false);
+        barDataSet2.setDrawValues(true);
 
 
 //        <-------------->
-        yValueGroup3.add(new BarEntry(3f,5f));
-        yValueGroup3.add(new BarEntry(3f,5f));
-        yValueGroup3.add(new BarEntry(3f,5f));
-        yValueGroup3.add(new BarEntry(3f,5f));
-        yValueGroup3.add(new BarEntry(3f,5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
 
 
         barDataSet3 = new BarDataSet(yValueGroup3, "");
 
 //        barDataSet3.label = "2017"
-        barDataSet3.setColors( (getResources().getColor(R.color.orange)));
+        barDataSet3.setColors((getResources().getColor(R.color.orange)));
 
         barDataSet3.setDrawIcons(false);
-        barDataSet3.setDrawValues(false);
+        barDataSet3.setDrawValues(true);
 
 //        <-------------->
-
-
-
 
 
 ///// Add a new Paramerter as a new row as barDataSet4 .... etc
@@ -152,8 +144,9 @@ public class ExampleFragment extends Fragment {
         barChartView.getBarData().setBarWidth(barWidth);
         barChartView.getXAxis().setAxisMinimum(0f);
         barChartView.getXAxis().setAxisMaximum(12f);
+
         barChartView.groupBars(0f, groupSpace, barSpace);
-        //   barChartView.setFitBars(true)
+        barChartView.setFitBars(true);
         barChartView.getData().setHighlightEnabled(false);
         barChartView.invalidate();
 
@@ -174,8 +167,6 @@ public class ExampleFragment extends Fragment {
         legend.setEnabled(false);
 
 
-
-
         XAxis xAxis = barChartView.getXAxis();
         xAxis.setGranularity(1f);
         xAxis.setGranularityEnabled(true);
@@ -187,17 +178,15 @@ public class ExampleFragment extends Fragment {
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
 
 
-
-
         xAxis.setLabelCount(12);
         xAxis.mAxisMaximum = 12f;
         xAxis.setCenterAxisLabels(true);
         xAxis.setAvoidFirstLastClipping(true);
-        xAxis.setSpaceMin(4f);
-        xAxis.setSpaceMax( 4f);
+        xAxis.setSpaceMin(20f);
+        xAxis.setSpaceMax(20f);
 
-        barChartView.setVisibleXRangeMaximum(12f);
-        barChartView.setVisibleXRangeMinimum(12f);
+        barChartView.setVisibleXRangeMaximum(20f);
+        barChartView.setVisibleXRangeMinimum(20f);
         barChartView.setDragEnabled(true);
 
         //Y-axis
