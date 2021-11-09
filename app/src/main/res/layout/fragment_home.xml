@@ -1117,7 +1117,9 @@
                 <com.github.mikephil.charting.charts.BarChart
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
+                    android:layout_marginBottom="10dp"
                     android:layout_below="@+id/heading"
+
                     android:id="@+id/idr_baroriginwise">
 
                 </com.github.mikephil.charting.charts.BarChart>

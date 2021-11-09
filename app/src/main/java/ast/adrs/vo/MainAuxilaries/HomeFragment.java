@@ -95,18 +95,18 @@ public class HomeFragment extends Fragment  {
         barWidth = 0.25f;
 
         List<String> xAxisValues = new ArrayList<>();
-        xAxisValues.add("Jan");
-        xAxisValues.add("Feb");
-        xAxisValues.add("Mar");
-        xAxisValues.add("Apr");
-        xAxisValues.add("May");
-//        xAxisValues.add("June");
-//        xAxisValues.add("Jul");
-//        xAxisValues.add("Aug");
-//        xAxisValues.add("Sep");
-//        xAxisValues.add("Oct");
-//        xAxisValues.add("Nov");
-//        xAxisValues.add("Dec");
+        xAxisValues.add("Therileriosis");
+        xAxisValues.add("Glander");
+        xAxisValues.add("Rabies (Mad dog disease)");
+        xAxisValues.add("Black quarter (black-leg)");
+        xAxisValues.add("Foot and mouth disease");
+        xAxisValues.add("Contagious  pleuropneumonia   ");
+        xAxisValues.add("Brucellosis of sheep.");
+        xAxisValues.add("Tetanus");
+        xAxisValues.add("Anthrax");
+        xAxisValues.add("Blue tongue");
+        xAxisValues.add("African swine fever");
+        xAxisValues.add("Transmissible spongiform ");
 
         ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
         // draw the graph
@@ -117,6 +117,12 @@ public class HomeFragment extends Fragment  {
         yValueGroup1.add(new BarEntry(3f, 13f));
         yValueGroup1.add(new BarEntry(4f, 14f));
         yValueGroup1.add(new BarEntry(5f, 15f));
+        yValueGroup1.add(new BarEntry(6f, 11f));
+        yValueGroup1.add(new BarEntry(7f, 11f));
+        yValueGroup1.add(new BarEntry(8f, 12f));
+        yValueGroup1.add(new BarEntry(9f, 13f));
+        yValueGroup1.add(new BarEntry(10f, 14f));
+        yValueGroup1.add(new BarEntry(11f, 15f));
 
         barDataSet1 = new BarDataSet(yValueGroup1, "");
         barDataSet1.setColors((getResources().getColor(R.color.red)));
@@ -126,7 +132,6 @@ public class HomeFragment extends Fragment  {
         barDataSet1.setDrawValues(true);
 
         BarData barData = new BarData(barDataSet1);
-
 
         barData.setValueFormatter(new PercentFormatter());
         barChartView.setData(barData);
@@ -153,10 +158,13 @@ public class HomeFragment extends Fragment  {
         legend.setYEntrySpace(0f);
         legend.setTextSize(5f);
         legend.setEnabled(false);
-        barData.setBarWidth(0.7f);
-        barDataSet1.setValueTextColor(Color.BLACK);
+        barData.setBarWidth(0.8f);
+        barDataSet1.setValueTextColor(Color.WHITE);
         barDataSet1.setValueTextSize(10f);
 
+        // to remove decimal point
+//        MyDecimalValueFormatter formatter = new MyDecimalValueFormatter();
+//        barDataSet1.setValueFormatter(formatter);
 
 
         XAxis xAxis = barChartView.getXAxis();
@@ -205,7 +213,7 @@ public class HomeFragment extends Fragment  {
         barChartView.animateY(2000);
         barChartView.setData(barData);
         // to select numbers of bars u wanna show
-        barChartView.setVisibleXRange(1f, 6f);
+        barChartView.setVisibleXRange(1f, 12f);
         barChartView.getDescription().setEnabled(false);
     }
 
@@ -261,6 +269,9 @@ public class HomeFragment extends Fragment  {
         barChartView.getXAxis().setAxisMaximum(12f);
 
 
+
+
+
         barChartView.setFitBars(true);
         barChartView.getData().setHighlightEnabled(false);
         barChartView.invalidate();
@@ -285,6 +296,9 @@ public class HomeFragment extends Fragment  {
         barDataSet1.setValueTextSize(10f);
 
 
+//        to remove decimal point
+//        MyDecimalValueFormatter formatter = new MyDecimalValueFormatter();
+//        barDataSet1.setValueFormatter(formatter);
         XAxis xAxis = barChartView.getXAxis();
         xAxis.setGranularity(1f);
         xAxis.setGranularityEnabled(true);
@@ -292,6 +306,9 @@ public class HomeFragment extends Fragment  {
         xAxis.setDrawGridLines(false);
         xAxis.setTextSize(12f);
 
+
+        //for vertical labels
+       // xAxis.setLabelRotationAngle(90);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
 
@@ -299,7 +316,7 @@ public class HomeFragment extends Fragment  {
         xAxis.setLabelCount(12);
         xAxis.mAxisMaximum = 12f;
         xAxis.setCenterAxisLabels(true);
-        xAxis.setAvoidFirstLastClipping(true);
+        xAxis.setAvoidFirstLastClipping(false);
         xAxis.setSpaceMin(20f);
         xAxis.setSpaceMax(20f);
 
