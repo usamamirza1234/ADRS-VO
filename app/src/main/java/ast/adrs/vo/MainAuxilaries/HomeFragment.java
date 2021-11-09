@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment  {
         // SetData(5,5);
         // showBarChart(frg);
 
-
+//
 //        BarChart barChart1 = frg.findViewById(R.id.idr_baroriginwise);
 //        LabelsNames = new ArrayList<>();
 //        fillMonthSales();
@@ -102,7 +102,7 @@ public class HomeFragment extends Fragment  {
 //        xAxis.setLabelRotationAngle(270);
 //        barChart1.animateY(2000);
 //        barChart1.invalidate();
-
+//
 
         return frg;
     }
