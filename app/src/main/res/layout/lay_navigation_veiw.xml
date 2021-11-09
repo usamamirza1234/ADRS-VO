@@ -163,7 +163,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text=""
+                    android:text="Example"
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />

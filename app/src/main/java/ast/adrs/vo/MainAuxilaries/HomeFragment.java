@@ -12,16 +12,19 @@ import com.armoomragames.denketa.R;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.LargeValueFormatter;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -34,19 +37,11 @@ import ast.adrs.vo.Utils.IBadgeUpdateListener;
 public class HomeFragment extends Fragment  {
     private IBadgeUpdateListener mBadgeUpdateListener;
     private PieChart pieChart;
-   // BarChart barChart;
-       BarChart mbarChart2;
-  //  HorizontalBarChart barChart;
+
     private PieChart mBarChart_dieses_idr;
     private PieChart mBarChart_sick_animal;
     private List<Integer> lstPieValues;
-    ArrayList<MonthDetails> monthDetailsArrayList = new ArrayList<>();
-    ArrayList<String> LabelsNames;
-    ArrayList<BarEntry> barEntriesArrayList;
 
-
-    int InProgress, Mapped;
-    //   Database database;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,44 +60,9 @@ public class HomeFragment extends Fragment  {
 
         showbarOriginWise(frg);
         showBarIDR(frg);
-        // SetData(5,5);
         // showBarChart(frg);
 
-//
-//        BarChart barChart1 = frg.findViewById(R.id.idr_baroriginwise);
-//        LabelsNames = new ArrayList<>();
-//        fillMonthSales();
-//        for (int i =0; i < monthDetailsArrayList.size();i++){
-//            String month = monthDetailsArrayList.get(i).getMonth();
-//            int sale = monthDetailsArrayList.get(i).getSale();
-//
-//            barEntriesArrayList.add(new BarEntry(i,sale));
-//
-//            LabelsNames.add(month);
-//        }
-//
-//
-//
-//        BarDataSet barDataSet = new BarDataSet(barEntriesArrayList,"Monthly Sales");
-//        barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-//        Description description = new Description();
-//        description.setText("Months");
-//        barChart1.setDescription(description);
-//        XAxis xAxis = barChart1.getXAxis();
-//
-//        xAxis.setValueFormatter(new IndexAxisValueFormatter(LabelsNames));
-//        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-//        BarData barData = new BarData(barDataSet);
-//        barChart1.setData(barData);
-//        xAxis.setValueFormatter(new IndexAxisValueFormatter(LabelsNames));
-//        xAxis.setDrawGridLines(false);
-//        xAxis.setDrawAxisLine(false);
-//        xAxis.setGranularity(1f);
-//        xAxis.setLabelCount(LabelsNames.size());
-//        xAxis.setLabelRotationAngle(270);
-//        barChart1.animateY(2000);
-//        barChart1.invalidate();
-//
+
 
         return frg;
     }
@@ -126,97 +86,258 @@ public class HomeFragment extends Fragment  {
 
     private void  showBarIDR(View frg){
 
-        BarChart barChart=  frg.findViewById(R.id.idr_barchart);
 
 
-        ArrayList<BarEntry> Visitor = new ArrayList<>();
-        Visitor.add(new BarEntry(20,4));
-        Visitor.add(new BarEntry(21,5));
-        Visitor.add(new BarEntry(22,8));
-        Visitor.add(new BarEntry(23,2));
-        Visitor.add(new BarEntry(24,1));
-        Visitor.add(new BarEntry(25,11));
+        BarChart barChartView = frg.findViewById(R.id.idr_barchart);
 
-        BarDataSet barDataSet = new BarDataSet(Visitor,"Visitor");
+        Float barWidth;
+        int groupCount = 12;
+        barWidth = 0.25f;
 
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        barDataSet.setValueTextSize(16f);
-        barDataSet.setStackLabels(new String[]{"Large","Small","Medium"});
-        barChart.setDragEnabled(true);
-        barDataSet.setValueTextColor(Color.BLACK);
-        BarData barData= new BarData(barDataSet);
-        barChart.setData(barData);
-        barChart.animateY(2000);
-        barChart.setFitBars(true);
-        barChart.getDescription().setEnabled(false);
-        barChart.setDrawValueAboveBar(true);
-        barData.setBarWidth(1f);
+        List<String> xAxisValues = new ArrayList<>();
+        xAxisValues.add("Jan");
+        xAxisValues.add("Feb");
+        xAxisValues.add("Mar");
+        xAxisValues.add("Apr");
+        xAxisValues.add("May");
+//        xAxisValues.add("June");
+//        xAxisValues.add("Jul");
+//        xAxisValues.add("Aug");
+//        xAxisValues.add("Sep");
+//        xAxisValues.add("Oct");
+//        xAxisValues.add("Nov");
+//        xAxisValues.add("Dec");
 
+        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
+        // draw the graph
+        BarDataSet barDataSet1;
+        //
+        yValueGroup1.add(new BarEntry(1f, 11f));
+        yValueGroup1.add(new BarEntry(2f, 12f));
+        yValueGroup1.add(new BarEntry(3f, 13f));
+        yValueGroup1.add(new BarEntry(4f, 14f));
+        yValueGroup1.add(new BarEntry(5f, 15f));
+
+        barDataSet1 = new BarDataSet(yValueGroup1, "");
+        barDataSet1.setColors((getResources().getColor(R.color.red)));
+        //        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)), (getResources().getColor(R.color.gray)), (getResources().getColor(R.color.orange)), (getResources().getColor(R.color.blue)));
+//        barDataSet1.label = "2016";
+        barDataSet1.setDrawIcons(false);
+        barDataSet1.setDrawValues(true);
+
+        BarData barData = new BarData(barDataSet1);
+
+
+        barData.setValueFormatter(new PercentFormatter());
+        barChartView.setData(barData);
+        barChartView.getBarData().setBarWidth(barWidth);
+        barChartView.getXAxis().setAxisMinimum(0f);
+        barChartView.getXAxis().setAxisMaximum(12f);
+
+        barChartView.setFitBars(true);
+        barChartView.getData().setHighlightEnabled(false);
+        barChartView.invalidate();
+
+        // set bar label
+        Legend legend = barChartView.getLegend();
+        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        legend.setOrientation(Legend.LegendOrientation.VERTICAL);
+        legend.setDrawInside(false);
+        ArrayList<LegendEntry> legenedEntries = new ArrayList<LegendEntry>();
+        legenedEntries.add(new LegendEntry("2016", Legend.LegendForm.SQUARE, 8f, 8f, null, Color.RED));
+        legenedEntries.add(new LegendEntry("2017", Legend.LegendForm.SQUARE, 8f, 8f, null, Color.YELLOW));
+        legend.setCustom(legenedEntries);
+        legend.setYOffset(2f);
+        legend.setXOffset(2f);
+        legend.setYEntrySpace(0f);
+        legend.setTextSize(5f);
+        legend.setEnabled(false);
+        barData.setBarWidth(0.7f);
+        barDataSet1.setValueTextColor(Color.BLACK);
+        barDataSet1.setValueTextSize(10f);
+
+
+
+        XAxis xAxis = barChartView.getXAxis();
+        xAxis.setGranularity(1f);
+        xAxis.setGranularityEnabled(true);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setDrawGridLines(false);
+        xAxis.setTextSize(12f);
+
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
+
+
+        xAxis.setLabelCount(12);
+        xAxis.mAxisMaximum = 12f;
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setAvoidFirstLastClipping(true);
+        xAxis.setSpaceMin(20f);
+        xAxis.setSpaceMax(20f);
+
+        barChartView.setVisibleXRangeMaximum(20f);
+        barChartView.setVisibleXRangeMinimum(20f);
+        barChartView.setDragEnabled(true);
+
+        //Y-axis
+        barChartView.getAxisRight().setEnabled(false);
+        barChartView.setScaleEnabled(true);
+
+        YAxis yAxis = barChartView.getAxisLeft();
+        yAxis.setValueFormatter(new LargeValueFormatter());
+        yAxis.setDrawGridLines(false);
+        yAxis.setSpaceTop(1f);
+        yAxis.setAxisMinimum(0f);
+        yAxis.setEnabled(false);
+
+        barChartView.setDrawBarShadow(false);
+
+
+        barChartView.setMaxVisibleValueCount(50);
+        barChartView.setPinchZoom(false);
+        barChartView.setDrawGridBackground(false);
+
+        // Display scores inside the bars
+        barChartView.setDrawValueAboveBar(false);
+
+        barChartView.animateY(2000);
+        barChartView.setData(barData);
+        // to select numbers of bars u wanna show
+        barChartView.setVisibleXRange(1f, 6f);
+        barChartView.getDescription().setEnabled(false);
     }
+
+
     private void showbarOriginWise(View frg) {
 
-        BarChart barChart1 = frg.findViewById(R.id.idr_baroriginwise);
+ BarChart barChartView = frg.findViewById(R.id.idr_baroriginwise);
+
+        Float barWidth;
+        int groupCount = 12;
+        barWidth = 0.25f;
+
+        List<String> xAxisValues = new ArrayList<>();
+        xAxisValues.add("Jan");
+        xAxisValues.add("Feb");
+        xAxisValues.add("Mar");
+        xAxisValues.add("Apr");
+        xAxisValues.add("May");
+//        xAxisValues.add("June");
+//        xAxisValues.add("Jul");
+//        xAxisValues.add("Aug");
+//        xAxisValues.add("Sep");
+//        xAxisValues.add("Oct");
+//        xAxisValues.add("Nov");
+//        xAxisValues.add("Dec");
+
+        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
+
+        // draw the graph
+        BarDataSet barDataSet1;
+        //
+
+        yValueGroup1.add(new BarEntry(1f, 11f));
+        yValueGroup1.add(new BarEntry(2f, 12f));
+        yValueGroup1.add(new BarEntry(3f, 13f));
+        yValueGroup1.add(new BarEntry(4f, 14f));
+        yValueGroup1.add(new BarEntry(5f, 15f));
+
+        barDataSet1 = new BarDataSet(yValueGroup1, "");
+        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)));
+        //        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)), (getResources().getColor(R.color.gray)), (getResources().getColor(R.color.orange)), (getResources().getColor(R.color.blue)));
+//        barDataSet1.label = "2016";
+        barDataSet1.setDrawIcons(false);
+        barDataSet1.setDrawValues(true);
+
+        BarData barData = new BarData(barDataSet1);
+//        barChartView.description.isEnabled = false;
+//        barChartView.description.textSize = 0f;
+        barData.setValueFormatter(new PercentFormatter());
+        barChartView.setData(barData);
+        barChartView.getBarData().setBarWidth(barWidth);
+        barChartView.getXAxis().setAxisMinimum(0f);
+        barChartView.getXAxis().setAxisMaximum(12f);
 
 
-        ArrayList<BarEntry> test = new ArrayList<>();
-        test.add(new BarEntry(20, 4));
-        test.add(new BarEntry(21, 5));
-        test.add(new BarEntry(22, 6));
-        test.add(new BarEntry(23, 7));
-        test.add(new BarEntry(24, 8));
-        test.add(new BarEntry(25, 9));
+        barChartView.setFitBars(true);
+        barChartView.getData().setHighlightEnabled(false);
+        barChartView.invalidate();
+
+        // set bar label
+        Legend legend = barChartView.getLegend();
+        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
+        legend.setOrientation(Legend.LegendOrientation.VERTICAL);
+        legend.setDrawInside(false);
+        ArrayList<LegendEntry> legenedEntries = new ArrayList<LegendEntry>();
+        legenedEntries.add(new LegendEntry("2016", Legend.LegendForm.SQUARE, 8f, 8f, null, Color.RED));
+        legenedEntries.add(new LegendEntry("2017", Legend.LegendForm.SQUARE, 8f, 8f, null, Color.YELLOW));
+        legend.setCustom(legenedEntries);
+        legend.setYOffset(2f);
+        legend.setXOffset(2f);
+        legend.setYEntrySpace(0f);
+        legend.setTextSize(5f);
+        legend.setEnabled(false);
+        barData.setBarWidth(0.7f);
+        barDataSet1.setValueTextColor(Color.BLACK);
+        barDataSet1.setValueTextSize(10f);
 
 
+        XAxis xAxis = barChartView.getXAxis();
+        xAxis.setGranularity(1f);
+        xAxis.setGranularityEnabled(true);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setDrawGridLines(false);
+        xAxis.setTextSize(12f);
 
-        BarDataSet barDataSet = new BarDataSet(test, "test");
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        //  barDataSet.setColors(Color.RED);
-        barDataSet.setValueTextSize(16f);
-        //this line is not working
-        barDataSet.setStackLabels(new String[]{"Large", "Small", "Medium"});
-        barChart1.setDragEnabled(true);
-        barDataSet.setValueTextColor(Color.BLACK);
-        BarData barData = new BarData(barDataSet);
-        barChart1.setData(barData);
-        barChart1.animateY(2000);
-        barChart1.setFitBars(true);
-        barChart1.getDescription().setEnabled(false);
-        barChart1.setDrawValueAboveBar(true);
-        barData.setBarWidth(1f);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
 
 
+        xAxis.setLabelCount(12);
+        xAxis.mAxisMaximum = 12f;
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setAvoidFirstLastClipping(true);
+        xAxis.setSpaceMin(20f);
+        xAxis.setSpaceMax(20f);
 
-        final ArrayList<String> xAxisLabel = new ArrayList<>();
-        xAxisLabel.add("Mon");
-        xAxisLabel.add("Tue");
-        xAxisLabel.add("Wed");
-        xAxisLabel.add("Thu");
-        xAxisLabel.add("Fri");
-        xAxisLabel.add("Sat");
-        xAxisLabel.add("Sun");
+        barChartView.setVisibleXRangeMaximum(20f);
+        barChartView.setVisibleXRangeMinimum(20f);
+        barChartView.setDragEnabled(true);
 
-        XAxis xAxis = barChart1.getXAxis();
-        xAxis.setValueFormatter(new ValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return xAxisLabel.get((int) value);
+        //Y-axis
+        barChartView.getAxisRight().setEnabled(false);
+        barChartView.setScaleEnabled(true);
 
-            }
-        });
+        YAxis yAxis = barChartView.getAxisLeft();
+        yAxis.setValueFormatter(new LargeValueFormatter());
+        yAxis.setDrawGridLines(false);
+        yAxis.setSpaceTop(1f);
+        yAxis.setAxisMinimum(0f);
+        yAxis.setEnabled(false);
 
+        barChartView.setDrawBarShadow(false);
 
 
+        barChartView.setMaxVisibleValueCount(50);
+        barChartView.setPinchZoom(false);
+        barChartView.setDrawGridBackground(false);
 
+        // Display scores inside the bars
+        barChartView.setDrawValueAboveBar(false);
+
+        barChartView.animateY(2000);
+        barChartView.setData(barData);
+        // to select numbers of bars u wanna show
+        barChartView.setVisibleXRange(1f, 6f);
+        barChartView.getDescription().setEnabled(false);
     }
 
-    public void fillMonthSales(){
-        monthDetailsArrayList.clear();
-        monthDetailsArrayList.add(new  MonthDetails ("jan",2500));
-        monthDetailsArrayList.add(new  MonthDetails ("jan",2500));
-        monthDetailsArrayList.add(new  MonthDetails ("jan",2500));
-        monthDetailsArrayList.add(new  MonthDetails ("jan",2500));
 
-    }
+
+
 
 
     private void showpieSWSickAnimal(View frg) {
@@ -365,65 +486,6 @@ public class HomeFragment extends Fragment  {
         PieChartManagger pieChartManagger = new PieChartManagger(mBarChart_sick_animal, getContext());
         pieChartManagger.showSolidPieChartNew(yvals, colors);
     }
-
-//
-//    private void SetData(int count, int range) {
-//
-//        ArrayList<BarEntry> yVals = new ArrayList<>();
-//        float barWidth = 5;
-//        float spaceForBar = 10f;
-//        ArrayList<BarEntry> entries = new ArrayList<>();
-//        entries.add(new BarEntry(1,40f ));
-//        entries.add(new BarEntry(2,45f ));
-//        entries.add(new BarEntry(3,30f ));
-//
-//        for (int i = 0; i < count; i++) {
-//            float val = (float) (Math.random() * count)+20;
-////            float val1 = (float) (Math.random() * count)+1;
-////            float val2 = (float) (Math.random() * count)+2;
-////            float val3 = (float) (Math.random() * count)+3;
-//            yVals.add(new BarEntry(i * spaceForBar, val));
-////            yVals.add(new BarEntry(i * spaceForBar, val1));
-////            yVals.add(new BarEntry(i * spaceForBar, val2));
-////            yVals.add(new BarEntry(i * spaceForBar, val3));
-//        }
-//
-//            BarDataSet set1;
-//            set1 = new BarDataSet(yVals, "Immediate Diseases Report");
-//            set1.setDrawIcons(false);
-//            set1.setStackLabels(new String[]{"L","S","M"});
-//            set1.setColors(ColorTemplate.JOYFUL_COLORS);
-//            BarData data = new BarData(set1);
-//            barChart.setData(data);
-//            data.setValueFormatter(new MyValueFormatter());
-//
-//            barChart.invalidate();
-//            barChart.setFitBars(true);
-//            barChart.getDescription().setEnabled(false);
-//            barChart.setMaxVisibleValueCount(50);
-//            barChart.setDrawValueAboveBar(true);
-//            data.setBarWidth(barWidth);
-//            barChart.setPinchZoom(false);
-//
-//
-//    ///
-//
-//
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

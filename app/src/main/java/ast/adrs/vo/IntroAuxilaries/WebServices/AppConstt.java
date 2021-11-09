@@ -171,7 +171,7 @@ public interface AppConstt {
         String FN_PreSignInFragment = "SignInVAFragment";
 
         String FN_HomeFragment = "HomeFragment";
-
+        String FN_ExampleFragment = "FN_ExampleFragment";
 
 
 

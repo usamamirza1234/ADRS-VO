@@ -8,11 +8,12 @@ android {
 
     defaultConfig {
         applicationId "ast.adrs.vo"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -50,8 +51,6 @@ dependencies {
     //FCM Push Notification
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     implementation 'com.google.firebase:firebase-analytics'
-
-
 
 
     // both are for retrieving otp sms without persmission
@@ -95,5 +94,12 @@ dependencies {
     implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
+
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+
+
+//AnyChart Lib
+
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
 }

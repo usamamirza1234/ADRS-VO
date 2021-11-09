@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.MainAuxilaries.ExampleFragment;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
@@ -86,7 +87,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        llRapid.setOnClickListener(this);
 //        llissues.setOnClickListener(this);
 //        llFeedback.setOnClickListener(this);
-//        llBusinessPortal.setOnClickListener(this);
+
+        //use For Example
+        llBusinessPortal.setOnClickListener(this);
+
 //        llIssuesFacedPrivate.setOnClickListener(this);
         llLogout.setOnClickListener(this);
 
@@ -120,6 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void navToHomeFragment() {
         clearMyBackStack();
         Fragment frg = new HomeFragment();
+        // TODO: 09-Nov-21 change frg here
+       // Fragment frg = new ExampleFragment();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
         ft.commit();
@@ -132,13 +138,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void navToPunjabBusinessRegFragment() {
-//        //Fragment frg = new PunjabBusinessRegulatoryFragment();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_PunjabBusinessRegulatoryFragment);
-//        ft.addToBackStack(AppConstt.FragTag.FN_PunjabBusinessRegulatoryFragment);
-//        hideLastStackFragment(ft);
-//        ft.commit();
+    public void navToExampleFragment() {
+        Fragment frg = new ExampleFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_ExampleFragment);
+        ft.addToBackStack(AppConstt.FragTag.FN_ExampleFragment);
+        hideLastStackFragment(ft);
+        ft.commit();
     }
 
     public void navToRegulatoryEYFragment() {
@@ -246,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.lay_navigationview_llBusinessPortal:
                 closeDrawar();
-                navToPunjabBusinessRegFragment();
+                navToExampleFragment();
                 break;
             case R.id.lay_navigationview_llDashboard:
                 closeDrawar();
