@@ -173,7 +173,9 @@ public interface AppConstt {
         String FN_HomeFragment = "HomeFragment";
         String FN_ExampleFragment = "FN_ExampleFragment";
 
+        String FN_ImmediateDiseasesReportsIDR = "FN_ImmediateDiseasesReportsIDR";
 
+        String FN_PerformanceMonitoringFragment = "FN_PerformanceMonitoringFragment";
 
         String FN_ElectricityHomeFragment = "ElectricityHomeFragment" ;
 

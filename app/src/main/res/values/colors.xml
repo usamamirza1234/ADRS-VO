@@ -13,6 +13,8 @@
 
     <!-- General Colors -->
     <color name="white">#ffffff</color>
+    <color name="lightblue">#00B3ED</color>
+
     <color name="black">#ff000000</color>
     <color name="brown">#ff4e3d29</color>
     <color name="green">#16ca6b</color>
@@ -37,6 +39,11 @@
     <color name="thm_green">#3bb045</color>
     <color name="thm_green_light">#00c853</color>
     <color name="thm_yellow">#ffeb3b</color>
+    <color name="thm_yellow4">#FFFE04</color>
+    FFFE04
+    <color name="thm_yellow3">#F7DA6B</color>
+    <color name="thm_yellowlight">#FEE49C</color>
+    FEE49C
     <color name="thm_yellow_1">#F8C120</color>
     <color name="thm_yellow_2">#EF8664</color>
     <color name="thm_error">#ca2306</color>

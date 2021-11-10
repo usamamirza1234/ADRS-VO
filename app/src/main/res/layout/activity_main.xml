@@ -21,6 +21,21 @@
             android:layout_alignParentTop="true">
 
             <include layout="@layout/lay_act_toolbar" />
+
+        </RelativeLayout>
+        <RelativeLayout
+
+            android:id="@+id/homebar"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+
+
+            android:layout_below="@+id/act_main_rl_toolbar">
+
+            <include layout="@layout/layhometollbar" />
+
         </RelativeLayout>
 
 
@@ -30,7 +45,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_below="@id/act_main_rl_toolbar"
-            android:layout_marginTop="14dp" />
+            android:layout_marginTop="140dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -48,12 +63,15 @@
         android:visibility="gone"
         android:id="@+id/act_main_rl_bttabbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/btmtabbar_inner_height"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true">
 
-        <include layout="@layout/lay_bottomtab_bar" />
+        <include layout="@layout/lay_act_toolbar" />
 
     </RelativeLayout>
+
+
+
 
 
     <com.google.android.material.navigation.NavigationView

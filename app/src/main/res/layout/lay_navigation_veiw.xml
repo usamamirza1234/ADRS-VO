@@ -126,7 +126,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lay_navigationview_llRegulatoryMapping"
+                android:visibility="gone"
+                android:id="@+id/lay_navigationview_llPerformancemonitoring"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
@@ -141,14 +142,14 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text=""
+                    android:text="Performance Monitoring"
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lay_navigationview_llBusinessPortal"
+                android:id="@+id/lay_navigationview_llimmediatediseasesreports_idr"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="5dp"
@@ -163,7 +164,7 @@
                     android:gravity="start"
                     android:includeFontPadding="false"
                     android:paddingStart="14dp"
-                    android:text="Example"
+                    android:text="Immediate Diseases Reports - IDR"
                     android:textColor="@color/white"
                     android:textSize="@dimen/fontsize_mini"
                     android:textStyle="bold" />

@@ -20,13 +20,14 @@ import com.google.android.material.navigation.NavigationView;
 
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-import ast.adrs.vo.MainAuxilaries.ExampleFragment;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
+import ast.adrs.vo.MainAuxilaries.ImmediateDiseasesReportsIDRFragment;
+import ast.adrs.vo.MainAuxilaries.PerformanceMonitoringFragment;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, IBadgeUpdateListener {
 
-    LinearLayout llPriority_Sector, llDashboard, llRegulatoryMapping, llRapid, llissues, llFeedback, llBusinessPortal, llIssuesFacedPrivate, llLogout;
+    LinearLayout llPriority_Sector, llDashboard, llPerformancemonitoring, llRapid, llissues, llFeedback, llImmediateDiseasesReportsIDR, llIssuesFacedPrivate, llLogout;
 
     FragmentTransaction ft;
     RelativeLayout rlBotmbar;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentManager fm;
 
     TextView txvTitleBar;
-    RelativeLayout rlToolbar, rlMenu;
+    RelativeLayout rlToolbar, rlMenu ,idr;
     private Dialog progressDialog;
 
     @Override
@@ -66,30 +67,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         txvTitleBar = findViewById(R.id.act_intro_txv_title);
         rlMenu = findViewById(R.id.act_intro_rl_toolbar_menu);
-
+        idr = findViewById(R.id.homebar);
 
         llPriority_Sector = findViewById(R.id.lay_navigationview_llPriority_Sector);
-        llRegulatoryMapping = findViewById(R.id.lay_navigationview_llRegulatoryMapping);
+        llPerformancemonitoring = findViewById(R.id.lay_navigationview_llPerformancemonitoring);
         llDashboard = findViewById(R.id.lay_navigationview_llDashboard);
         llRapid = findViewById(R.id.lay_navigationview_llRapid);
 
         llFeedback = findViewById(R.id.lay_navigationview_llFeedback);
-        llBusinessPortal = findViewById(R.id.lay_navigationview_llBusinessPortal);
+        llImmediateDiseasesReportsIDR = findViewById(R.id.lay_navigationview_llimmediatediseasesreports_idr);
         llIssuesFacedPrivate = findViewById(R.id.lay_navigationview_llIssuesFacedPrivate);
         llLogout = findViewById(R.id.lay_navigationview_llLogout);
         llissues = findViewById(R.id.lay_navigationview_llissues);
 
         rlMenu.setOnClickListener(this);
+        idr.setOnClickListener(this);
 //
 //        llPriority_Sector.setOnClickListener(this);
-//        llRegulatoryMapping.setOnClickListener(this);
+        llPerformancemonitoring.setOnClickListener(this);
         llDashboard.setOnClickListener(this);
 //        llRapid.setOnClickListener(this);
 //        llissues.setOnClickListener(this);
 //        llFeedback.setOnClickListener(this);
 
         //use For Example
-        llBusinessPortal.setOnClickListener(this);
+        llImmediateDiseasesReportsIDR.setOnClickListener(this);
 
 //        llIssuesFacedPrivate.setOnClickListener(this);
         llLogout.setOnClickListener(this);
@@ -125,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearMyBackStack();
         Fragment frg = new HomeFragment();
         // TODO: 09-Nov-21 change frg here
-       // Fragment frg = new ExampleFragment();
+      //  Fragment frg = new ExampleFragment();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
         ft.commit();
@@ -138,22 +140,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void navToExampleFragment() {
-        Fragment frg = new ExampleFragment();
+    public void navToImmediateDiseasesReportsIDR() {
+        Fragment frg = new ImmediateDiseasesReportsIDRFragment();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_ExampleFragment);
-        ft.addToBackStack(AppConstt.FragTag.FN_ExampleFragment);
+        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_ImmediateDiseasesReportsIDR);
+        ft.addToBackStack(AppConstt.FragTag.FN_ImmediateDiseasesReportsIDR);
         hideLastStackFragment(ft);
         ft.commit();
     }
 
-    public void navToRegulatoryEYFragment() {
-//        Fragment frg = new RegulatoryMappingFragment();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_RegulatoryMappingEYFragment);
-//        ft.addToBackStack(AppConstt.FragTag.FN_RegulatoryMappingEYFragment);
-//        hideLastStackFragment(ft);
-//        ft.commit();
+    public void navToPerformanceMonitoringFragment() {
+        Fragment frg = new PerformanceMonitoringFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_PerformanceMonitoringFragment);
+        ft.addToBackStack(AppConstt.FragTag.FN_PerformanceMonitoringFragment);
+        hideLastStackFragment(ft);
+        ft.commit();
     }
 
     public void navToPrimeMinisterPrioritySectorFragment() {
@@ -250,18 +252,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.act_intro_rl_toolbar_menu:
                 openDrawar();
                 break;
-            case R.id.lay_navigationview_llBusinessPortal:
+            case R.id.lay_navigationview_llimmediatediseasesreports_idr:
                 closeDrawar();
-                navToExampleFragment();
+                navToImmediateDiseasesReportsIDR();
                 break;
             case R.id.lay_navigationview_llDashboard:
                 closeDrawar();
                // navToHomeFragment();
                 break;
 
-            case R.id.lay_navigationview_llRegulatoryMapping:
+            case R.id.lay_navigationview_llPerformancemonitoring:
                 closeDrawar();
-                navToRegulatoryEYFragment();
+                navToPerformanceMonitoringFragment();
                 break;
 
             case R.id.lay_navigationview_llPriority_Sector:
@@ -316,14 +318,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 rlMenu.setVisibility(View.VISIBLE);
                 txvTitleBar.setVisibility(View.VISIBLE);
+                idr.setVisibility(View.VISIBLE);
                 break;
 
-            case AppConstt.ToolbarState.TOOLBAR_VISIBLE:
-                closeDrawar();
-
-                rlMenu.setVisibility(View.VISIBLE);
-                txvTitleBar.setVisibility(View.VISIBLE);
-                break;
+//            case AppConstt.ToolbarState.TOOLBAR_VISIBLE:
+//                closeDrawar();
+//
+//                rlMenu.setVisibility(View.VISIBLE);
+//                txvTitleBar.setVisibility(View.VISIBLE);
+//                break;
         }
     }
 

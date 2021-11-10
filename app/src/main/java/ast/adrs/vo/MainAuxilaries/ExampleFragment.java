@@ -74,14 +74,14 @@ public class ExampleFragment extends Fragment {
         ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
 
         //
-//        ArrayList<BarEntry> yValueGroup2 = new ArrayList<>();
-//        ArrayList<BarEntry> yValueGroup3 = new ArrayList<>();
+        ArrayList<BarEntry> yValueGroup2 = new ArrayList<>();
+        ArrayList<BarEntry> yValueGroup3 = new ArrayList<>();
 
         // draw the graph
         BarDataSet barDataSet1;
         //
-//        BarDataSet barDataSet2;
-//        BarDataSet barDataSet3;
+        BarDataSet barDataSet2;
+        BarDataSet barDataSet3;
 
 
         yValueGroup1.add(new BarEntry(1f, 11f));
@@ -106,37 +106,37 @@ public class ExampleFragment extends Fragment {
 
 //        <-------------->
 
-//
-//        yValueGroup2.add(new BarEntry(2f, 4f));
-//        yValueGroup2.add(new BarEntry(2f, 4f));
-//        yValueGroup2.add(new BarEntry(2f, 4f));
-//        yValueGroup2.add(new BarEntry(2f, 4f));
-//        yValueGroup2.add(new BarEntry(2f, 4f));
-//
-//        barDataSet2 = new BarDataSet(yValueGroup2, "");
+
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+        yValueGroup2.add(new BarEntry(2f, 4f));
+
+        barDataSet2 = new BarDataSet(yValueGroup2, "");
 
       //  barDataSet2.label = "2017"
-//        barDataSet2.setColors((getResources().getColor(R.color.gray)));
-//
-//        barDataSet2.setDrawIcons(false);
-//        barDataSet2.setDrawValues(true);
+        barDataSet2.setColors((getResources().getColor(R.color.gray)));
+
+        barDataSet2.setDrawIcons(false);
+        barDataSet2.setDrawValues(true);
 
 
       //  <-------------->
-//        yValueGroup3.add(new BarEntry(3f, 5f));
-//        yValueGroup3.add(new BarEntry(3f, 5f));
-//        yValueGroup3.add(new BarEntry(3f, 5f));
-//        yValueGroup3.add(new BarEntry(3f, 5f));
-//        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
+        yValueGroup3.add(new BarEntry(3f, 5f));
 
 
-//        barDataSet3 = new BarDataSet(yValueGroup3, "");
+        barDataSet3 = new BarDataSet(yValueGroup3, "");
 
       //        barDataSet3.label = "2017"
-//        barDataSet3.setColors((getResources().getColor(R.color.orange)));
-//
-//        barDataSet3.setDrawIcons(false);
-//        barDataSet3.setDrawValues(true);
+        barDataSet3.setColors((getResources().getColor(R.color.orange)));
+
+        barDataSet3.setDrawIcons(false);
+        barDataSet3.setDrawValues(true);
 
       //  <-------------->
 
@@ -152,9 +152,9 @@ public class ExampleFragment extends Fragment {
         barChartView.getXAxis().setAxisMinimum(0f);
         barChartView.getXAxis().setAxisMaximum(12f);
 
-// TODO: 09-Nov-21  uncomment this to use grouped dataset
 
-//        barChartView.groupBars(0f, groupSpace, barSpace);
+
+        barChartView.groupBars(0f, groupSpace, barSpace);
 
 
 
