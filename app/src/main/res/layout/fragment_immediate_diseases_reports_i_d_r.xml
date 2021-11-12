@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"    android:background="@color/lightblue"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/lightblue"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -998,6 +1000,7 @@
 
 
 
+
                 </LinearLayout>
 
                 <com.github.mikephil.charting.charts.HorizontalBarChart
@@ -1010,8 +1013,67 @@
 
             </RelativeLayout>
 
+            <!-- Recycle  Table -->
+            <LinearLayout
+
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:background="@drawable/shp_rect_rounded_black_stoke2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:background="@color/red"
+                        android:padding="1dp"
+                        android:gravity="start"
+                        android:layout_gravity="start"
+                        android:text="Disease: Foot and Mouth Disease (FMD)"
+                        android:textSize="@dimen/fontsize_small"
+                        android:textColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:background="@color/red"
+                        android:padding="1dp"
+                        android:gravity="start"
+                        android:layout_gravity="start"
+                        android:text="Faisalabad , T,Faisalabad, M"
+                        android:textSize="@dimen/fontsize_small"
+                        android:textColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="gone"
+                        android:id="@+id/frg_IDR_rcvFootMouth"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+
+                        tools:listitem="@layout/lay_item_idr_footmouth"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
+
+
+
+
+
 
 
 

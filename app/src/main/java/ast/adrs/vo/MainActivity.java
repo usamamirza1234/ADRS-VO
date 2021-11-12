@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     NavigationView navigationView;
     private FragmentManager fm;
 
-    TextView txvTitleBar;
+    TextView txvTitleBar,btnview;
     RelativeLayout rlToolbar, rlMenu ,idr;
     private Dialog progressDialog;
 
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawer = findViewById(R.id.act_main_drawr);
         navigationView = drawer.findViewById(R.id.act_main_navview);
         rlBotmbar = findViewById(R.id.act_main_rl_bttabbar);
-
+        btnview = findViewById(R.id.btnview);
 
         txvTitleBar = findViewById(R.id.act_intro_txv_title);
         rlMenu = findViewById(R.id.act_intro_rl_toolbar_menu);
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearMyBackStack();
         Fragment frg = new HomeFragment();
         // TODO: 09-Nov-21 change frg here
-      //  Fragment frg = new ExampleFragment();
+       // Fragment frg = new ExampleFragment();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
         ft.commit();

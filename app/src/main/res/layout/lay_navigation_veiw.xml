@@ -149,6 +149,7 @@
             </LinearLayout>
 
             <LinearLayout
+
                 android:id="@+id/lay_navigationview_llimmediatediseasesreports_idr"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"

@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.armoomragames.denketa.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -26,6 +28,8 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import ast.adrs.vo.MainAuxilaries.Adapter.IDRFootMouthRcvAdapter;
+import ast.adrs.vo.MainAuxilaries.DModels.DModelIDRFootMouth;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
 
@@ -36,7 +40,9 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
     private List<Integer> lstPieValues;
     private PieChart mBarChart_district_faisalabad;
     private PieChart mBarChart_foot_mouth;
-
+    RecyclerView rcvIDRFootMouth;
+    ArrayList<DModelIDRFootMouth> lstIDRFootMouth;
+    IDRFootMouthRcvAdapter idrFootMouthRcvAdapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,7 +54,7 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
         showDistrictwiseDiseaseReport(frg);
         showpieDistrictFaisalabad();
         showTehsilFaisalabad(frg);
-
+        populateIDRFootMouth(lstIDRFootMouth);
         return frg;
     }
 
@@ -57,10 +63,15 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
 
     private void init(){
         lstPieValues = new ArrayList<>();
-
+        lstIDRFootMouth = new ArrayList<>();
+        setToolbar();
     }
 
     private void bindViews(View frg) {
+
+        rcvIDRFootMouth = frg.findViewById(R.id.frg_IDR_rcvFootMouth);
+
+
         mBarChart_foot_mouth = frg.findViewById(R.id.frg_home_mpchart_foot_mouth);
         mBarChart_district_faisalabad = frg.findViewById(R.id.frg_home_mpchart_district_faisalabad);
 
@@ -443,8 +454,54 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
     }
 
 
+    private void populateIDRFootMouth(ArrayList<DModelIDRFootMouth> mData) {
+
+      //  rlIssue_Faced.setVisibility(View.VISIBLE);
+     //   rlEY_Portal.setVisibility(View.GONE);
 
 
+idrFootMouthRcvAdapter=null;
+        if (idrFootMouthRcvAdapter == null) {
+
+            idrFootMouthRcvAdapter = new IDRFootMouthRcvAdapter(getActivity(), mData, (eventId, position) -> {
+
+            });
+
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+            rcvIDRFootMouth.setLayoutManager(linearLayoutManager);
+            rcvIDRFootMouth.setAdapter(idrFootMouthRcvAdapter);
+
+        } else {
+            idrFootMouthRcvAdapter.notifyDataSetChanged();
+        }
+
+
+    }
+
+
+
+    void setToolbar() {
+
+        try {
+            mBadgeUpdateListener = (IBadgeUpdateListener) getActivity();
+        } catch (ClassCastException castException) {
+            castException.printStackTrace(); // The activity does not implement the listener
+        }
+        if (getActivity() != null && isAdded()) {
+//            mBadgeUpdateListener.setToolbarState(AppConstt.ToolbarState.TOOLBAR_BACK_HIDDEN);
+            mBadgeUpdateListener.setHeaderTitle("Immediate Diseases Report -IDR");
+
+        }
+
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!isHidden()) {
+            setToolbar();
+        }
+    }
 
 
 

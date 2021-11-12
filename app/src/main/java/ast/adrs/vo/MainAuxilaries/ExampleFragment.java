@@ -1,12 +1,15 @@
 package ast.adrs.vo.MainAuxilaries;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.armoomragames.denketa.R;
 import com.github.mikephil.charting.charts.BarChart;
@@ -20,32 +23,55 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ast.adrs.vo.MainAuxilaries.Adapter.IDRFootMouthRcvAdapter;
+import ast.adrs.vo.MainAuxilaries.DModels.DModelIDRFootMouth;
+
 public class ExampleFragment extends Fragment {
 
     View view;
-
+    IDRFootMouthRcvAdapter idrFootMouthRcvAdapter;
+RecyclerView rcvIDRFootMouth;
+    ArrayList<DModelIDRFootMouth> lstIDRFootMouth;
     public ExampleFragment() {
 
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View frg = inflater.inflate(R.layout.fragment_example, container, false);
 
-        view = inflater.inflate(R.layout.fragment_example, container, false);
+        init();
+        bindViews(frg);
+      //  populateIDRFootMouth(lstIDRFootMouth);
+       // populateGraphData();
 
-
-        populateGraphData();
-        return view;
+        return frg;
     }
 
 
+
+
+    private void  init(){
+     //   lstIDRFootMouth = new ArrayList<>();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void bindViews(View frg) {
+      //  rcvIDRFootMouth = frg.findViewById(R.id.frg_IDR_rcvFootMouth);
+
+     FloatingActionButton fab = (FloatingActionButton) frg.findViewById(R.id.fab);
+     fab.setTooltipText("S");
+    }
+
     private void populateGraphData() {
 
-        BarChart barChartView = view.findViewById(R.id.chartConsumptionGraph);
+       BarChart barChartView = view.findViewById(R.id.chartConsumptionGraph);
 
         Float barWidth;
         Float barSpace;
@@ -227,7 +253,35 @@ public class ExampleFragment extends Fragment {
         // to select numbers of bars u wanna show
         barChartView.setVisibleXRange(1f, 12f);
     }
+
+
+
+
+    private void populateIDRFootMouth(ArrayList<DModelIDRFootMouth> mData) {
+
+        //  rlIssue_Faced.setVisibility(View.VISIBLE);
+        //   rlEY_Portal.setVisibility(View.GONE);
+
+
+
+//        if (idrFootMouthRcvAdapter == null) {
+//
+//            idrFootMouthRcvAdapter = new IDRFootMouthRcvAdapter(getActivity(), mData, (eventId, position) -> {
+//
+//            });
+//
+//            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+//            rcvIDRFootMouth.setLayoutManager(linearLayoutManager);
+//            rcvIDRFootMouth.setAdapter(idrFootMouthRcvAdapter);
+//
+//        } else {
+//            idrFootMouthRcvAdapter.notifyDataSetChanged();
+//        }
+//
+//
+    }
 }
+
 
 
 
