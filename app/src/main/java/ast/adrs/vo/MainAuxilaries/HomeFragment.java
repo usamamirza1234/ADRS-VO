@@ -122,11 +122,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         mBarChart_dieses_idr = frg.findViewById(R.id.frg_home_mpchart_dieses_idr);
         mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
          barChartView = frg.findViewById(R.id.idr_barchart);
-
-
-
-
-        btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
+         btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
 //        btnhomefrgsick.setTooltipText("Sick");
         // mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
 
