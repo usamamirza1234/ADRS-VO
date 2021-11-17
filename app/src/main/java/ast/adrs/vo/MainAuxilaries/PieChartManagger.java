@@ -86,8 +86,6 @@ public class PieChartManagger {
 
     }
 
-
-
     public void showSolidPieChartNew(List<PieEntry> yvals, List<Integer> colors) {
         //Data collection
 
@@ -189,7 +187,6 @@ public class PieChartManagger {
 // show attempt
         pieChart.setData(pieData);
     }
-
 
     /**
      * Display ring
