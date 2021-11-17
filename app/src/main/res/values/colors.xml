@@ -128,6 +128,24 @@
     <color name="thm_line">#EEEEEE</color>
 
 
+    <color name="graph_idr_orange1">#ED7D34</color>
+    <color name="graph_idr_orangelight1">#EF9859</color>
+    <color name="graph_idr_silver1">#A5A5A5</color>
+    <color name="graph_idr_lightsilver1">#B7B7B5</color>
+    <color name="graph_idr_likeblue1">#2A6193</color>
+    <color name="graph_idr_navy1">#264478</color>
+    <color name="graph_idr_lightblue1">#4572C5</color>
+    <color name="graph_idr_sky1">#7BAFDF</color>
+    <color name="graph_idr_yellow1">#FFC000</color>
+    <color name="graph_idr_lightgreen1">#72AB47</color>
+    <color name="graph_idr_brown1">#A0470C</color>
+    <color name="graph_idr_gray1">#64645D</color>
+    <color name="graph_idr_mehndhi1">#9D7004</color>
+    <color name="graph_idr_bluesish1">#589CD4</color>
+    <color name="graph_idr_green">#42682B</color>
+
+
+
     <color name="black1">#BF000000</color>
     <color name="thm_dark_navy1">#80004390</color>
     <color name="thm_gray_bg_dark1">#1A707070</color>

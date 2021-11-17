@@ -1,7 +1,6 @@
 package ast.adrs.vo.MainAuxilaries;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -40,29 +40,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-import ast.adrs.vo.MainActivity;
+import ast.adrs.vo.Utils.CustomToast;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
     private IBadgeUpdateListener mBadgeUpdateListener;
     private PieChart pieChart;
-AlertDialog alertDialog;
+    AlertDialog alertDialog;
     private PieChart mBarChart_dieses_idr;
     private PieChart mBarChart_sick_animal;
     private List<Integer> lstPieValues;
-TextView btnhomefrgsick;
+    TextView btnhomefrgsick;
 
 
     ArrayList<BarEntry> barEntriesArrayList;
-    ArrayList<String > lableName;
+    ArrayList<String> lableName;
     ArrayList<MonthlySalesData> monthlySalesDataArrayList = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState ) {
+                             Bundle savedInstanceState) {
         View frg = inflater.inflate(R.layout.fragment_home, container, false);
-
 
 
         init();
@@ -79,30 +78,28 @@ TextView btnhomefrgsick;
         // showBarChart(frg);
 
 
-
         return frg;
     }
-
-
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void bindViews(View frg) {
         mBarChart_dieses_idr = frg.findViewById(R.id.frg_home_mpchart_dieses_idr);
-       // btnhomefrgsick   = frg.findViewById(R.id.frg_home_frg_txv_sick);
+        // btnhomefrgsick   = frg.findViewById(R.id.frg_home_frg_txv_sick);
 
 
-        btnhomefrgsick  =  frg.findViewById(R.id.frg_home_frg_txv_sick);
+        btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
         btnhomefrgsick.setTooltipText("Sick");
         // mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
 
 //showdata wala
-      //   barChart= (HorizontalBarChart) frg.findViewById(R.id.idr_barchart);
+        //   barChart= (HorizontalBarChart) frg.findViewById(R.id.idr_barchart);
 
         btnhomefrgsick.setOnClickListener(this);
 
 
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -113,10 +110,7 @@ TextView btnhomefrgsick;
     }
 
 
-
-
-    private void  showBarIDR(View frg){
-
+    private void showBarIDR(View frg) {
 
 
         BarChart barChartView = frg.findViewById(R.id.idr_barchart);
@@ -193,7 +187,7 @@ TextView btnhomefrgsick;
         barDataSet1.setValueTextColor(Color.WHITE);
         barDataSet1.setValueTextSize(10f);
 
-     //    to remove decimal point
+        //    to remove decimal point
         MyDecimalValueFormatter formatter = new MyDecimalValueFormatter();
         barDataSet1.setValueFormatter(formatter);
 
@@ -249,13 +243,10 @@ TextView btnhomefrgsick;
     }
 
 
-
-
-
     private void showbarOriginWise(View frg) {
 
- BarChart barChartView = frg.findViewById(R.id.idr_baroriginwise);
-     //   fillMonthlySalesArrayList();
+        BarChart barChartView = frg.findViewById(R.id.idr_baroriginwise);
+        //   fillMonthlySalesArrayList();
         Float barWidth;
         int groupCount = 12;
         barWidth = 0.25f;
@@ -307,9 +298,6 @@ TextView btnhomefrgsick;
         barChartView.getXAxis().setAxisMaximum(12f);
 
 
-
-
-
         barChartView.setFitBars(true);
         barChartView.getData().setHighlightEnabled(true);
         barChartView.invalidate();
@@ -336,7 +324,7 @@ TextView btnhomefrgsick;
         barDataSet1.setValueTextSize(10f);
 
 
-       // to remove decimal point
+        // to remove decimal point
         MyDecimalValueFormatter formatter = new MyDecimalValueFormatter();
         barDataSet1.setValueFormatter(formatter);
         XAxis xAxis = barChartView.getXAxis();
@@ -348,8 +336,7 @@ TextView btnhomefrgsick;
         xAxis.setTextSize(12f);
 
 
-
-       // for vertical labels
+        // for vertical labels
         xAxis.setLabelRotationAngle(-90);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
@@ -365,10 +352,6 @@ TextView btnhomefrgsick;
         //        barChartView.getXAxis().setAxisMaximum(maxX + 0.2f);
 //        barChartView.getXAxis().setAxisMinimum(minX - 0.2f);
 //
-
-
-
-
 
 
         barChartView.setVisibleXRangeMaximum(20f);
@@ -404,12 +387,19 @@ TextView btnhomefrgsick;
         barChartView.setVisibleXRange(1f, 10f);
         barChartView.getDescription().setEnabled(false);
 
+
+        /////
+
+
 //        barChartView.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
 //            @Override
 //            public void onValueSelected(Entry e, Highlight h) {
+//
 //                int x = barChartView.getData().getDataSetForEntry(e).getEntryIndex((BarEntry) e);
 //                String region = monthlySalesDataArrayList.get(x).getMonth();
 //                String sales = NumberFormat.getCurrencyInstance().format(monthlySalesDataArrayList.get(x).getSales());
+//                   Toast.makeText(getContext(),"Enter all fields", Toast.LENGTH_LONG).show();
+                   //CustomToast.showToastMessage(getActivity(),"some thing"+e.getY(),Toast);
 //                AlertDialog.Builder builder = new AlertDialog.Builder(HomeFragment.this);
 //                builder.setCancelable(true);
 //                View view = LayoutInflater.from(HomeFragment.this).inflate(R.layout.monthtest,null);
@@ -429,7 +419,7 @@ TextView btnhomefrgsick;
 //            }
 //        });
 //
-//
+////
 //    }
 //    private void fillMonthlySalesArrayList(){
 //       monthlySalesDataArrayList.clear();
@@ -445,8 +435,9 @@ TextView btnhomefrgsick;
 //    monthlySalesDataArrayList.add(new MonthlySalesData("Oct",320000));
 //    monthlySalesDataArrayList.add(new MonthlySalesData("Nov",150000));
 //    monthlySalesDataArrayList.add(new MonthlySalesData("Dec EGypt",200000));
-}
 
+
+    }
 
 
 
@@ -525,33 +516,61 @@ TextView btnhomefrgsick;
         // lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrFourth());
 
 
-        lstPieValues.add(16);
-        lstPieValues.add(7);
-        lstPieValues.add(2);
-        lstPieValues.add(9);
-
-        lstPieValues.add(0);
         lstPieValues.add(1);
+        lstPieValues.add(4);
+        lstPieValues.add(9);
+        lstPieValues.add(10);
+
+        lstPieValues.add(18);
         lstPieValues.add(5);
+        lstPieValues.add(5);
+
+        lstPieValues.add(7);
+        lstPieValues.add(4);
+        lstPieValues.add(4);
+        lstPieValues.add(4);
+
+        lstPieValues.add(4);
+        lstPieValues.add(1);
+        lstPieValues.add(2);
+        lstPieValues.add(8);
 
 
 
         for (int i = 0; i < lstPieValues.size(); i++) {
             yvals.add(new PieEntry(lstPieValues.get(i)));
             if (i == 0) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_green_dark_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_bluesish1));
             } else if (i == 1) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_blue_dark_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_brown1));
             } else if (i == 2) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_light_green_dark_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_gray1));
             } else if (i == 3) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_yellow_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_green));
             } else if (i == 4) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_green_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightblue1));
             } else if (i == 5) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_blue_app));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightgreen1));
             } else if (i == 6) {
-                colors.add(getActivity().getResources().getColor(R.color.app_blue_lightest));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightsilver1));
+            } else if (i == 7) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightsilver1));
+            } else if (i == 8) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_likeblue1));
+            } else if (i == 9) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_mehndhi1));
+            } else if (i == 10) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_navy1));
+            } else if (i == 11) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_orange1));
+            } else if (i == 12) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_orangelight1));
+            } else if (i == 13) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_sky1));
+            } else if (i == 14) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_yellow1));
+            } else if (i == 15) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_silver1));
             }
 
         }

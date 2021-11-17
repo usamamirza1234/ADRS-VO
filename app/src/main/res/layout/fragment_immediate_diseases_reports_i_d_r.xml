@@ -185,6 +185,7 @@
 
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/frg_home_mpchart_foot_mouth"
@@ -1015,6 +1016,7 @@
 
             <!-- Recycle  Table -->
             <LinearLayout
+                android:visibility="gone"
 
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"

@@ -225,7 +225,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="A"
+                                android:text="Anthrax"
                                 android:textAlignment="center"
                                 android:textSize="@dimen/fontsize_mini"
                                 android:textStyle="bold" />
@@ -251,14 +251,14 @@
                                 android:layout_gravity="center"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
+                                android:background="@drawable/shp_round_thm_silver1" />
 
                             <TextView
 
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="B"
-                                android:textAlignment="center"
+                                android:text="Brucellosis"
+                                android:textAlignment="textStart"
                                 android:textSize="@dimen/fontsize_mini"
                                 android:textStyle="bold" />
 
@@ -283,13 +283,13 @@
                                 android:layout_gravity="center"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
+                                android:background="@drawable/shp_round_thm_orange1" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="C"
-                                android:textAlignment="center"
+                                android:text="Foot and Mouth\n Disease (FMD)"
+                                android:textAlignment="textStart"
                                 android:textSize="@dimen/fontsize_mini"
                                 android:textStyle="bold" />
 
@@ -314,14 +314,14 @@
                                 android:layout_gravity="center"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
+                                android:background="@drawable/shp_round_thm_yellow1" />
 
                             <TextView
 
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="D"
-                                android:textAlignment="center"
+                                android:text="Bovine\nTuberculosis (bTB)"
+                                android:textAlignment="textStart"
                                 android:textSize="@dimen/fontsize_mini"
                                 android:textStyle="bold" />
 
@@ -346,23 +346,149 @@
                                 android:layout_gravity="center"
                                 android:layout_marginStart="20dp"
                                 android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
+                                android:background="@drawable/shp_round_thm_ink1" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="E"
-                                android:textAlignment="center"
+                                android:text="Rabies"
+                                android:textAlignment="textStart"
                                 android:textSize="@dimen/fontsize_mini"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
 
                     </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/shp_round_thm_lightorange1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Newcastle\nDisease (ND)"
+                                android:textAlignment="textStart"
+                                android:textSize="@dimen/fontsize_mini"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/shp_round_thm_leaves1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Black Quarter (BQ)"
+                                android:textAlignment="textStart"
+                                android:textSize="@dimen/fontsize_mini"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/shp_round_thm_likeblue1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Enterotoxaemia\n(ET)"
+                                android:textAlignment="textStart"
+                                android:textSize="@dimen/fontsize_mini"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/shp_round_thm_brown1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Glander"
+                                android:textAlignment="textStart"
+                                android:textSize="@dimen/fontsize_mini"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
                 </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="-1dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/frg_home_mpchart_dieses_idr"
@@ -389,12 +515,107 @@
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_gray1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="A"
+                                    android:text="Paratuberculosis\n(Jhone's disease)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_mini"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_mehandhi1" />
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Surra\n(Trypanosoma evansi)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_mini"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_navy1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Haemorrhagic\nSepticaemia (HS)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_mini"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_darkgreen1" />
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Peste des Petits Ruminants (PPR)"
                                     android:textAlignment="center"
                                     android:textSize="@dimen/fontsize_mini"
                                     android:textStyle="bold" />
@@ -420,14 +641,13 @@
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_lightblue" />
 
                                 <TextView
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="B"
-                                    android:textAlignment="center"
+                                    android:text="Caprine\npleuropneumonia (CPP)"
+                                    android:textAlignment="textStart"
                                     android:textSize="@dimen/fontsize_mini"
                                     android:textStyle="bold" />
 
@@ -452,76 +672,13 @@
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_blue1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="C"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="3dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
-
-                                <TextView
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="D"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="3dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:orientation="horizontal">
-
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="E"
-                                    android:textAlignment="center"
+                                    android:text="Theileriosis"
+                                    android:textAlignment="textStart"
                                     android:textSize="@dimen/fontsize_mini"
                                     android:textStyle="bold" />
 
