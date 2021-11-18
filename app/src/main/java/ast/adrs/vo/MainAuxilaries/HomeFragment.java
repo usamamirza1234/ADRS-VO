@@ -248,9 +248,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         PieChartManagerForLables pieChartManagerForLables = new PieChartManagerForLables(mBarChart_sick_animal, getContext());
         pieChartManagerForLables.showLabeledPieChart(yvals, colors);
         //pieChartManagerForLables.showLabeledPieChartHidden(yvals, colors);
+////
+        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
+        ArrayList<BarEntry> yValueGroup2 = new ArrayList<>();
+        BarChartManager barChartManager = new BarChartManager(barChartView, getContext());
+        barChartManager.showBarChart(yValueGroup2, xAxisValues);
+        barChartManager.showBarChart(yValueGroup1, xAxisValues);
 
         mBarChart_sick_animal.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
+
+
             public void onValueSelected(Entry e, Highlight h) {
                 PieEntry pe = (PieEntry) e;
                 pe.getLabel();
@@ -265,12 +273,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                     case "Small Animal":
                         CustomToast.showToastMessage(getActivity(),pe.getLabel()+" selected",Toast.LENGTH_LONG);
 
+                        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
+                        yValueGroup1.add(new BarEntry(6f, 6f));
+                        yValueGroup1.add(new BarEntry(7f, 2f));
+                        yValueGroup1.add(new BarEntry(3f, 3f));
+                        yValueGroup1.add(new BarEntry(2f, 4f));
+                        yValueGroup1.add(new BarEntry(6f, 5f));
+                        yValueGroup1.add(new BarEntry(3f, 11f));
+                        yValueGroup1.add(new BarEntry(6f, 11f));
+                        yValueGroup1.add(new BarEntry(2f, 12f));
+                        yValueGroup1.add(new BarEntry(1f, 13f));
+                        yValueGroup1.add(new BarEntry(6f, 14f));
+                        yValueGroup1.add(new BarEntry(11f, 15f));
+                        barChartManager.showBarChart(yValueGroup1, xAxisValues);
+
+
                         break;
 
 
                     case "Large Animal":
                         CustomToast.showToastMessage(getActivity(),pe.getLabel()+" selected",Toast.LENGTH_LONG);
-
 
 
                         List<PieEntry> yvals = new ArrayList<>();
@@ -291,9 +313,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                             yvals.add(new PieEntry(lstPieValues.get(i)));
                             if (i == 0) {
                                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_bluesish1));
-                            } else if (i == 1) {
+                            }  else if (i == 1) {
                                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_brown1));
-                            } else if (i == 2) {
+                            }else if (i == 2) {
                                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_gray1));
                             } else if (i == 3) {
                                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_green));
@@ -307,6 +329,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                         PieChartManagger pieChartManagger = new PieChartManagger(mBarChart_dieses_idr, getContext());
                         pieChartManagger.showSolidPieChartNew(yvals, colors);
 
+
                         break;
 
 
@@ -315,21 +338,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
 
 
-                        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
-                        yValueGroup1.add(new BarEntry(6f, 6f));
-                        yValueGroup1.add(new BarEntry(7f, 2f));
-                        yValueGroup1.add(new BarEntry(3f, 3f));
-                        yValueGroup1.add(new BarEntry(2f, 4f));
-                        yValueGroup1.add(new BarEntry(6f, 5f));
-                        yValueGroup1.add(new BarEntry(3f, 11f));
-                        yValueGroup1.add(new BarEntry(6f, 11f));
-                        yValueGroup1.add(new BarEntry(2f, 12f));
-                        yValueGroup1.add(new BarEntry(1f, 13f));
-                        yValueGroup1.add(new BarEntry(6f, 14f));
-                        yValueGroup1.add(new BarEntry(11f, 15f));
 
-                        BarChartManager barChartManager = new BarChartManager(barChartView, getContext());
-                        barChartManager.showBarChart(yValueGroup1, xAxisValues);
+                        yValueGroup2.add(new BarEntry(6f, 6f));
+                        yValueGroup2.add(new BarEntry(7f, 2f));
+                        yValueGroup2.add(new BarEntry(3f, 3f));
+//                        yValueGroup1.add(new BarEntry(2f, 4f));
+//                        yValueGroup1.add(new BarEntry(6f, 5f));
+//                        yValueGroup1.add(new BarEntry(3f, 11f));
+//                        yValueGroup1.add(new BarEntry(6f, 11f));
+//                        yValueGroup1.add(new BarEntry(2f, 12f));
+//                        yValueGroup1.add(new BarEntry(1f, 13f));
+//                        yValueGroup1.add(new BarEntry(6f, 14f));
+//                        yValueGroup1.add(new BarEntry(11f, 15f));
+
+
+                        barChartManager.showBarChart(yValueGroup2, xAxisValues);
+
+
                         break;
 
                 }
@@ -391,7 +416,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         BarChartManager barChartManager = new BarChartManager(barChartView, getContext());
         barChartManager.showBarChart(yValueGroup1, xAxisValues);
+
+
+        ////
+
     }
+
+
+
+
+////
+
 
     private void showbarOriginWise(View frg) {
 
@@ -534,6 +569,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         // to select numbers of bars u wanna show
         barChartView.setVisibleXRange(1f, 10f);
         barChartView.getDescription().setEnabled(false);
+
+
 
     }
 
