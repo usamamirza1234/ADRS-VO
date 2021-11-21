@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ast.adrs.vo.MainAuxilaries.ExampleFragment"
+    tools:context="ast.adrs.vo.ExampleFragment"
     android:background="@color/white">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

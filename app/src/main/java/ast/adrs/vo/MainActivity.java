@@ -22,6 +22,7 @@ import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.MainAuxilaries.ImmediateDiseasesReportsIDRFragment;
+import ast.adrs.vo.MainAuxilaries.MapFragment;
 import ast.adrs.vo.MainAuxilaries.PerformanceMonitoringFragment;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 

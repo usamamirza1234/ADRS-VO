@@ -26,6 +26,8 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import ast.adrs.vo.Utils.ChartManagers.MyDecimalValueFormatter;
+import ast.adrs.vo.Utils.ChartManagers.PieChartManagger;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
 public class PerformanceMonitoringFragment extends Fragment {

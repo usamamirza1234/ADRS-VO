@@ -199,7 +199,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -230,7 +230,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -262,7 +262,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -293,7 +293,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -325,7 +325,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -368,7 +368,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -399,7 +399,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -431,7 +431,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -462,7 +462,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -494,7 +494,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -638,7 +638,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -669,7 +669,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -701,7 +701,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -732,7 +732,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -764,7 +764,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -807,7 +807,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -838,7 +838,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -870,7 +870,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -901,7 +901,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"
@@ -933,7 +933,7 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                                <ast.adrs.vo.Utils.CircleImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
                                     android:layout_gravity="center"

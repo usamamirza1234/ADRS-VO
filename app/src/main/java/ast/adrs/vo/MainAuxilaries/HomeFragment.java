@@ -1,7 +1,6 @@
 package ast.adrs.vo.MainAuxilaries;
 
 import android.app.AlertDialog;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,31 +14,21 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.armoomragames.denketa.R;
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.LegendEntry;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.LargeValueFormatter;
-import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.Utils.ChartManagers.BarChartManager;
+import ast.adrs.vo.Utils.ChartManagers.PieChartManagerForLables;
+import ast.adrs.vo.Utils.ChartManagers.PieChartManagger;
 import ast.adrs.vo.Utils.CustomToast;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
@@ -49,7 +38,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     TextView btnhomefrgsick;
     ArrayList<BarEntry> barEntriesArrayList;
     ArrayList<String> lableName;
-    ArrayList<MonthlySalesData> monthlySalesDataArrayList = new ArrayList<>();
+
     private IBadgeUpdateListener mBadgeUpdateListener;
     private PieChart pieChart;
     private PieChart mBarChart_dieses_idr;
@@ -124,7 +113,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
        barChartViewvertical = frg.findViewById(R.id.idr_baroriginwise);
         btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
-        btnhomefrgsick.setTooltipText("Sick");
+        try{
+//            btnhomefrgsick.setTooltipText("Sick");
+        }
+        catch (Exception e)
+        {
+
+        }
+
+
         // mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
 
         btnhomefrgsick.setOnClickListener(this);

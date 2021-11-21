@@ -1,4 +1,4 @@
-package ast.adrs.vo.MainAuxilaries;
+package ast.adrs.vo;
 
 import android.graphics.Color;
 import android.os.Build;

@@ -29,6 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ast.adrs.vo.MainAuxilaries.Adapter.IDRFootMouthRcvAdapter;
+import ast.adrs.vo.Utils.ChartManagers.MyDecimalValueFormatter;
+import ast.adrs.vo.Utils.ChartManagers.PieChartManagerForLables;
+import ast.adrs.vo.Utils.ChartManagers.PieChartManagger;
 import ast.adrs.vo.MainAuxilaries.DModels.DModelIDRFootMouth;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
