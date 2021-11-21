@@ -15,6 +15,7 @@ import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.armoomragames.denketa.R;
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -25,12 +26,15 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +56,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private PieChart mBarChart_sick_animal;
     private List<Integer> lstPieValues;
     private String TAG="PIE_CHART";
-    BarChart barChartView;
+    BarChart barChartView,barChartViewvertical;
     List<String> xAxisValues;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,7 +74,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
         //Bar
 
-        showbarOriginWise(frg);
+        showbarOriginWise();
         showBarIDR();
         // showBarChart(frg);
 
@@ -117,12 +121,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         mBarChart_dieses_idr = frg.findViewById(R.id.frg_home_mpchart_dieses_idr);
         mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
         barChartView = frg.findViewById(R.id.idr_barchart);
+
+       barChartViewvertical = frg.findViewById(R.id.idr_baroriginwise);
         btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
         btnhomefrgsick.setTooltipText("Sick");
         // mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
-
-//showdata wala
-        //   barChart= (HorizontalBarChart) frg.findViewById(R.id.idr_barchart);
 
         btnhomefrgsick.setOnClickListener(this);
 
@@ -173,7 +176,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_green));
             } else if (i == 4) {
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightblue1));
-            } else if (i == 5) {
+            }
+            else if (i == 5) {
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightgreen1));
             } else if (i == 6) {
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightsilver1));
@@ -198,6 +202,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             }
 
         }
+
 
 
         PieChartManagger pieChartManagger = new PieChartManagger(mBarChart_dieses_idr, getContext());
@@ -248,12 +253,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         PieChartManagerForLables pieChartManagerForLables = new PieChartManagerForLables(mBarChart_sick_animal, getContext());
         pieChartManagerForLables.showLabeledPieChart(yvals, colors);
         //pieChartManagerForLables.showLabeledPieChartHidden(yvals, colors);
+
+
+
+
 ////
         ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
         ArrayList<BarEntry> yValueGroup2 = new ArrayList<>();
         BarChartManager barChartManager = new BarChartManager(barChartView, getContext());
-        barChartManager.showBarChart(yValueGroup2, xAxisValues);
         barChartManager.showBarChart(yValueGroup1, xAxisValues);
+        barChartManager.showBarChart(yValueGroup2, xAxisValues);
 
         mBarChart_sick_animal.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
@@ -297,14 +306,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
                         List<PieEntry> yvals = new ArrayList<>();
                         List<Integer> colors = new ArrayList<>();
-
                         if (lstPieValues.size() > 0)
                             lstPieValues.clear();
 
-                        lstPieValues.add(1);
-                        lstPieValues.add(4);
-                        lstPieValues.add(9);
-                        lstPieValues.add(10);
+                            lstPieValues.add(1);
+                            lstPieValues.add(4);
+                            lstPieValues.add(9);
+                            lstPieValues.add(10);
 
 
 
@@ -342,16 +350,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                         yValueGroup2.add(new BarEntry(6f, 6f));
                         yValueGroup2.add(new BarEntry(7f, 2f));
                         yValueGroup2.add(new BarEntry(3f, 3f));
-//                        yValueGroup1.add(new BarEntry(2f, 4f));
-//                        yValueGroup1.add(new BarEntry(6f, 5f));
-//                        yValueGroup1.add(new BarEntry(3f, 11f));
-//                        yValueGroup1.add(new BarEntry(6f, 11f));
-//                        yValueGroup1.add(new BarEntry(2f, 12f));
-//                        yValueGroup1.add(new BarEntry(1f, 13f));
-//                        yValueGroup1.add(new BarEntry(6f, 14f));
-//                        yValueGroup1.add(new BarEntry(11f, 15f));
-
-
                         barChartManager.showBarChart(yValueGroup2, xAxisValues);
 
 
@@ -418,25 +416,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         barChartManager.showBarChart(yValueGroup1, xAxisValues);
 
 
-        ////
-
     }
 
 
+    private void showbarOriginWise() {
 
 
-////
-
-
-    private void showbarOriginWise(View frg) {
-
-        BarChart barChartView = frg.findViewById(R.id.idr_baroriginwise);
-
-        Float barWidth;
-        int groupCount = 12;
-        barWidth = 0.25f;
-
-        List<String> xAxisValues = new ArrayList<>();
         xAxisValues.add("Therileriosis");
         xAxisValues.add("Glander");
         xAxisValues.add("Rabies (Mad dog disease)");
@@ -447,13 +432,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         xAxisValues.add("Tetanus");
         xAxisValues.add("Anthrax");
 
-
         ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
-
-        // draw the graph
-        BarDataSet barDataSet1;
-        //
-
         yValueGroup1.add(new BarEntry(1f, 24f));
         yValueGroup1.add(new BarEntry(2f, 31f));
         yValueGroup1.add(new BarEntry(3f, 4f));
@@ -464,111 +443,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         yValueGroup1.add(new BarEntry(8f, 15f));
         yValueGroup1.add(new BarEntry(9f, 5f));
 
-        barDataSet1 = new BarDataSet(yValueGroup1, "");
-        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)));
-        //        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)), (getResources().getColor(R.color.gray)), (getResources().getColor(R.color.orange)), (getResources().getColor(R.color.blue)));
-//        barDataSet1.label = "2016";
-        barDataSet1.setDrawIcons(false);
-        barDataSet1.setDrawValues(true);
-
-        BarData barData = new BarData(barDataSet1);
-//        barChartView.description.isEnabled = false;
-//        barChartView.description.textSize = 0f;
-        barData.setValueFormatter(new PercentFormatter());
-        barChartView.setData(barData);
-        barChartView.getBarData().setBarWidth(barWidth);
-        barChartView.getXAxis().setAxisMinimum(0f);
-        barChartView.getXAxis().setAxisMaximum(12f);
 
 
-        barChartView.setFitBars(true);
-        barChartView.getData().setHighlightEnabled(true);
-        barChartView.invalidate();
-
-        // set bar label
-        Legend legend = barChartView.getLegend();
-        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
-
-        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.LEFT);
-        legend.setOrientation(Legend.LegendOrientation.VERTICAL);
-        legend.setDrawInside(false);
-        ArrayList<LegendEntry> legenedEntries = new ArrayList<LegendEntry>();
-        legenedEntries.add(new LegendEntry("2016", Legend.LegendForm.SQUARE, 8f, 8f, null, Color.RED));
-        legenedEntries.add(new LegendEntry("2017", Legend.LegendForm.SQUARE, 8f, 8f, null, Color.YELLOW));
-        legend.setCustom(legenedEntries);
-        legend.setYOffset(2f);
-        legend.setXOffset(2f);
-        legend.setYEntrySpace(0f);
-        legend.setTextSize(5f);
-        legend.setEnabled(false);
-        barData.setBarWidth(0.7f);
-
-        barDataSet1.setValueTextColor(Color.BLACK);
-        barDataSet1.setValueTextSize(10f);
-
-
-        // to remove decimal point
-        MyDecimalValueFormatter formatter = new MyDecimalValueFormatter();
-        barDataSet1.setValueFormatter(formatter);
-        XAxis xAxis = barChartView.getXAxis();
-
-        xAxis.setGranularity(1f);
-        xAxis.setGranularityEnabled(true);
-        xAxis.setCenterAxisLabels(true);
-        xAxis.setDrawGridLines(false);
-        xAxis.setTextSize(12f);
-
-
-        // for vertical labels
-        xAxis.setLabelRotationAngle(-90);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
-
-
-        xAxis.setLabelCount(12);
-        xAxis.mAxisMaximum = 12f;
-        xAxis.setCenterAxisLabels(true);
-        xAxis.setAvoidFirstLastClipping(false);
-        xAxis.setSpaceMin(20f);
-        xAxis.setSpaceMax(20f);
-
-        //        barChartView.getXAxis().setAxisMaximum(maxX + 0.2f);
-//        barChartView.getXAxis().setAxisMinimum(minX - 0.2f);
-//
-
-
-        barChartView.setVisibleXRangeMaximum(20f);
-        barChartView.setVisibleXRangeMinimum(20f);
-        barChartView.setDragEnabled(true);
-
-        //Y-axis
-        barChartView.getAxisRight().setEnabled(false);
-        barChartView.setScaleEnabled(true);
-
-        YAxis yAxis = barChartView.getAxisLeft();
-        yAxis.setValueFormatter(new LargeValueFormatter());
-        yAxis.setDrawGridLines(false);
-        yAxis.setSpaceTop(1f);
-        yAxis.setAxisMinimum(0f);
-        yAxis.setEnabled(false);
-
-
-        barChartView.setDrawBarShadow(false);
-
-
-        barChartView.setMaxVisibleValueCount(50);
-        barChartView.setPinchZoom(false);
-
-        barChartView.setDrawGridBackground(false);
-
-        // Display scores inside the bars
-        barChartView.setDrawValueAboveBar(false);
-
-        barChartView.animateY(2000);
-        barChartView.setData(barData);
-        // to select numbers of bars u wanna show
-        barChartView.setVisibleXRange(1f, 10f);
-        barChartView.getDescription().setEnabled(false);
+        BarChartManager barChartManager = new BarChartManager(barChartViewvertical, getContext());
+        barChartManager.showBarChartVertical(yValueGroup1, xAxisValues);
 
 
 

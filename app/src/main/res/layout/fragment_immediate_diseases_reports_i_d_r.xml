@@ -576,7 +576,7 @@
             </RelativeLayout>
 <!--PIE-->
             <RelativeLayout
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -627,6 +627,7 @@
 
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/frg_home_mpchart_district_faisalabad"

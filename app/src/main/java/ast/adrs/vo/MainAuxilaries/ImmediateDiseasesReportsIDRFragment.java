@@ -88,57 +88,112 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
         List<PieEntry> yvals = new ArrayList<>();
         List<Integer> colors = new ArrayList<>();
 
-        if (lstPieValues.size() > 0)
-            lstPieValues.clear();
 
-        //   lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrFirst());
-        //    lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrSecond());
-        //   lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrThird());
-        // lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrFourth());
+        List<Integer> lstPieValues = new ArrayList<>();
+        lstPieValues.add(58);
+        lstPieValues.add(59);
+        lstPieValues.add(25);
+        lstPieValues.add(55);
 
-
-        lstPieValues.add(16);
-        lstPieValues.add(7);
-        lstPieValues.add(2);
-        lstPieValues.add(9);
-
-        lstPieValues.add(0);
-        lstPieValues.add(1);
-        lstPieValues.add(5);
-        lstPieValues.add(0);
-        lstPieValues.add(1);
+        lstPieValues.add(28);
+        lstPieValues.add(38);
+        lstPieValues.add(43);
+        lstPieValues.add(70);
+        lstPieValues.add(50);
 
 
+
+        List<String> lstPieLabels = new ArrayList<>();
+        lstPieLabels.add("Sargodha");
+        lstPieLabels.add("Sahiwal");
+        lstPieLabels.add("Rawalpindi");
+        lstPieLabels.add("Multan");
+        lstPieLabels.add("Lahore");
+        lstPieLabels.add("Gujranwala");
+        lstPieLabels.add("Faisalabad");
+        lstPieLabels.add("DG Khan");
+        lstPieLabels.add("Bhawalpur");
 
         for (int i = 0; i < lstPieValues.size(); i++) {
-            yvals.add(new PieEntry(lstPieValues.get(i)));
+            yvals.add(new PieEntry(lstPieValues.get(i),lstPieLabels.get(i)));
             if (i == 0) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_green_dark_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_bluesish1));
             } else if (i == 1) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_blue_dark_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_brown1));
             } else if (i == 2) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_light_green_dark_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_gray1));
             } else if (i == 3) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_yellow_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_green));
             } else if (i == 4) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_green_graph_indicator));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightblue1));
             } else if (i == 5) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_blue_app));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightgreen1));
             } else if (i == 6) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_red));
-            }else if (i == 7) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_blue2));
-            }else if (i == 8) {
-                colors.add(getActivity().getResources().getColor(R.color.thm_blue_slc));
-            }else if (i == 9) {
-                colors.add(getActivity().getResources().getColor(R.color.gray));
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightsilver1));
+            } else if (i == 7) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightsilver1));
+            } else if (i == 8) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_likeblue1));
+            } else if (i == 9) {
+                colors.add(getActivity().getResources().getColor(R.color.graph_idr_mehndhi1));
             }
 
         }
 
+        PieChartManagerForLables pieChartManagerForLables = new PieChartManagerForLables(mBarChart_foot_mouth, getContext());
+        pieChartManagerForLables.showLabeledPieChart(yvals, colors);
 
-        PieChartManagger pieChartManagger = new PieChartManagger(mBarChart_foot_mouth, getContext());
-        pieChartManagger.showSolidPieChartNew(yvals, colors);
+//        if (lstPieValues.size() > 0)
+//            lstPieValues.clear();
+//
+//        //   lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrFirst());
+//        //    lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrSecond());
+//        //   lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrThird());
+//        // lstPieValues.add(AppConfig.getInstance().getGraphValueList().get(1).getStrFourth());
+//
+//
+//        lstPieValues.add(16);
+//        lstPieValues.add(7);
+//        lstPieValues.add(2);
+//        lstPieValues.add(9);
+//
+//        lstPieValues.add(0);
+//        lstPieValues.add(1);
+//        lstPieValues.add(5);
+//        lstPieValues.add(0);
+//        lstPieValues.add(1);
+//
+//
+//
+//        for (int i = 0; i < lstPieValues.size(); i++) {
+//            yvals.add(new PieEntry(lstPieValues.get(i)));
+//            if (i == 0) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_green_dark_graph_indicator));
+//            } else if (i == 1) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_blue_dark_graph_indicator));
+//            } else if (i == 2) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_light_green_dark_graph_indicator));
+//            } else if (i == 3) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_yellow_graph_indicator));
+//            } else if (i == 4) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_green_graph_indicator));
+//            } else if (i == 5) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_blue_app));
+//            } else if (i == 6) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_red));
+//            }else if (i == 7) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_blue2));
+//            }else if (i == 8) {
+//                colors.add(getActivity().getResources().getColor(R.color.thm_blue_slc));
+//            }else if (i == 9) {
+//                colors.add(getActivity().getResources().getColor(R.color.gray));
+//            }
+//
+//        }
+//
+//
+//        PieChartManagger pieChartManagger = new PieChartManagger(mBarChart_foot_mouth, getContext());
+//        pieChartManagger.showSolidPieChartNew(yvals, colors);
     }
 
 
@@ -187,7 +242,7 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
 
 
         PieChartManagger pieChartManagger = new PieChartManagger(mBarChart_district_faisalabad, getContext());
-        pieChartManagger.showSolidPieChartNew(yvals, colors);
+        pieChartManagger.showdonutChartNew(yvals, colors);
     }
 
 
@@ -336,14 +391,14 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
         barWidth = 0.25f;
 
         List<String> xAxisValues = new ArrayList<>();
-        xAxisValues.add("Therileriosis");
-        xAxisValues.add("Glander");
-        xAxisValues.add("Rabies (Mad dog disease)");
-        xAxisValues.add("Black quarter (black-leg)");
-        xAxisValues.add("Foot and mouth disease");
-        xAxisValues.add("Contagious  pleuropneumonia   ");
-        xAxisValues.add("Brucellosis of sheep.");
-        xAxisValues.add("Tetanus");
+        xAxisValues.add("Kahna Naag");
+        xAxisValues.add("Semaa Naag");
+        xAxisValues.add("Majiwal");
+        xAxisValues.add("Naag  Kalan");
+        xAxisValues.add("Arori Blochan");
+        xAxisValues.add("Chugal Pura");
+        xAxisValues.add("Bhook Pura");
+        xAxisValues.add("Pharala");
 
 
         ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();

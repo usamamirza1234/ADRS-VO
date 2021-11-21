@@ -30,6 +30,10 @@ public class PieChartManagger {
     }
 
     private void initPieChart() {
+
+        //
+
+
         // Whether to show the middle hole
         pieChart.setDrawHoleEnabled(false);
         pieChart.setHoleRadius(80f);//Set the size of the middle hole
@@ -121,7 +125,7 @@ public class PieChartManagger {
 
 
         pieChart.setDrawHoleEnabled(false);
-        pieChart.setUsePercentValues(false);
+     //   pieChart.setUsePercentValues(false);
         pieChart.setEntryLabelTextSize(12);
         pieChart.setEntryLabelColor(Color.BLACK);
 //        pieChart.setCenterText("Spending by Category");
@@ -140,6 +144,89 @@ public class PieChartManagger {
         pieChart.invalidate();
 
         pieChart.animateY(1400, Easing.EaseInOutQuad);
+    }
+
+    public void showdonutChartNew(List<PieEntry> yvals, List<Integer> colors) {
+
+
+        pieChart.setDrawCenterText(true);
+
+
+        PieDataSet dataSet = new PieDataSet(yvals, "Expense Category");
+
+        PieData data = new PieData(dataSet);
+        data.setDrawValues(true);
+        data.setValueFormatter(new IntegerFormatter(pieChart));
+        data.setValueTextSize(12f);
+        data.setValueTextColor(Color.BLACK);
+
+        pieChart.setData(data);
+        pieChart.invalidate();
+
+        pieChart.animateY(1400, Easing.EaseInOutQuad);
+
+
+
+        //Fill the color of each area
+        dataSet.setColors(colors);
+        //Whether to display the value on the graph
+        dataSet.setDrawValues(true);
+        // The size of the text
+        dataSet.setValueTextSize(14);
+        // text color
+        dataSet.setValueTextColor(context.getResources().getColor(R.color.white));
+        // Style of text
+        dataSet.setValueTypeface(Typeface.DEFAULT_BOLD);
+        // Set the gap before each
+        dataSet.setSliceSpace(2);
+        //Set the distance that changes when the pie item is selected
+        dataSet.setSelectionShift(3f);
+
+
+        pieChart.setDrawHoleEnabled(true);
+
+        pieChart.setHoleRadius(50f);
+           pieChart.setUsePercentValues(false);
+        pieChart.setEntryLabelTextSize(12);
+        pieChart.setEntryLabelColor(Color.BLACK);
+        pieChart.setCenterText("");
+        pieChart.setCenterTextColor(Color.BLACK);
+        pieChart.setCenterTextSize(5);
+        pieChart.getDescription().setEnabled(false);
+
+        Legend l = pieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setEnabled(false);
+
+
+        pieChart.setData(data);
+        pieChart.invalidate();
+
+        pieChart.animateY(1400, Easing.EaseInOutQuad);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
