@@ -5,454 +5,184 @@
     >
 
 
+
     <LinearLayout
+        android:id="@+id/lay_bill_info_llParent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:orientation="vertical">
 
-        android:background="@drawable/shp_rect_white_gray_stoke"
-        android:orientation="vertical"
-        android:padding="5dp">
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/gray" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_xmedium"
+
+            android:orientation="horizontal"
+            android:weightSum="110">
 
             <LinearLayout
+                android:id="@+id/lay_bill_info_llDetails"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
+                android:layout_height="match_parent"
+                android:layout_weight="90"
+                android:orientation="horizontal"
+                android:weightSum="0">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/lay_foot_mouth_txv_sr"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
+                    android:layout_weight="30"
+                    android:padding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
                     android:text="Sr."
                     android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-                android:paddingTop="2dp"
-                android:paddingBottom="2dp">
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/fontsize_mini" />
 
                 <TextView
-                    android:id="@+id/lay_issues_list_txv_sr"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/lay_foot_mouth_txv_farmer"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
-                    android:text="Desc"
+                    android:layout_weight="30"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Farmer"
                     android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/fontsize_mini" />
+
+                <TextView
+                    android:id="@+id/lay_foot_mouth_txv_species"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Species"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/fontsize_mini" />
+                <TextView
+                    android:id="@+id/lay_foot_mouth_txv_dead"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Dead"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/fontsize_mini" />
+                <TextView
+                    android:id="@+id/lay_foot_mouth_txv_risk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="30"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="At Risk"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/fontsize_mini" />
+
+                <TextView
+                    android:id="@+id/lay_foot_mouth_txv_sick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="27"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Sick"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
                     android:textSize="@dimen/fontsize_mini" />
             </LinearLayout>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="0dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Proposed Regulatory Reform "
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
 
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="2dp"
-                android:orientation="vertical"
-
-                >
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_brmi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="0dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Specific Rule/Policy/Law to be changed (Eliminated or Amended)"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_totalreforms"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Proposed Change (Elimination or Amendment)"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_implemented"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Approving Authority for Proposed Change"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_partitallyimplemented"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Department/Agency Comments/Feedback"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_underimplementation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Status"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_furtherdelibrations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Timeline"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_disagreed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="2dp"
-                android:paddingStart="2dp"
-                android:paddingEnd="2dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="3dp"
-                    android:text="Evidnece"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini"
-                    android:textStyle="bold" />
-
-                <View
-
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/divider_height"
-                    />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:orientation="vertical"
-
-                android:paddingBottom="2dp">
-
-                <TextView
-                    android:id="@+id/lay_issues_list_txv_doesnotpertain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="4dp"
-                    android:paddingBottom="5dp"
-                    android:text="Desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_mini" />
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+<!--    <TableRow-->
+<!--        android:id="@+id/tabla_cabecera"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"></TableRow>-->
+
+<!--    <TableLayout-->
+<!--        android:id="@+id/tabla_cuerpo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <TableRow-->
+<!--            android:id="@+id/tableRow1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:padding="5dp"-->
+<!--                android:text="TextView"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:padding="5dp"-->
+<!--                android:text="TextView"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:padding="5dp"-->
+<!--                android:text="TextView"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:padding="5dp"-->
+<!--                android:text="TextView"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:padding="5dp"-->
+<!--                android:text="TextView"-->
+<!--                android:textAppearance="?android:attr/textAppearanceMedium"></TextView>-->
+<!--        </TableRow>-->
+<!--     -->
+<!--    </TableLayout>-->
+
 
 </RelativeLayout>

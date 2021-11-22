@@ -113,8 +113,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
        barChartViewvertical = frg.findViewById(R.id.idr_baroriginwise);
         btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
+
+        btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
         try{
-//            btnhomefrgsick.setTooltipText("Sick");
+//           btnhomefrgsick.setTooltipText("Sick");
         }
         catch (Exception e)
         {
@@ -173,8 +175,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_green));
             } else if (i == 4) {
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightblue1));
-            }
-            else if (i == 5) {
+            } else if (i == 5) {
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightgreen1));
             } else if (i == 6) {
                 colors.add(getActivity().getResources().getColor(R.color.graph_idr_lightsilver1));

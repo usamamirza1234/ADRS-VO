@@ -5,9 +5,9 @@
         android:endColor="@color/transparent"
         android:angle="90"/>
 
-    <!--    <solid android:color="@color/white"-->
+        <solid android:color="@color/white"
 
-    <!--        />-->
+            />
 
 
 

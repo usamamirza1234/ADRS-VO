@@ -533,7 +533,7 @@
 
 <!--BAR-->
             <RelativeLayout
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -1017,7 +1017,7 @@
 
             <!-- Recycle  Table -->
             <LinearLayout
-                android:visibility="gone"
+                android:visibility="visible"
 
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
@@ -1058,13 +1058,13 @@
 
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:id="@+id/frg_IDR_rcvFootMouth"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="200dp" />
 
-                        tools:listitem="@layout/lay_item_idr_footmouth"
-                        />
+<!--                        tools:listitem="@layout/lay_item_idr_footmouth"-->
+
 
                 </LinearLayout>
 

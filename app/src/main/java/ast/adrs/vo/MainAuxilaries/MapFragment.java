@@ -182,6 +182,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                             .build();           // Creates a CameraPosition from the builder
                     mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                     mGoogleMap.setMyLocationEnabled(true);
+
                 }
             } catch (Exception e) {
 
