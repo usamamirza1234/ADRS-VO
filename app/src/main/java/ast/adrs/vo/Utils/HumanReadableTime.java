@@ -6,8 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-
 
 public class HumanReadableTime {
     public final static long NOW = 0;

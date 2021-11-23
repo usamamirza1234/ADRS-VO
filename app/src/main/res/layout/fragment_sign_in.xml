@@ -67,7 +67,7 @@
                     android:padding="10dp"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="ADRS"
+                    android:text="adrsadmin"
                     android:textColor="@color/light_gray3"
                     android:textColorHint="@color/light_gray3"
                     android:textCursorDrawable="@null" />
@@ -98,7 +98,7 @@
                     android:padding="10dp"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp"
-                    android:text="test"
+                    android:text="Ast@1234"
                     android:textColor="@color/light_gray3"
                     android:textColorHint="@color/light_gray3"
                     android:textCursorDrawable="@null" />

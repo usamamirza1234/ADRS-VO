@@ -3,7 +3,6 @@ package ast.adrs.vo.MainAuxilaries;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.armoomragames.denketa.R;
@@ -25,18 +23,21 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.MainAuxilaries.WebServices.Home_WebHit_Post_GetDiseaseExecutiveSummary;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
 import ast.adrs.vo.Utils.ChartManagers.BarChartManager;
 import ast.adrs.vo.Utils.ChartManagers.PieChartManagerForLables;
 import ast.adrs.vo.Utils.ChartManagers.PieChartManagger;
 import ast.adrs.vo.Utils.CustomToast;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
+import ast.adrs.vo.Utils.IWebCallback;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
@@ -49,22 +50,27 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private final String TAG = "PIE_CHART";
     TextView txvApply;
     AlertDialog alertDialog;
-    TextView btnhomefrgsick;
+    TextView txvSick,txvDead,txvTotal;
     ArrayList<BarEntry> barEntriesArrayList;
     ArrayList<String> lableName;
     BarChart barChartView, barChartViewvertical;
     List<String> xAxisValues;
+    ArrayList<BarEntry> yAxisValue_FORIDR ;
     private CheckBox[] arrchbFilterPeroid;
     private LinearLayout[] arrllFilterPeroid;
     private IBadgeUpdateListener mBadgeUpdateListener;
     private PieChart pieChart;
     private PieChart mBarChart_dieses_idr;
     private PieChart mBarChart_sick_animal;
-//    private List<Integer> lstPieValues;
+    //    private List<Integer> lstPieValues;
     private List<Integer> lstPieValuesIDR;
     private List<Integer> lstPieValuesSickAnimal;
     private Dialog popup;
+    private Dialog progressDialog;
 
+
+    private List<DModel_DiseaseModel> lstDiseases;
+    private List<DModel_AnimalPopulation> lstAnimalPopulation;
 
     //Pie chart label ka kam jisye kia ha ab wisye krna ha..... code cleaned ... bar chart ka b
 
@@ -77,25 +83,59 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         init();
         bindViews(frg);
 
-
         setDataForPie();
 
 
-        // showSWSickAnimal();
 
-        //Bar
-
-        showbarOriginWise();
-        showBarIDR();
-        // showBarChart(frg);
 
         showPopupDialog();
 
         return frg;
     }
 
-    private void setDataForPie()
-    {
+    private void setDataForBar() {
+
+        for (int i=0;i<lstDiseases.size();i++)
+        {
+            xAxisValues.add(lstDiseases.get(i).getDiseaseName());
+            yAxisValue_FORIDR.add(new BarEntry((float)  lstDiseases.get(i).getDr(),(float) lstDiseases.get(i).getDi()));
+            Log.d("apiData","getDr "+ (float) lstDiseases.get(i).getDr()+" getDi "+ (float) lstDiseases.get(i).getDi());
+        }
+
+
+
+//        xAxisValues.add("Therileriosis");
+//        xAxisValues.add("Glander");
+//        xAxisValues.add("Rabies (Mad dog disease)");
+//        xAxisValues.add("Black quarter (black-leg)");
+//        xAxisValues.add("Foot and mouth disease");
+//        xAxisValues.add("Contagious  pleuropneumonia   ");
+//        xAxisValues.add("Brucellosis of sheep.");
+//        xAxisValues.add("Tetanus");
+//        xAxisValues.add("Anthrax");
+//        xAxisValues.add("Blue tongue");
+//        xAxisValues.add("African swine fever");
+//        xAxisValues.add("Transmissible spongiform ");
+
+        showBarIDR();
+        showbarOriginWise();
+
+    }
+
+    private void setDataComingFromApi() {
+        int sick = 0, risk = 0, dead = 0, total = 0;
+        for (int i = 0; i < lstAnimalPopulation.size(); i++) {
+            sick += lstAnimalPopulation.get(i).getSickAnimals();
+//            risk += lstAnimalPopulation.get(i).getSickAnimals();
+            dead += lstAnimalPopulation.get(i).getDeadAnimals();
+            total += lstAnimalPopulation.get(i).getTotalAnimals();
+        }
+        txvSick.setText("Sick("+sick+")");
+        txvDead.setText("Dead("+dead+")");
+        txvTotal.setText("Total("+total+")");
+    }
+
+    private void setDataForPie() {
 
 
         lstPieValuesIDR.add(1);
@@ -133,7 +173,85 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         lstPieValuesIDR = new ArrayList<>();
         lstPieValuesSickAnimal = new ArrayList<>();
         barEntriesArrayList = new ArrayList<>();
+        lstDiseases = new ArrayList<>();
+        lstAnimalPopulation = new ArrayList<>();
         xAxisValues = new ArrayList<>();
+        yAxisValue_FORIDR = new ArrayList<>();
+
+
+
+    }
+
+    private void requestExecutive(String toString) {
+        showProgDialog();
+        Home_WebHit_Post_GetDiseaseExecutiveSummary home_webHit_post_getDiseaseExecutiveSummary = new Home_WebHit_Post_GetDiseaseExecutiveSummary();
+
+        home_webHit_post_getDiseaseExecutiveSummary.PostGetDiseaseExecutiveSummary(getContext(), new IWebCallback() {
+            @Override
+            public void onWebResult(boolean isSuccess, String strMsg) {
+                if (isSuccess) {
+
+                    dismissDialog();
+                    if (Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject != null &&
+                            Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult() != null &&
+
+                            Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getDiseaseSummaryDetailViewModel() != null) {
+                        for (int i = 0; i < Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getDiseaseSummaryDetailViewModel().size(); i++) {
+                            lstDiseases.add(new DModel_DiseaseModel(
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getDiseaseSummaryDetailViewModel().get(i).getDiseaseName(),
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getDiseaseSummaryDetailViewModel().get(i).getDi(),
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getDiseaseSummaryDetailViewModel().get(i).getDr()
+                            ));
+
+                            setDataForBar();
+                        }
+
+                    }
+                    if (Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject != null &&
+                            Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult() != null &&
+                            Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getAnimalPopulation() != null) {
+                        for (int i = 0; i < Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getAnimalPopulation().size(); i++) {
+                            lstAnimalPopulation.add(new DModel_AnimalPopulation(
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getAnimalPopulation().get(i).getName(),
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getAnimalPopulation().get(i).getTotalAnimals(),
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getAnimalPopulation().get(i).getSickAnimals(),
+                                    Home_WebHit_Post_GetDiseaseExecutiveSummary.responseObject.getResult().getAnimalPopulation().get(i).getDeadAnimals()
+                            ));
+
+                            setDataComingFromApi();
+                        }
+
+                    }
+
+                } else {
+                    dismissDialog();
+
+                    AppConfig.getInstance().showErrorMessage(getContext(), strMsg);
+                }
+            }
+
+            @Override
+            public void onWebException(Exception ex) {
+                dismissDialog();
+                Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
+                AppConfig.getInstance().showErrorMessage(getContext(), ex.toString());
+            }
+        }, toString);
+    }
+
+    private void dismissDialog() {
+        if (progressDialog != null) {
+            progressDialog.dismiss();
+        }
+    }
+
+    private void showProgDialog() {
+        progressDialog = new Dialog(getActivity(), R.style.AppTheme);
+        progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        progressDialog.setContentView(R.layout.dialog_progress);
+
+        progressDialog.setCancelable(false);
+        progressDialog.show();
     }
 
     void setToolbar() {
@@ -162,27 +280,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     // har pie chart ka aisye krna ha label sb ko dainy han pr ager hide krny ha to srf yh function call krna ha ... pieChartManagerForLables.showLabeledPieChartHidden(yvals, colors);
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     private void bindViews(View frg) {
         mBarChart_dieses_idr = frg.findViewById(R.id.frg_home_mpchart_dieses_idr);
         mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
         barChartView = frg.findViewById(R.id.idr_barchart);
 
         barChartViewvertical = frg.findViewById(R.id.idr_baroriginwise);
-        btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
-
-        btnhomefrgsick = frg.findViewById(R.id.frg_home_frg_txv_sick);
-        try {
-//           btnhomefrgsick.setTooltipText("Sick");
-        } catch (Exception e) {
-
-        }
 
 
-        // mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
+        txvSick = frg.findViewById(R.id.frg_home_txv_sick);
+        txvDead = frg.findViewById(R.id.frg_home_txv_dead);
+        txvTotal = frg.findViewById(R.id.frg_home_txv_total);
 
-        btnhomefrgsick.setOnClickListener(this);
 
+
+        JsonObject jsonObject = new JsonObject();
+//        jsonObject.addProperty("tehsilId", "6");
+//        jsonObject.addProperty("divisionId",);
+//        jsonObject.addProperty("districtId", );
+//        jsonObject.addProperty("startDate",);
+//        jsonObject.addProperty("endDate",);
+
+
+        requestExecutive(jsonObject.toString());
 
     }
 
@@ -191,8 +312,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         //Set the number of each share
         List<PieEntry> yvals = new ArrayList<>();
         List<Integer> colors = new ArrayList<>();
-
-
 
 
         for (int i = 0; i < lstPieValues.size(); i++) {
@@ -245,7 +364,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         List<PieEntry> yvals = new ArrayList<>();
         List<Integer> colors = new ArrayList<>();
-
 
 
         List<String> lstPieLabels = new ArrayList<>();
@@ -473,39 +591,19 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void showBarIDR() {
 
+//        yAxisValue_FORIDR.clear();
+//        yAxisValue_FORIDR.add(new BarEntry(0f, 15f));
+//        yAxisValue_FORIDR.add(new BarEntry(0f, 0f));
+//        yAxisValue_FORIDR.add(new BarEntry(6f, 15f));
+//        yAxisValue_FORIDR.add(new BarEntry(0f, 14f));
+//        yAxisValue_FORIDR.add(new BarEntry(0f, 15f));
+//        yAxisValue_FORIDR.add(new BarEntry(29f, 66f));
+//        yAxisValue_FORIDR.add(new BarEntry(0f, 11f));
+//        yAxisValue_FORIDR.add(new BarEntry(17f, 25f));
 
-//        List<String> xAxisValues = new ArrayList<>(); isko bhar(global) isliye kia ha ku k is ky label ny static rahna ha agr ni rhna
-        //to isko b ander rakh laina
-        //  showPieChartFor_SickAnimal() is function ma pie pr click krny sy dubara array ma label ki value nai dalni praye is liye
-        // agr dalni ha to isaye un comment kr daina or udr b same arry list bna daina jasaye udr (yValueGroup1) is ki bni ha
-        xAxisValues.add("Therileriosis");
-        xAxisValues.add("Glander");
-        xAxisValues.add("Rabies (Mad dog disease)");
-        xAxisValues.add("Black quarter (black-leg)");
-        xAxisValues.add("Foot and mouth disease");
-        xAxisValues.add("Contagious  pleuropneumonia   ");
-        xAxisValues.add("Brucellosis of sheep.");
-        xAxisValues.add("Tetanus");
-        xAxisValues.add("Anthrax");
-        xAxisValues.add("Blue tongue");
-        xAxisValues.add("African swine fever");
-        xAxisValues.add("Transmissible spongiform ");
-
-        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
-        yValueGroup1.add(new BarEntry(1f, 11f));
-        yValueGroup1.add(new BarEntry(2f, 12f));
-        yValueGroup1.add(new BarEntry(3f, 13f));
-        yValueGroup1.add(new BarEntry(4f, 14f));
-        yValueGroup1.add(new BarEntry(5f, 15f));
-        yValueGroup1.add(new BarEntry(6f, 11f));
-        yValueGroup1.add(new BarEntry(7f, 11f));
-        yValueGroup1.add(new BarEntry(8f, 12f));
-        yValueGroup1.add(new BarEntry(9f, 13f));
-        yValueGroup1.add(new BarEntry(10f, 14f));
-        yValueGroup1.add(new BarEntry(11f, 15f));
 
         BarChartManager barChartManager = new BarChartManager(barChartView, getContext());
-        barChartManager.showBarChart(yValueGroup1, xAxisValues);
+        barChartManager.showBarChart(yAxisValue_FORIDR, xAxisValues);
 
 
     }
@@ -513,30 +611,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private void showbarOriginWise() {
 
 
-        xAxisValues.add("Therileriosis");
-        xAxisValues.add("Glander");
-        xAxisValues.add("Rabies (Mad dog disease)");
-        xAxisValues.add("Black quarter (black-leg)");
-        xAxisValues.add("Foot and mouth disease");
-        xAxisValues.add("Contagious  pleuropneumonia   ");
-        xAxisValues.add("Brucellosis of sheep.");
-        xAxisValues.add("Tetanus");
-        xAxisValues.add("Anthrax");
+//        xAxisValues.add("Therileriosis");
+//        xAxisValues.add("Glander");
+//        xAxisValues.add("Rabies (Mad dog disease)");
+//        xAxisValues.add("Black quarter (black-leg)");
+//        xAxisValues.add("Foot and mouth disease");
+//        xAxisValues.add("Contagious  pleuropneumonia   ");
+//        xAxisValues.add("Brucellosis of sheep.");
+//        xAxisValues.add("Tetanus");
+//        xAxisValues.add("Anthrax");
 
-        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
-        yValueGroup1.add(new BarEntry(1f, 24f));
-        yValueGroup1.add(new BarEntry(2f, 31f));
-        yValueGroup1.add(new BarEntry(3f, 4f));
-        yValueGroup1.add(new BarEntry(4f, 2f));
-        yValueGroup1.add(new BarEntry(5f, 10f));
-        yValueGroup1.add(new BarEntry(6f, 14f));
-        yValueGroup1.add(new BarEntry(7f, 7f));
-        yValueGroup1.add(new BarEntry(8f, 15f));
-        yValueGroup1.add(new BarEntry(9f, 5f));
+//        ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
+//        yAxisValue_FORIDR.add(new BarEntry(1f, 24f));
+//        yAxisValue_FORIDR.add(new BarEntry(2f, 31f));
+//        yAxisValue_FORIDR.add(new BarEntry(3f, 4f));
+//        yAxisValue_FORIDR.add(new BarEntry(4f, 2f));
+//        yAxisValue_FORIDR.add(new BarEntry(5f, 10f));
+//        yAxisValue_FORIDR.add(new BarEntry(6f, 14f));
+//        yAxisValue_FORIDR.add(new BarEntry(7f, 7f));
+//        yAxisValue_FORIDR.add(new BarEntry(8f, 15f));
+//        yAxisValue_FORIDR.add(new BarEntry(9f, 5f));
 
 
         BarChartManager barChartManager = new BarChartManager(barChartViewvertical, getContext());
-        barChartManager.showBarChartVertical(yValueGroup1, xAxisValues);
+        barChartManager.showBarChartVertical(yAxisValue_FORIDR, xAxisValues);
 
 
     }

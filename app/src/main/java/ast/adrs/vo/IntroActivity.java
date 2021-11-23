@@ -17,10 +17,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import java.util.Locale;
 
-import ast.adrs.vo.IntroAuxilaries.PreSignInFragment;
+import ast.adrs.vo.IntroAuxilaries.SignInFragment;
 import ast.adrs.vo.IntroAuxilaries.SplashFragment;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
 
 import com.armoomragames.denketa.R;
 
@@ -204,7 +204,7 @@ public class IntroActivity extends AppCompatActivity implements IBadgeUpdateList
     //region Navigations
     public void navToPreSignInVAFragment() {
         clearMyBackStack();
-        PreSignInFragment frg = new PreSignInFragment();
+        SignInFragment frg = new SignInFragment();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_intro_content_frg, frg, AppConstt.FragTag.FN_PreSignInFragment);

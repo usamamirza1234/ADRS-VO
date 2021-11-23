@@ -9,8 +9,12 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
+import ast.adrs.vo.Utils.IWebCallback;
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.entity.StringEntity;
 
@@ -33,53 +37,39 @@ public class Intro_WebHit_Post_LogIn {
     public void postSignIn(Context context, final IWebCallback iWebCallback,
                            final String _signInEntity) {
         mContext = context;
-
-
        // String myUrl = AppConfig.getInstance().getBaseUrlApi() + ApiMethod.POST.signIn;
-        String myUrl = "http://119.160.90.110:8020/auth/login";
-
-
-        ///////////
+        String myUrl = "http://services.adrspunjab.gov.pk/api/Account/login";
         Log.d("LOG_AS", "postSignIn: " + myUrl + _signInEntity);
-
         StringEntity entity = null;
-
         entity = new StringEntity(_signInEntity, "UTF-8");
-
         mClient.setMaxRetriesAndTimeout(AppConstt.LIMIT_API_RETRY, AppConstt.LIMIT_TIMOUT_MILLIS);
-
-        Log.d("currentLang", AppConfig.getInstance().loadDefLanguage());
-
         mClient.post(mContext, myUrl, entity, "application/json", new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                         String strResponse;
-
-
                         try {
                             Gson gson = new Gson();
                             strResponse = new String(responseBody, StandardCharsets.UTF_8);
                             Log.d("LOG_AS", "postSignIn: strResponse" + strResponse);
                             responseObject = gson.fromJson(strResponse, ResponseModel.class);
 
+                            switch (statusCode) {
 
-                            iWebCallback.onWebResult(true, "");
+                                case AppConstt.ServerStatus.OK:
+                                case AppConstt.ServerStatus.CREATED:
+                                    iWebCallback.onWebResult(true, "");
+                                    break;
 
-//                            switch (statusCode) {
-//
-//                                case AppConstt.ServerStatus.OK:
-//                                case AppConstt.ServerStatus.CREATED:
-//                                    iWebCallback.onWebResult(true, "");
-//                                    break;
-//
-//                                default:
-//                                    AppConfig.getInstance().parsErrorMessage(iWebCallback, responseBody);
-//                                    break;
-//                            }
+                                default:
+                                    AppConfig.getInstance().parsErrorMessageOnFailure(iWebCallback, responseBody);
+                                    break;
+                            }
                         } catch (Exception ex) {
                             ex.printStackTrace();
                             iWebCallback.onWebException(ex);
                         }
+
+
                     }
 
 
@@ -94,7 +84,7 @@ public class Intro_WebHit_Post_LogIn {
                             case AppConstt.ServerStatus.FORBIDDEN:
                             case AppConstt.ServerStatus.UNAUTHORIZED:
                             default:
-                                AppConfig.getInstance().parsErrorMessage(iWebCallback, responseBody);
+                                AppConfig.getInstance().parsErrorMessageOnFailure(iWebCallback, responseBody);
                                 break;
                         }
                     }
@@ -106,70 +96,95 @@ public class Intro_WebHit_Post_LogIn {
 
     public class ResponseModel {
 
+        public class Result
+        {
+            private String userName;
 
-        public class User {
-            private String id;
+            private String authToken;
 
-            private String loginID;
+            private String refreshToken;
 
-            private String name;
+            private int id;
 
-            private String designation;
-
-            public void setId(String id) {
+            public void setUserName(String userName){
+                this.userName = userName;
+            }
+            public String getUserName(){
+                return this.userName;
+            }
+            public void setAuthToken(String authToken){
+                this.authToken = authToken;
+            }
+            public String getAuthToken(){
+                return this.authToken;
+            }
+            public void setRefreshToken(String refreshToken){
+                this.refreshToken = refreshToken;
+            }
+            public String getRefreshToken(){
+                return this.refreshToken;
+            }
+            public void setId(int id){
                 this.id = id;
             }
-
-            public String getId() {
+            public int getId(){
                 return this.id;
             }
-
-            public void setLoginID(String loginID) {
-                this.loginID = loginID;
-            }
-
-            public String getLoginID() {
-                return this.loginID;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public String getName() {
-                return this.name;
-            }
-
-            public void setDesignation(String designation) {
-                this.designation = designation;
-            }
-
-            public String getDesignation() {
-                return this.designation;
-            }
         }
 
 
-        private String token;
 
-        private User user;
+            private String version;
 
-        public void setToken(String token) {
-            this.token = token;
-        }
+            private int statusCode;
 
-        public String getToken() {
-            return this.token;
-        }
+            private String errorMessage;
 
-        public void setUser(User user) {
-            this.user = user;
-        }
+            private Result result;
 
-        public User getUser() {
-            return this.user;
-        }
+            private String timestamp;
+
+            private List<String> errors;
+
+            public void setVersion(String version){
+                this.version = version;
+            }
+            public String getVersion(){
+                return this.version;
+            }
+            public void setStatusCode(int statusCode){
+                this.statusCode = statusCode;
+            }
+            public int getStatusCode(){
+                return this.statusCode;
+            }
+            public void setErrorMessage(String errorMessage){
+                this.errorMessage = errorMessage;
+            }
+            public String getErrorMessage(){
+                return this.errorMessage;
+            }
+            public void setResult(Result result){
+                this.result = result;
+            }
+            public Result getResult(){
+                return this.result;
+            }
+            public void setTimestamp(String timestamp){
+                this.timestamp = timestamp;
+            }
+            public String getTimestamp(){
+                return this.timestamp;
+            }
+            public void setErrors(List<String> errors){
+                this.errors = errors;
+            }
+            public List<String> getErrors(){
+                return this.errors;
+            }
 
 
     }
+
+
 }

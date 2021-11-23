@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/edttext_height_xmedium"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
@@ -18,16 +18,16 @@
 
         <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="25"
             android:background="@drawable/chb_btn_sick_off"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/frg_home_frg_txv_sick"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:id="@+id/frg_home_txv_sick"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
 
                 android:gravity="center"
@@ -43,16 +43,15 @@
 
         <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="25"
             android:background="@drawable/chb_btn_risk_on"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/frg_punjab_business_txv_rlcoautomated"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
 
                 android:gravity="center"
@@ -66,16 +65,16 @@
 
         <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="25"
             android:background="@drawable/chb_btn_dead_off"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/frg_punjab_business_txv_rlcomapped"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:id="@+id/frg_home_txv_dead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerInParent="true"
 
                 android:gravity="center"
@@ -90,18 +89,18 @@
 
         <RelativeLayout
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="25"
             android:background="@drawable/chb_btn_dashboardtotal_off"
             android:gravity="center">
 
             <TextView
-                android:id="@+id/frg_punjab_business_txv_alldept"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_centerInParent="true"
 
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:id="@+id/frg_home_txv_total"
                 android:gravity="center"
                 android:padding="10dp"
 

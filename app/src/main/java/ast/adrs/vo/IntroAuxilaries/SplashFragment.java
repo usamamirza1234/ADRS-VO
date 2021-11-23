@@ -14,8 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
+import ast.adrs.vo.Utils.AppConfig;
 import ast.adrs.vo.IntroActivity;
 import ast.adrs.vo.MainActivity;
 import com.armoomragames.denketa.R;
@@ -114,7 +114,7 @@ public class SplashFragment extends Fragment {
     }
 
     public void navToPreSignInVAFragment() {
-        PreSignInFragment frg = new PreSignInFragment();
+        SignInFragment frg = new SignInFragment();
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_intro_content_frg, frg, AppConstt.FragTag.FN_PreSignInFragment);

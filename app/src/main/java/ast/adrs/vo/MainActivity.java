@@ -18,8 +18,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.armoomragames.denketa.R;
 import com.google.android.material.navigation.NavigationView;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.MainAuxilaries.ImmediateDiseasesReportsIDRFragment;
 import ast.adrs.vo.MainAuxilaries.MapFragment;

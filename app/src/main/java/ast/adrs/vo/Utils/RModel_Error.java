@@ -9,49 +9,46 @@ public class RModel_Error {
 
     private String errorMessage;
 
+    private String result;
 
     private String timestamp;
 
     private List<String> errors;
 
-    public String getVersion() {
-        return this.version;
-    }
-
-    public void setVersion(String version) {
+    public void setVersion(String version){
         this.version = version;
     }
-
-    public int getStatusCode() {
-        return this.statusCode;
+    public String getVersion(){
+        return this.version;
     }
-
-    public void setStatusCode(int statusCode) {
+    public void setStatusCode(int statusCode){
         this.statusCode = statusCode;
     }
-
-    public String getErrorMessage() {
-        return this.errorMessage;
+    public int getStatusCode(){
+        return this.statusCode;
     }
-
-    public void setErrorMessage(String errorMessage) {
+    public void setErrorMessage(String errorMessage){
         this.errorMessage = errorMessage;
     }
-
-    public String getTimestamp() {
-        return this.timestamp;
+    public String getErrorMessage(){
+        return this.errorMessage;
     }
-
-    public void setTimestamp(String timestamp) {
+    public void setResult(String result){
+        this.result = result;
+    }
+    public String getResult(){
+        return this.result;
+    }
+    public void setTimestamp(String timestamp){
         this.timestamp = timestamp;
     }
-
-    public List<String> getErrors() {
-        return this.errors;
+    public String getTimestamp(){
+        return this.timestamp;
     }
-
-    public void setErrors(List<String> errors) {
+    public void setErrors(List<String> errors){
         this.errors = errors;
     }
-
+    public List<String> getErrors(){
+        return this.errors;
+    }
 }
