@@ -1,127 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"    android:background="@color/thm_yellow3"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/thm_yellow3"
     android:orientation="vertical">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:orientation="horizontal"
-            android:weightSum="100">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edttext_height_xmedium"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
 
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="25"
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="25"
+            android:background="@drawable/chb_btn_sick_off"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/frg_home_txv_sick"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+
                 android:gravity="center"
-                android:background="@drawable/chb_btn_sick_off"
-                >
-
-                <TextView
-                    android:id="@+id/frg_home_frg_txv_sick"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true"
-
-                    android:gravity="center"
-                    android:padding="10dp"
+                android:padding="10dp"
 
 
-                    android:text="Sick"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_tiny"
-                    android:textStyle="bold" />
+                android:text="Sick"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fontsize_tiny"
+                android:textStyle="bold" />
 
-            </RelativeLayout>
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="25"
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="25"
+            android:background="@drawable/chb_btn_risk_on"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+
                 android:gravity="center"
-                android:background="@drawable/chb_btn_risk_on">
+                android:padding="10dp"
+                android:text="At Risk"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fontsize_tiny"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/frg_punjab_business_txv_rlcoautomated"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true"
+        </RelativeLayout>
 
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="At Risk"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fontsize_tiny"
-                    android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="25"
+            android:background="@drawable/chb_btn_dead_off"
+            android:gravity="center">
 
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/frg_home_txv_dead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="25"
                 android:gravity="center"
-                android:background="@drawable/chb_btn_dead_off"
-                >
+                android:padding="10dp"
+                android:text="Dead"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_tiny"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/frg_punjab_business_txv_rlcomapped"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true"
-
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Dead"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize_tiny"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
+        </RelativeLayout>
 
 
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="25"
+            android:background="@drawable/chb_btn_dashboardtotal_off"
+            android:gravity="center">
 
+            <TextView
 
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="25"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:id="@+id/frg_home_txv_total"
                 android:gravity="center"
-                android:background="@drawable/chb_btn_dashboardtotal_off"
-                >
-
-                <TextView
-                    android:id="@+id/frg_punjab_business_txv_alldept"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerInParent="true"
-
-                    android:gravity="center"
-                    android:padding="10dp"
+                android:padding="10dp"
 
 
-                    android:text="Total"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/fontsize_tiny"
-                    android:textStyle="bold" />
+                android:text="Total"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fontsize_tiny"
+                android:textStyle="bold" />
 
-            </RelativeLayout>
-
-
+        </RelativeLayout>
 
 
-        </LinearLayout>
-
+    </LinearLayout>
 
 
     <androidx.core.widget.NestedScrollView
@@ -135,10 +127,10 @@
             android:orientation="vertical">
 
             <com.github.mikephil.charting.charts.PieChart
-                android:visibility="gone"
                 android:id="@+id/activity_main_piechart"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="300dp"
+                android:visibility="gone" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -159,10 +151,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:padding="10dp"
-                        android:gravity="center"
                         android:layout_marginLeft="60dp"
                         android:background="@color/red"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="Immediate Diseases Reports(IDR)"
                         android:textColor="@color/white"
                         android:textSize="@dimen/fontsize_mini"
@@ -192,190 +184,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/frg_home_mpchart_dieses_idr"
+                    android:layout_marginTop="-20dp"
                     android:orientation="horizontal">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/frg_home_mpchart_dieses_idr"
-                    android:layout_centerInParent="false"
-                    android:layout_gravity="center"
-                    android:layout_margin="-5dp"
-                    android:orientation="vertical">
-
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="3dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="A"
-                                android:textAlignment="center"
-                                android:textSize="@dimen/fontsize_mini"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="3dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
-
-                            <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="B"
-                                android:textAlignment="center"
-                                android:textSize="@dimen/fontsize_mini"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="3dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="C"
-                                android:textAlignment="center"
-                                android:textSize="@dimen/fontsize_mini"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="3dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
-
-                            <TextView
-
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="D"
-                                android:textAlignment="center"
-                                android:textSize="@dimen/fontsize_mini"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="3dp">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                android:layout_width="15dp"
-                                android:layout_height="15dp"
-                                android:layout_gravity="center"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginEnd="10dp"
-                                android:background="@drawable/shp_round_thm_green1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="E"
-                                android:textAlignment="center"
-                                android:textSize="@dimen/fontsize_mini"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-                </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginLeft="40dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/frg_home_mpchart_dieses_idr"
-                        android:layout_centerInParent="false"
-                        android:layout_gravity="center"
-                        android:layout_margin="-5dp"
+
                         android:orientation="vertical">
 
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="3dp">
+                            android:padding="1dp">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -383,9 +205,9 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
@@ -394,9 +216,9 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="A"
+                                    android:text="Anthrax"
                                     android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
+                                    android:textSize="@dimen/fontsize_minute"
                                     android:textStyle="bold" />
 
                             </LinearLayout>
@@ -406,7 +228,7 @@
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="3dp">
+                            android:padding="1dp">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -414,21 +236,21 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_silver1" />
 
                                 <TextView
 
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="B"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
+                                    android:text="Brucellosis"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
                                     android:textStyle="bold" />
 
                             </LinearLayout>
@@ -438,7 +260,7 @@
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="3dp">
+                            android:padding="1dp">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -446,20 +268,20 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_orange1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="C"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
+                                    android:text="Foot and Mouth\n Disease (FMD)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
                                     android:textStyle="bold" />
 
                             </LinearLayout>
@@ -469,7 +291,7 @@
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="3dp">
+                            android:padding="1dp">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -477,21 +299,21 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_yellow1" />
 
                                 <TextView
 
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="D"
-                                    android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
+                                    android:text="Bovine\nTuberculosis (bTB)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
                                     android:textStyle="bold" />
 
                             </LinearLayout>
@@ -501,7 +323,7 @@
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="3dp">
+                            android:padding="1dp">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -509,20 +331,341 @@
                                 android:gravity="center"
                                 android:orientation="horizontal">
 
-                                <ast.adrs.vo.MainAuxilaries.CircleImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_marginEnd="10dp"
-                                    android:background="@drawable/shp_round_thm_green1" />
+                                    android:background="@drawable/shp_round_thm_ink1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="E"
+                                    android:text="Rabies"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_lightorange1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Newcastle\nDisease (ND)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_leaves1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Black Quarter (BQ)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_likeblue1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Enterotoxaemia\n(ET)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_brown1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Glander"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_gray1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Paratuberculosis\n(Jhone's disease)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_mehandhi1" />
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Surra\n(Trypanosoma evansi)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_navy1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Haemorrhagic\nSepticaemia (HS)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_darkgreen1" />
+
+                                <TextView
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Peste des Petits Ruminants (PPR)"
                                     android:textAlignment="center"
-                                    android:textSize="@dimen/fontsize_mini"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_lightblue" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Caprine\npleuropneumonia (CPP)"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="1dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ast.adrs.vo.Utils.CircleImageView
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:background="@drawable/shp_round_thm_blue1" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Theileriosis"
+                                    android:textAlignment="textStart"
+                                    android:textSize="@dimen/fontsize_minute"
                                     android:textStyle="bold" />
 
                             </LinearLayout>
@@ -552,10 +695,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:padding="10dp"
-                        android:gravity="center"
                         android:layout_marginLeft="60dp"
                         android:background="@color/red"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="Species Wise Sick Animals"
                         android:textColor="@color/white"
                         android:textSize="@dimen/fontsize_mini"
@@ -586,199 +729,147 @@
                     android:layout_height="match_parent"
                     android:layout_below="@+id/frg_home_mpchart_sick_animal"
                     android:orientation="horizontal">
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
 
-<!--                        android:layout_below="@+id/frg_home_mpchart_sick_animal"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:layout_gravity="center"-->
-<!--                        android:layout_margin="-5dp"-->
-<!--                        android:orientation="vertical">-->
-
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:padding="3dp">-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:orientation="horizontal">-->
-
-<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
-<!--                                    android:layout_width="15dp"-->
-<!--                                    android:layout_height="15dp"-->
-<!--                                    android:layout_gravity="center"-->
-<!--                                    android:layout_marginStart="20dp"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
-
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:text="Camel"-->
-<!--                                    android:textAlignment="center"-->
-<!--                                    android:textSize="@dimen/fontsize_mini"-->
-<!--                                    android:textStyle="bold" />-->
-
-<!--                            </LinearLayout>-->
-
-<!--                        </RelativeLayout>-->
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:padding="3dp">-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:orientation="horizontal">-->
-
-<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
-<!--                                    android:layout_width="15dp"-->
-<!--                                    android:layout_height="15dp"-->
-<!--                                    android:layout_gravity="center"-->
-<!--                                    android:layout_marginStart="20dp"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
-
-<!--                                <TextView-->
-
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:text="Small Animal"-->
-<!--                                    android:textAlignment="center"-->
-<!--                                    android:textSize="@dimen/fontsize_mini"-->
-<!--                                    android:textStyle="bold" />-->
-
-<!--                            </LinearLayout>-->
-
-<!--                        </RelativeLayout>-->
-
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:padding="3dp">-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:orientation="horizontal">-->
-
-<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
-<!--                                    android:layout_width="15dp"-->
-<!--                                    android:layout_height="15dp"-->
-<!--                                    android:layout_gravity="center"-->
-<!--                                    android:layout_marginStart="20dp"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
-
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:text="Large Animal"-->
-<!--                                    android:textAlignment="center"-->
-<!--                                    android:textSize="@dimen/fontsize_mini"-->
-<!--                                    android:textStyle="bold" />-->
-
-<!--                            </LinearLayout>-->
-
-<!--                        </RelativeLayout>-->
-<!--                        <RelativeLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:padding="3dp">-->
-
-<!--                            <LinearLayout-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:orientation="horizontal">-->
-
-<!--                                <ast.adrs.vo.MainAuxilaries.CircleImageView-->
-<!--                                    android:layout_width="15dp"-->
-<!--                                    android:layout_height="15dp"-->
-<!--                                    android:layout_gravity="center"-->
-<!--                                    android:layout_marginStart="20dp"-->
-<!--                                    android:layout_marginEnd="10dp"-->
-<!--                                    android:background="@drawable/shp_round_thm_green1" />-->
-
-<!--                                <TextView-->
-<!--                                    android:layout_width="wrap_content"-->
-<!--                                    android:layout_height="wrap_content"-->
-<!--                                    android:text="Aquine"-->
-<!--                                    android:textAlignment="center"-->
-<!--                                    android:textSize="@dimen/fontsize_mini"-->
-<!--                                    android:textStyle="bold" />-->
-
-<!--                            </LinearLayout>-->
-
-<!--                        </RelativeLayout>-->
+                    <!--                        android:layout_below="@+id/frg_home_mpchart_sick_animal"-->
+                    <!--                        android:layout_centerInParent="true"-->
+                    <!--                        android:layout_gravity="center"-->
+                    <!--                        android:layout_margin="-5dp"-->
+                    <!--                        android:orientation="vertical">-->
 
 
-<!--                    </LinearLayout>-->
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:padding="1dp">-->
 
+                    <!--                            <LinearLayout-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:gravity="center"-->
+                    <!--                                android:orientation="horizontal">-->
+
+                    <!--                                <ast.adrs.vo.Utils.CircleImageView-->
+                    <!--                                    android:layout_width="15dp"-->
+                    <!--                                    android:layout_height="15dp"-->
+                    <!--                                    android:layout_gravity="center"-->
+                    <!--                                    android:layout_marginStart="20dp"-->
+                    <!--                                    android:layout_marginEnd="10dp"-->
+                    <!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+                    <!--                                <TextView-->
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:text="Camel"-->
+                    <!--                                    android:textAlignment="center"-->
+                    <!--                                    android:textSize="@dimen/fontsize_mini"-->
+                    <!--                                    android:textStyle="bold" />-->
+
+                    <!--                            </LinearLayout>-->
+
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:padding="1dp">-->
+
+                    <!--                            <LinearLayout-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:gravity="center"-->
+                    <!--                                android:orientation="horizontal">-->
+
+                    <!--                                <ast.adrs.vo.Utils.CircleImageView-->
+                    <!--                                    android:layout_width="15dp"-->
+                    <!--                                    android:layout_height="15dp"-->
+                    <!--                                    android:layout_gravity="center"-->
+                    <!--                                    android:layout_marginStart="20dp"-->
+                    <!--                                    android:layout_marginEnd="10dp"-->
+                    <!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+                    <!--                                <TextView-->
+
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:text="Small Animal"-->
+                    <!--                                    android:textAlignment="center"-->
+                    <!--                                    android:textSize="@dimen/fontsize_mini"-->
+                    <!--                                    android:textStyle="bold" />-->
+
+                    <!--                            </LinearLayout>-->
+
+                    <!--                        </RelativeLayout>-->
+
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:padding="1dp">-->
+
+                    <!--                            <LinearLayout-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:gravity="center"-->
+                    <!--                                android:orientation="horizontal">-->
+
+                    <!--                                <ast.adrs.vo.Utils.CircleImageView-->
+                    <!--                                    android:layout_width="15dp"-->
+                    <!--                                    android:layout_height="15dp"-->
+                    <!--                                    android:layout_gravity="center"-->
+                    <!--                                    android:layout_marginStart="20dp"-->
+                    <!--                                    android:layout_marginEnd="10dp"-->
+                    <!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+                    <!--                                <TextView-->
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:text="Large Animal"-->
+                    <!--                                    android:textAlignment="center"-->
+                    <!--                                    android:textSize="@dimen/fontsize_mini"-->
+                    <!--                                    android:textStyle="bold" />-->
+
+                    <!--                            </LinearLayout>-->
+
+                    <!--                        </RelativeLayout>-->
+                    <!--                        <RelativeLayout-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:padding="1dp">-->
+
+                    <!--                            <LinearLayout-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:gravity="center"-->
+                    <!--                                android:orientation="horizontal">-->
+
+                    <!--                                <ast.adrs.vo.Utils.CircleImageView-->
+                    <!--                                    android:layout_width="15dp"-->
+                    <!--                                    android:layout_height="15dp"-->
+                    <!--                                    android:layout_gravity="center"-->
+                    <!--                                    android:layout_marginStart="20dp"-->
+                    <!--                                    android:layout_marginEnd="10dp"-->
+                    <!--                                    android:background="@drawable/shp_round_thm_green1" />-->
+
+                    <!--                                <TextView-->
+                    <!--                                    android:layout_width="wrap_content"-->
+                    <!--                                    android:layout_height="wrap_content"-->
+                    <!--                                    android:text="Aquine"-->
+                    <!--                                    android:textAlignment="center"-->
+                    <!--                                    android:textSize="@dimen/fontsize_mini"-->
+                    <!--                                    android:textStyle="bold" />-->
+
+                    <!--                            </LinearLayout>-->
+
+                    <!--                        </RelativeLayout>-->
+
+
+                    <!--                    </LinearLayout>-->
 
 
                 </LinearLayout>
             </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/shp_stoke_thm_blue"
-                android:padding="5dp">
-
-
-        <LinearLayout
-            android:id="@+id/heading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:padding="10dp"
-                android:gravity="center"
-                android:layout_marginLeft="60dp"
-                android:background="@color/red"
-                android:text="Immediate Diseases Reports(IDR)"
-                android:textColor="@color/white"
-                android:textSize="@dimen/fontsize_mini"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="Theileriosis Anthrax"
-                android:textColor="@color/black_1"
-                android:textSize="@dimen/fontsize_tiny" />
-        </LinearLayout>
-
-            <com.github.mikephil.charting.charts.HorizontalBarChart
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:layout_below="@+id/heading"
-                android:id="@+id/idr_barchart">
-
-            </com.github.mikephil.charting.charts.HorizontalBarChart>
-
-        </RelativeLayout>
 
 
             <RelativeLayout
@@ -800,11 +891,62 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:padding="10dp"
-                        android:gravity="center"
-
                         android:layout_marginLeft="60dp"
                         android:background="@color/red"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Immediate Diseases Reports(IDR)"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/fontsize_mini"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Theileriosis Anthrax"
+                        android:textColor="@color/black_1"
+                        android:textSize="@dimen/fontsize_tiny" />
+                </LinearLayout>
+
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/idr_barchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_below="@+id/heading">
+
+                </com.github.mikephil.charting.charts.HorizontalBarChart>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shp_stoke_thm_blue"
+                android:padding="5dp">
+
+
+                <LinearLayout
+                    android:id="@+id/heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="60dp"
+                        android:background="@color/red"
+
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="Origin/Source Wise Disease Spread"
                         android:textColor="@color/white"
                         android:textSize="@dimen/fontsize_mini"
@@ -823,20 +965,17 @@
                 </LinearLayout>
 
                 <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/idr_baroriginwise"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_below="@+id/heading"
 
-                    android:id="@+id/idr_baroriginwise">
+                    android:layout_marginBottom="10dp">
 
                 </com.github.mikephil.charting.charts.BarChart>
 
             </RelativeLayout>
         </LinearLayout>
-
-
-
 
 
     </androidx.core.widget.NestedScrollView>

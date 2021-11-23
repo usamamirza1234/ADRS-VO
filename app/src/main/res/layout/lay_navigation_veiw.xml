@@ -27,7 +27,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp">
 
-                <ast.adrs.vo.MainAuxilaries.CircleImageView
+                <ast.adrs.vo.Utils.CircleImageView
                     android:id="@+id/lay_navigationview_imv_user"
                     android:layout_width="90dp"
                     android:layout_height="90dp"

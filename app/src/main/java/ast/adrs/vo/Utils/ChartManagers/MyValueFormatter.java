@@ -1,15 +1,20 @@
-package ast.adrs.vo.MainAuxilaries;
+package ast.adrs.vo.Utils.ChartManagers;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 
-public class IntegerFormatter extends ValueFormatter {
+public class MyValueFormatter extends ValueFormatter {
 
     private PieChart pieChart;
 
+
+    public MyValueFormatter() {
+
+    }
+
     // Can be used to remove percent signs if the chart isn't in percent mode
-    public IntegerFormatter(PieChart pieChart) {
+    public MyValueFormatter(PieChart pieChart) {
         this.pieChart = pieChart;
     }
 
@@ -28,6 +33,4 @@ public class IntegerFormatter extends ValueFormatter {
             return  ((int) value)+"";
         }
     }
-
-
 }

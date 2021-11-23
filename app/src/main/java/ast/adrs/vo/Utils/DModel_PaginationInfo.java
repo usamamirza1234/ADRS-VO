@@ -1,8 +1,6 @@
 package ast.adrs.vo.Utils;
 
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-
 public class DModel_PaginationInfo {
     public int currIndex;
     public boolean isCompleted;

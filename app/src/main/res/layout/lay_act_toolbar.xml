@@ -72,7 +72,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <ast.adrs.vo.MainAuxilaries.CircleImageView
+        <ast.adrs.vo.Utils.CircleImageView
             android:layout_width="50dp"
 
             android:layout_height="50dp"

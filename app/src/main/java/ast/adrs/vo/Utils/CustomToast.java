@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-
 import com.armoomragames.denketa.R;
 
 

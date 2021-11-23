@@ -1,8 +1,6 @@
 package ast.adrs.vo.Utils;
 
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-
 public class MyLocation {
 
     private double latitude;

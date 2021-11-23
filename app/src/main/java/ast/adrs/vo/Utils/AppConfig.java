@@ -1,4 +1,4 @@
-package ast.adrs.vo.IntroAuxilaries.WebServices;
+package ast.adrs.vo.Utils;
 
 import android.app.Activity;
 import android.app.NotificationManager;
@@ -29,13 +29,6 @@ import java.util.Random;
 import ast.adrs.vo.DModelUser;
 import ast.adrs.vo.IntroActivity;
 import ast.adrs.vo.MyApplication;
-import ast.adrs.vo.Utils.RModel_Error;
-import ast.adrs.vo.Utils.RModel_Message;
-import ast.adrs.vo.Utils.CustomAlertConfirmationInterface;
-import ast.adrs.vo.Utils.CustomAlertDialog;
-import ast.adrs.vo.Utils.IWebIndexedCallback;
-import ast.adrs.vo.Utils.IWebPaginationCallback;
-import ast.adrs.vo.Utils.RModel_onFailureError;
 
 
 public class AppConfig {
@@ -173,14 +166,8 @@ public class AppConfig {
         try {
             Gson gson = new Gson();
             String strResponse = new String(responseBody, StandardCharsets.UTF_8);
-            RModel_onFailureError responseObjectLocal = gson.fromJson(strResponse, RModel_onFailureError.class);
-
-
-            Log.d("paserdJSON", "JSONObject: responseObjectLocal.getErrors() " + responseObjectLocal.getErrors());
-//            parseJson(responseObjectLocal.getErrors());
-
-
-            iWebCallback.onWebResult(false, responseObjectLocal.getErrors().toString());
+            RModel_Error responseObjectLocal = gson.fromJson(strResponse, RModel_Error.class);
+            iWebCallback.onWebResult(false, responseObjectLocal.getErrorMessage().toString());
         } catch (Exception ex) {
             ex.printStackTrace();
             iWebCallback.onWebException(ex);

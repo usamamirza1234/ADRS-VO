@@ -1,7 +1,6 @@
-package ast.adrs.vo.MainAuxilaries;
+package ast.adrs.vo.Utils.ChartManagers;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Typeface;
 
 import com.armoomragames.denketa.R;

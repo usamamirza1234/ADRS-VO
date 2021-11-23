@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
 
 
 public class MyApplication extends Application {

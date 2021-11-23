@@ -18,10 +18,11 @@ import androidx.fragment.app.FragmentTransaction;
 import com.armoomragames.denketa.R;
 import com.google.android.material.navigation.NavigationView;
 
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.MainAuxilaries.ImmediateDiseasesReportsIDRFragment;
+import ast.adrs.vo.MainAuxilaries.MapFragment;
 import ast.adrs.vo.MainAuxilaries.PerformanceMonitoringFragment;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView txvTitleBar,btnview;
     RelativeLayout rlToolbar, rlMenu ,idr;
     private Dialog progressDialog;
+    RelativeLayout mMap;
+     ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,9 +81,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llImmediateDiseasesReportsIDR = findViewById(R.id.lay_navigationview_llimmediatediseasesreports_idr);
         llIssuesFacedPrivate = findViewById(R.id.lay_navigationview_llIssuesFacedPrivate);
         llLogout = findViewById(R.id.lay_navigationview_llLogout);
-        llissues = findViewById(R.id.lay_navigationview_llissues);
+        mMap = findViewById(R.id.map);
+        mMap.setOnClickListener(this);
+
+//        SupportMapFragment MapFragment = (SupportMapFragment).getSupportFragmentManager().findFragmentById(R.id.map);
+//
+//        MapFragment.getMapAsync(this);
+
 
         rlMenu.setOnClickListener(this);
+
+
         idr.setOnClickListener(this);
 //
 //        llPriority_Sector.setOnClickListener(this);
@@ -90,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        llissues.setOnClickListener(this);
 //        llFeedback.setOnClickListener(this);
 
-        //use For Example
+
         llImmediateDiseasesReportsIDR.setOnClickListener(this);
 
 //        llIssuesFacedPrivate.setOnClickListener(this);
@@ -135,6 +146,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    public void navToMapFragment() {
+        Fragment frg = new MapFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_MapFragment);
+        ft.addToBackStack(AppConstt.FragTag.FN_MapFragment);
+        hideLastStackFragment(ft);
+        ft.commit();
+    }
+
+
+
     private void init() {
         fm = getSupportFragmentManager();
     }
@@ -147,6 +169,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ft.addToBackStack(AppConstt.FragTag.FN_ImmediateDiseasesReportsIDR);
         hideLastStackFragment(ft);
         ft.commit();
+
     }
 
     public void navToPerformanceMonitoringFragment() {
@@ -258,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.lay_navigationview_llDashboard:
                 closeDrawar();
-               // navToHomeFragment();
+                navToHomeFragment();
                 break;
 
             case R.id.lay_navigationview_llPerformancemonitoring:
@@ -294,6 +317,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.lay_navigationview_llLogout:
                 AppConfig.getInstance().navtoLogin();
+                break;
+
+            case R.id.map:
+                navToMapFragment();
                 break;
         }
 

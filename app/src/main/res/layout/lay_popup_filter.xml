@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shp_rect_rounded_white"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/orange"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:padding="5dp"
+                android:paddingTop="@dimen/textview_font_padding_bottombar"
+                android:paddingBottom="@dimen/textview_font_padding_bottombar"
+                android:text="Period"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fontsize_small"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/lay_prog_ll_today"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+
+                android:layout_weight="25"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/lay_prog_chb_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:clickable="false" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:paddingTop="@dimen/textview_font_padding_bottombar"
+                    android:paddingBottom="@dimen/textview_font_padding_bottombar"
+                    android:text="Today"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fontsize_mini" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_prog_ll_yesterday"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+
+                android:layout_weight="25"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/lay_prog_chb_yesterday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:clickable="false" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:paddingTop="@dimen/textview_font_padding_bottombar"
+                    android:paddingBottom="@dimen/textview_font_padding_bottombar"
+                    android:text="Yesterday"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fontsize_mini" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_prog_ll_total"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+
+                android:layout_weight="25"
+                android:gravity="start"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/lay_prog_chb_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:clickable="false" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:lines="1"
+                    android:paddingTop="@dimen/textview_font_padding_bottombar"
+                    android:paddingBottom="@dimen/textview_font_padding_bottombar"
+                    android:text="Total"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fontsize_mini" />
+
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/lay_popup_txvApply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/orange"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:padding="5dp"
+                android:paddingTop="@dimen/textview_font_padding_bottombar"
+                android:paddingBottom="@dimen/textview_font_padding_bottombar"
+                android:text="Close"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fontsize_small"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

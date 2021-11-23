@@ -51,12 +51,10 @@ public class IDRFootMouthRcvAdapter extends RecyclerView.Adapter<IDRFootMouthRcv
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
 
-        holder.txv_BRMI.setText(mData.get(position).getName());
-        holder.txv_totalreforms.setText(mData.get(position).getDescription());
-        holder.txv_implemented.setText(mData.get(position).getProposedChange());
-        holder.txv_partitallyimplemented.setText(mData.get(position).getApprovingAuthority());
-        holder.txv_underimplementation.setText(mData.get(position).getDepartment());
-        holder.txv_furtherdelibrations.setText(mData.get(position).getDetails());
+        holder.txv_farmer.setText(mData.get(position).getName());
+        holder.txv_sick.setText(mData.get(position).getDescription());
+        holder.txv_dead.setText(mData.get(position).getProposedChange());
+        holder.txv_risk.setText(mData.get(position).getApprovingAuthority());
         holder.txv_sr.setText((position+1)+"");
 
 
@@ -83,21 +81,17 @@ public class IDRFootMouthRcvAdapter extends RecyclerView.Adapter<IDRFootMouthRcv
 
 
 
-        TextView txv_BRMI,txv_totalreforms,txv_implemented,txv_partitallyimplemented,
-                txv_underimplementation,txv_furtherdelibrations,txv_disagreed,txv_doesnotpertain,txv_sr;
+        TextView txv_sr, txv_farmer, txv_sick, txv_dead,  txv_risk;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            txv_BRMI = itemView.findViewById(R.id.lay_issues_list_txv_brmi);
-            txv_totalreforms = itemView.findViewById(R.id.lay_issues_list_txv_totalreforms);
-            txv_implemented = itemView.findViewById(R.id.lay_issues_list_txv_implemented);
-            txv_partitallyimplemented = itemView.findViewById(R.id.lay_issues_list_txv_partitallyimplemented);
-            txv_underimplementation = itemView.findViewById(R.id.lay_issues_list_txv_underimplementation);
-            txv_furtherdelibrations = itemView.findViewById(R.id.lay_issues_list_txv_furtherdelibrations);
-            txv_disagreed = itemView.findViewById(R.id.lay_issues_list_txv_disagreed);
-            txv_doesnotpertain = itemView.findViewById(R.id.lay_issues_list_txv_doesnotpertain);
-            txv_sr = itemView.findViewById(R.id.lay_issues_list_txv_sr);
+            txv_sr = itemView.findViewById(R.id.lay_foot_mouth_txv_sr);
+            txv_farmer = itemView.findViewById(R.id.lay_foot_mouth_txv_farmer);
+            txv_sick = itemView.findViewById(R.id.lay_foot_mouth_txv_sick);
+            txv_dead= itemView.findViewById(R.id.lay_foot_mouth_txv_dead);
+            txv_risk = itemView.findViewById(R.id.lay_foot_mouth_txv_risk);
+
 
         }
 

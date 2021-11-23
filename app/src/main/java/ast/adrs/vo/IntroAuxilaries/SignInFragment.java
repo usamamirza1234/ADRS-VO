@@ -13,29 +13,26 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.armoomragames.denketa.R;
+import com.google.gson.JsonObject;
 
 import ast.adrs.vo.IntroActivity;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConfig;
-import ast.adrs.vo.IntroAuxilaries.WebServices.AppConstt;
-import ast.adrs.vo.IntroAuxilaries.WebServices.Home_WebHit_Get_Database;
-import ast.adrs.vo.IntroAuxilaries.WebServices.IWebCallback;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.IWebCallback;
 import ast.adrs.vo.IntroAuxilaries.WebServices.Intro_WebHit_Post_LogIn;
-import ast.adrs.vo.MainAuxilaries.HomeFragment;
 
-public class PreSignInFragment extends Fragment implements View.OnClickListener {
 
-    private Dialog progressDialog;
+public class SignInFragment extends Fragment implements View.OnClickListener {
+
     RelativeLayout rlSignin, rlSignUp, rlForgot;
     EditText edtName, edtPassword;
     String str = "";
+    private Dialog progressDialog;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View frg = inflater.inflate(R.layout.fragment_pre_sign_in, container, false);
+        View frg = inflater.inflate(R.layout.fragment_sign_in, container, false);
 
         init();
         bindviews(frg);
@@ -44,6 +41,7 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
         return frg;
 
     }
+
     private void bindviews(View frg) {
 
         rlSignin = frg.findViewById(R.id.frg_presigin_rllogin);
@@ -61,10 +59,6 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
     }
 
 
-
-
-
-
     @Override
     public void onClick(View v) {
 
@@ -72,15 +66,13 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
 
             case R.id.frg_presigin_rllogin:
 
-                  closeKeyboard();
-                  checkErrorConditions();
+                closeKeyboard();
+                checkErrorConditions();
 
                 break;
 
         }
     }
-
-
 
 
     private void navToMainActivity() {
@@ -89,19 +81,21 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
     }
 
 
-
-
     private void checkErrorConditions() {
         if (checkPasswordError()) {
 
-            AppConfig.getInstance().mUser.isLoggedIn = true;
-            AppConfig.getInstance().saveUserProfile();
-            navToMainActivity();
-//            JsonObject jsonObject = new JsonObject();
-//            jsonObject.addProperty("loginId", edtName.getText().toString());
-//            jsonObject.addProperty("password", edtPassword.getText().toString());
 
-//            requestUserSigin(jsonObject.toString());
+            JsonObject jsonObject = new JsonObject();
+            jsonObject.addProperty("username", edtName.getText().toString());
+            jsonObject.addProperty("password", edtPassword.getText().toString());
+            jsonObject.addProperty("appVersion", "1.0");
+
+            requestUserSigin(jsonObject.toString());
+
+
+//            AppConfig.getInstance().mUser.isLoggedIn = true;
+//            AppConfig.getInstance().saveUserProfile();
+//            navToMainActivity();
         }
     }
 
@@ -114,6 +108,7 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
         }
 
     }
+
     //region  functions for Dialog
     private void dismissProgDialog() {
         if (progressDialog != null) {
@@ -159,19 +154,17 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
                     dismissProgDialog();
 
                     //Save user login data todo un
-                  AppConfig.getInstance().mUser.User_Id = Integer.parseInt(Intro_WebHit_Post_LogIn.responseObject.getUser().getId());
+                    AppConfig.getInstance().mUser.User_Id = (Intro_WebHit_Post_LogIn.responseObject.getResult().getId());
 
-                    AppConfig.getInstance().mUser.Email = Intro_WebHit_Post_LogIn.responseObject.getUser().getLoginID();
+                    AppConfig.getInstance().mUser.Email = Intro_WebHit_Post_LogIn.responseObject.getResult().getUserName();
 
-                    AppConfig.getInstance().mUser.Authorization = Intro_WebHit_Post_LogIn.responseObject.getToken();
-                    if (Intro_WebHit_Post_LogIn.responseObject.getUser().getName() != null)
-                        Toast.makeText(getActivity(),"error", Toast.LENGTH_SHORT).show();
-                        AppConfig.getInstance().mUser.Name = Intro_WebHit_Post_LogIn.responseObject.getUser().getName();
+                    AppConfig.getInstance().mUser.Authorization = Intro_WebHit_Post_LogIn.responseObject.getResult().getAuthToken();
+
                     AppConfig.getInstance().mUser.isLoggedIn = true;
+
                     AppConfig.getInstance().saveUserProfile();
 
-
-                    requestDataBase();
+                    navToMainActivity();
 
                 } else {
                     dismissProgDialog();
@@ -191,76 +184,8 @@ public class PreSignInFragment extends Fragment implements View.OnClickListener 
     }
 
 
-    private void requestDataBase() {
-        dismissProgDialog();
-        showProgDialog();
-        Home_WebHit_Get_Database home_webHit_get_database = new Home_WebHit_Get_Database();
-        home_webHit_get_database.getDatabase(new IWebCallback() {
-            @Override
-            public void onWebResult(boolean isSuccess, String strMsg) {
-                if (isSuccess) {
-
-                    showProgInstallingDataDialog();
-                    if (strMsg != "") {
-                     //   populateDBOPS(strMsg);
-                    }
-
-                    navToMainActivity();
-                    dismissProgDialog();
-                } else {
-                    dismissProgDialog();
-                    Toast.makeText(getActivity(), strMsg, Toast.LENGTH_SHORT).show();
-//                    AppConfig.getInstance().showErrorMessage(getContext(), strMsg);
-                }
-            }
-
-            @Override
-            public void onWebException(Exception ex) {
-                dismissProgDialog();
-                Toast.makeText(getActivity(), ex.getMessage(), Toast.LENGTH_SHORT).show();
-//                AppConfig.getInstance().showErrorMessage(getContext(), ex.toString());
-            }
-        });
-    }
 
 
-
-
-
-
-    private void navToSignUpFragment() {
-
-    }
-
-    private void navToSignInFragment() {
-//        FragmentManager fm = getFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        Fragment frag = new SignInFragment();
-//        ft.add(R.id.act_intro_content_frg, frag, AppConstt.FragTag.FN_SignInFragment);
-//        ft.addToBackStack(AppConstt.FragTag.FN_SignInFragment);
-//        ft.hide(this);
-//        ft.commit();
-    }
-
-
-
-
-
-
-    private FragmentManager getSupportFragmentManager() {
-        return null;
-    }
-
-
-    private void navToForgotPasswordFragment() {
-//        FragmentManager fm = getFragmentManager();
-//        FragmentTransaction ft = fm.beginTransaction();
-//        Fragment frag = new ForgotPasswordFragment();
-//        ft.add(R.id.act_intro_content_frg, frag, AppConstt.FragTag.FN_SignInFragment);
-//        ft.addToBackStack(AppConstt.FragTag.FN_SignInFragment);
-//        ft.hide(this);
-//        ft.commit();
-    }
     private void editTextWatchers() {
 
         edtName.addTextChangedListener(new TextWatcher() {

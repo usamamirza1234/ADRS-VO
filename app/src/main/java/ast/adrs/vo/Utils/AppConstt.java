@@ -1,4 +1,4 @@
-package ast.adrs.vo.IntroAuxilaries.WebServices;
+package ast.adrs.vo.Utils;
 
 import android.os.Environment;
 
@@ -9,14 +9,8 @@ public interface AppConstt {
 
     interface ServerUrl {
 
-        //Weather icon url...
-        String Aqua_Weather_Start = "https://developer.accuweather.com/sites/default/files/";
-        String Aqua_Weather_End = "-s.png";
-
-        //Image url...
-        String Artist_Image_Url = "https://art-station-bucket.s3.me-south-1.amazonaws.com/uploads_staging/";
         //DEBUG urls
-        String DEB_BASE_URL = "http://74.208.144.99:9090/";
+        String DEB_BASE_URL = "http://services.adrspunjab.gov.pk/";
         String DEB_URL_API = DEB_BASE_URL + "api/";
 //        String DEB_URL_API = DEB_BASE_URL + "api/v1/mobile/";
 
@@ -29,7 +23,7 @@ public interface AppConstt {
 
 
         //release server
-        String REL_BASE_URL = "http://74.208.144.99:9090/";//TODO also add staging+live FCM files+ Googlemaps(debug+release) to this project
+        String REL_BASE_URL = "http://services.adrspunjab.gov.pk/";//TODO also add staging+live FCM files+ Googlemaps(debug+release) to this project
         String REL_URL_API = REL_BASE_URL + "api/v1/";
         String REL_BASE_URL_CHAT = REL_BASE_URL + "/chat";
         String REL_URL_IMG = REL_BASE_URL + "uploads/";
@@ -174,7 +168,7 @@ public interface AppConstt {
         String FN_ExampleFragment = "FN_ExampleFragment";
 
         String FN_ImmediateDiseasesReportsIDR = "FN_ImmediateDiseasesReportsIDR";
-
+        String FN_MapFragment = "FN_MapFragment";
         String FN_PerformanceMonitoringFragment = "FN_PerformanceMonitoringFragment";
 
         String FN_ElectricityHomeFragment = "ElectricityHomeFragment" ;
