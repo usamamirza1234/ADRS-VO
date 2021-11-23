@@ -63,6 +63,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //    private List<Integer> lstPieValues;
     private List<Integer> lstPieValuesIDR;
     private List<Integer> lstPieValuesSickAnimal;
+    private List<String> xAxisValuesIDR ;
+    private List<String> xAxisValuesOriginWise ;
     private Dialog popup;
 
 
@@ -79,17 +81,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
 
         setDataForPie();
-
+        setDataForBar();
 
         // showSWSickAnimal();
 
         //Bar
 
-        showbarOriginWise();
-        showBarIDR();
+      //  showbarOriginWise();
+       // showBarIDR();
         // showBarChart(frg);
 
-        showPopupDialog();
+
 
         return frg;
     }
@@ -123,9 +125,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         lstPieValuesSickAnimal.add(250);
         lstPieValuesSickAnimal.add(540);
 
-
         showPieChartFor_SickAnimal(lstPieValuesSickAnimal);
+
+
+
+
     }
+
+
+    private void setDataForBar()
+    {
+
+
+        showBarIDR(xAxisValuesIDR);
+
+
+        showbarOriginWise(xAxisValuesOriginWise);
+
+
+
+
+
+
+    }
+
 
     //region INIT
     private void init() {
@@ -133,6 +156,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         lstPieValuesIDR = new ArrayList<>();
         lstPieValuesSickAnimal = new ArrayList<>();
         barEntriesArrayList = new ArrayList<>();
+
+        xAxisValuesIDR = new ArrayList<>();
+        xAxisValuesOriginWise = new ArrayList<>();
         xAxisValues = new ArrayList<>();
     }
 
@@ -440,6 +466,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+
+            case R.id.frg_home_frg_txv_sick:
+
+                showPopupDialog();
+                break;
             case R.id.lay_popup_txvApply:
 
                 dismissProgDialog();
@@ -455,9 +486,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.lay_prog_ll_yesterday:
                 Collections.shuffle(lstPieValuesIDR);
                 Collections.shuffle(lstPieValuesSickAnimal);
+                Collections.shuffle(lstPieValuesSickAnimal);
 
                 showPieChartFor_IDR(lstPieValuesIDR);
                 showPieChartFor_SickAnimal(lstPieValuesSickAnimal);
+
+                showBarIDR( xAxisValues );
+                showbarOriginWise(xAxisValues);
+                
                 switchBottomTab(CHB_YESTERDAY);
                 break;
             case R.id.lay_prog_ll_total:
@@ -471,7 +507,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void showBarIDR() {
+    private void showBarIDR(List<String> xAxisValues ) {
 
 
 //        List<String> xAxisValues = new ArrayList<>(); isko bhar(global) isliye kia ha ku k is ky label ny static rahna ha agr ni rhna
@@ -510,7 +546,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void showbarOriginWise() {
+    private void showbarOriginWise(List<String> xAxisValues) {
 
 
         xAxisValues.add("Therileriosis");

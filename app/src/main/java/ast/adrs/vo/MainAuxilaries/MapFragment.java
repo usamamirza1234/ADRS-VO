@@ -180,6 +180,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                             .bearing(0)         // Sets the orientation of the camera (90 => east, 0 => North)
                             .tilt(20)           // Sets the tilt of the camera to 20 degrees
                             .build();           // Creates a CameraPosition from the builder
+
                     mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                     mGoogleMap.setMyLocationEnabled(true);
 
