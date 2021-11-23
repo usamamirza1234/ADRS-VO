@@ -579,6 +579,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 Collections.shuffle(lstPieValuesIDR);
                 Collections.shuffle(lstPieValuesSickAnimal);
 
+
                 showPieChartFor_IDR(lstPieValuesIDR);
                 showPieChartFor_SickAnimal(lstPieValuesSickAnimal);
                 switchBottomTab(CHB_TODAY);

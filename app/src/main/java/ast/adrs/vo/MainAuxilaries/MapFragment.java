@@ -21,6 +21,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -41,9 +42,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View frg = inflater.inflate(R.layout.fragment_map, container, false);
+
 
         init();
         bindViews(frg);
@@ -58,12 +59,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         lstMaps = new ArrayList<>();
 
 
-        lstMaps.add(new DModelMap(33.6844,73.0479));
-        lstMaps.add(new DModelMap(31.5204,74.3587));
-        lstMaps.add(new DModelMap(34.5204,72.0479));
-        lstMaps.add(new DModelMap(32.5204,71.0479));
-        lstMaps.add(new DModelMap(30.5204,69.0479));
-        lstMaps.add(new DModelMap(29.5204,68.0479));
+        lstMaps.add(new DModelMap(33.6844, 73.0479));
+        lstMaps.add(new DModelMap(31.5204, 74.3587));
+        lstMaps.add(new DModelMap(34.5204, 72.0479));
+        lstMaps.add(new DModelMap(32.5204, 71.0479));
+        lstMaps.add(new DModelMap(30.5204, 69.0479));
+        lstMaps.add(new DModelMap(29.5204, 68.0479));
 
 
         setUpMap();
@@ -96,6 +97,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //            }
 //        }
     }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.mGoogleMap = googleMap;
@@ -104,12 +106,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 //            @Override
 //            public void onMapClick(LatLng latLng) {
-////                getAddress(latLng.latitude, latLng.longitude);
+//               // getAddress(latLng.latitude, latLng.longitude);
+//
+//                Toast.makeText(getContext(), "No Data for this department", Toast.LENGTH_SHORT).show();
+//
 //            }
 //        });
 
-        for(int i = 0 ; i < lstMaps.size() ; i++) {
-            getAddress(lstMaps.get(i).getLat(),lstMaps.get(i).getLon());
+        for (int i = 0; i < lstMaps.size(); i++) {
+            getAddress(lstMaps.get(i).getLat(), lstMaps.get(i).getLon());
         }
     }
 
@@ -124,6 +129,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 e.printStackTrace();
             }
         }
+
     }
 
     public void getAddress(double lat, double lng) {
@@ -183,6 +189,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                     mGoogleMap.setMyLocationEnabled(true);
 
+
+                    Marker marker = mGoogleMap.addMarker(new MarkerOptions()
+                            .position(latLng)
+                            .title("Diseases")
+
+                    );
+
                 }
             } catch (Exception e) {
 
@@ -191,7 +204,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
             mGoogleMap.addMarker(new MarkerOptions().position(latLng).title(mStreetAddress.length() > 0 ? mStreetAddress : DEFAULT_TEXT));
 
-        }
+
+    }
+
+
+
     }
     //endregion
 
