@@ -15,9 +15,12 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 public class BarChartManager {
@@ -31,7 +34,7 @@ public class BarChartManager {
         this.barChart = barChart;
         this.context = context;
         barWidth = 0.25f;
-        initPieChart();
+
     }
 
     private void initPieChart() {
@@ -58,7 +61,7 @@ public class BarChartManager {
 
     public void showBarChart(ArrayList<BarEntry> yValueGroup1, List<String> xAxisValues ) {
 
-
+        initPieChart();
 
         // draw the graph
         BarDataSet barDataSet1;
@@ -145,7 +148,7 @@ public class BarChartManager {
     public void showBarChartVertical(ArrayList<BarEntry> yValueGroup1, List<String> xAxisValues ) {
 
 
-
+        initPieChart();
         // draw the graph
         BarDataSet barDataSet1;
         barDataSet1 = new BarDataSet(yValueGroup1, "");
@@ -230,4 +233,7 @@ public class BarChartManager {
         barDataSet1.setValueTextColor(Color.BLACK);
         barDataSet1.setValueTextSize(10f);
     }
+
+
+
 }

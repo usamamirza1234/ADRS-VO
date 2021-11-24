@@ -50,12 +50,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private final String TAG = "PIE_CHART";
     TextView txvApply;
     AlertDialog alertDialog;
-    TextView txvSick,txvDead,txvTotal;
+    TextView txvSick, txvDead, txvTotal;
     ArrayList<BarEntry> barEntriesArrayList;
     ArrayList<String> lableName;
     BarChart barChartView, barChartViewvertical;
-    List<String> xAxisValues;
-    ArrayList<BarEntry> yAxisValue_FORIDR ;
+    TextView btnhomefrgsick;
     private CheckBox[] arrchbFilterPeroid;
     private LinearLayout[] arrllFilterPeroid;
     private IBadgeUpdateListener mBadgeUpdateListener;
@@ -67,10 +66,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private List<Integer> lstPieValuesSickAnimal;
     private Dialog popup;
     private Dialog progressDialog;
-    TextView btnhomefrgsick;
-
-
-    private List<DModel_DiseaseModel> lstDiseases;
+    private ArrayList<DModel_DiseaseModel> lstDiseases;
     private List<DModel_AnimalPopulation> lstAnimalPopulation;
 
     //Pie chart label ka kam jisye kia ha ab wisye krna ha..... code cleaned ... bar chart ka b
@@ -87,22 +83,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         setDataForPie();
 
 
-
-
-
-
         return frg;
     }
 
     private void setDataForBar() {
-
-        for (int i=0;i<lstDiseases.size();i++)
-        {
-            xAxisValues.add(lstDiseases.get(i).getDiseaseName());
-            yAxisValue_FORIDR.add(new BarEntry((float)  lstDiseases.get(i).getDr(),(float) lstDiseases.get(i).getDi()));
-            Log.d("apiData","getDr "+ (float) lstDiseases.get(i).getDr()+" getDi "+ (float) lstDiseases.get(i).getDi());
-        }
-
 
 
 //        xAxisValues.add("Therileriosis");
@@ -118,10 +102,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        xAxisValues.add("African swine fever");
 //        xAxisValues.add("Transmissible spongiform ");
 
+
         showBarIDR();
         showbarOriginWise();
 
     }
+
 
     private void setDataComingFromApi() {
         int sick = 0, risk = 0, dead = 0, total = 0;
@@ -131,9 +117,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             dead += lstAnimalPopulation.get(i).getDeadAnimals();
             total += lstAnimalPopulation.get(i).getTotalAnimals();
         }
-        txvSick.setText("Sick("+sick+")");
-        txvDead.setText("Dead("+dead+")");
-        txvTotal.setText("Total("+total+")");
+        txvSick.setText("Sick(" + sick + ")");
+        txvDead.setText("Dead(" + dead + ")");
+        txvTotal.setText("Total(" + total + ")");
     }
 
     private void setDataForPie() {
@@ -176,9 +162,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         barEntriesArrayList = new ArrayList<>();
         lstDiseases = new ArrayList<>();
         lstAnimalPopulation = new ArrayList<>();
-        xAxisValues = new ArrayList<>();
-        yAxisValue_FORIDR = new ArrayList<>();
-
 
 
     }
@@ -286,9 +269,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mBarChart_dieses_idr = frg.findViewById(R.id.frg_home_mpchart_dieses_idr);
         mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
 
-         barChartView = frg.findViewById(R.id.idr_barchart);
+        barChartView = frg.findViewById(R.id.idr_barchart);
 
-       // btnhomefrgsick.setTooltipText("Sick");
+        // btnhomefrgsick.setTooltipText("Sick");
         // mBarChart_sick_animal = frg.findViewById(R.id.frg_home_mpchart_sick_animal);
 
         barChartView = frg.findViewById(R.id.idr_barchart);
@@ -367,7 +350,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showPieChartFor_SickAnimal(List<Integer> lstPieValues) {
-
+        List<String> xAxisValues = null;
+        xAxisValues = new ArrayList<>();
 
         List<PieEntry> yvals = new ArrayList<>();
         List<Integer> colors = new ArrayList<>();
@@ -412,6 +396,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         barChartManager.showBarChart(yValueGroup1, xAxisValues);
         barChartManager.showBarChart(yValueGroup2, xAxisValues);
 
+        List<String> finalXAxisValues = xAxisValues;
         mBarChart_sick_animal.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
 
@@ -441,7 +426,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         yValueGroup1.add(new BarEntry(1f, 13f));
                         yValueGroup1.add(new BarEntry(6f, 14f));
                         yValueGroup1.add(new BarEntry(11f, 15f));
-                        barChartManager.showBarChart(yValueGroup1, xAxisValues);
+                        barChartManager.showBarChart(yValueGroup1, finalXAxisValues);
 
 
                         break;
@@ -493,7 +478,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         yValueGroup2.add(new BarEntry(6f, 6f));
                         yValueGroup2.add(new BarEntry(7f, 2f));
                         yValueGroup2.add(new BarEntry(3f, 3f));
-                        barChartManager.showBarChart(yValueGroup2, xAxisValues);
+                        barChartManager.showBarChart(yValueGroup2, finalXAxisValues);
 
 
                         break;
@@ -615,6 +600,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        yAxisValue_FORIDR.add(new BarEntry(0f, 11f));
 //        yAxisValue_FORIDR.add(new BarEntry(17f, 25f));
 
+        List<String> xAxisValues = null;
+        ArrayList<BarEntry> yAxisValue_FORIDR = null;
+
+        xAxisValues = new ArrayList<>();
+        yAxisValue_FORIDR = new ArrayList<>();
+
+        for (int i = 0; i < lstDiseases.size(); i++) {
+            if (lstDiseases.get(i).getDi() > 0 && lstDiseases.get(i).getDr() > 0) {
+                String name = lstDiseases.get(i).getDiseaseName();
+                xAxisValues.add(name);
+//                yAxisValue_FORIDR.add(new BarEntry( (float) (lstDiseases.get(i).getDi()),(float) i*2));
+            }
+
+        }
+
+        yAxisValue_FORIDR.add(new BarEntry(1f, 24f));
+        yAxisValue_FORIDR.add(new BarEntry(2f, 31f));
+        yAxisValue_FORIDR.add(new BarEntry(3f, 4f));
+        yAxisValue_FORIDR.add(new BarEntry(4f, 2f));
+        yAxisValue_FORIDR.add(new BarEntry(5f, 10f));
+        yAxisValue_FORIDR.add(new BarEntry(6f, 14f));
+        yAxisValue_FORIDR.add(new BarEntry(7f, 7f));
+        yAxisValue_FORIDR.add(new BarEntry(8f, 15f));
+        yAxisValue_FORIDR.add(new BarEntry(9f, 5f));
 
         BarChartManager barChartManager = new BarChartManager(barChartView, getContext());
         barChartManager.showBarChart(yAxisValue_FORIDR, xAxisValues);
@@ -645,7 +654,30 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //        yAxisValue_FORIDR.add(new BarEntry(7f, 7f));
 //        yAxisValue_FORIDR.add(new BarEntry(8f, 15f));
 //        yAxisValue_FORIDR.add(new BarEntry(9f, 5f));
+        List<String> xAxisValues = null;
+        xAxisValues = new ArrayList<>();
+        ArrayList<BarEntry> yAxisValue_FORIDR = null;
 
+
+        yAxisValue_FORIDR = new ArrayList<>();
+
+        for (int i = 0; i < lstDiseases.size(); i++) {
+            if (lstDiseases.get(i).getDi() > 0 && lstDiseases.get(i).getDr() > 0) {
+                String name = lstDiseases.get(i).getDiseaseName();
+                xAxisValues.add(name);
+//                yAxisValue_FORIDR.add(new BarEntry((float) lstDiseases.get(i).getDr(),(float) i*2));
+            }
+
+        }
+        yAxisValue_FORIDR.add(new BarEntry(1f, 24f));
+        yAxisValue_FORIDR.add(new BarEntry(2f, 31f));
+        yAxisValue_FORIDR.add(new BarEntry(3f, 4f));
+        yAxisValue_FORIDR.add(new BarEntry(4f, 2f));
+        yAxisValue_FORIDR.add(new BarEntry(5f, 10f));
+        yAxisValue_FORIDR.add(new BarEntry(6f, 14f));
+        yAxisValue_FORIDR.add(new BarEntry(7f, 7f));
+        yAxisValue_FORIDR.add(new BarEntry(8f, 15f));
+        yAxisValue_FORIDR.add(new BarEntry(9f, 5f));
 
         BarChartManager barChartManager = new BarChartManager(barChartViewvertical, getContext());
         barChartManager.showBarChartVertical(yAxisValue_FORIDR, xAxisValues);
