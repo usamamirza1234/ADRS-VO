@@ -5,6 +5,7 @@ public class DModelMap {
     double lat;
     double lon;
 
+
     public DModelMap() {
     }
 

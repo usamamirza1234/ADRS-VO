@@ -19,9 +19,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -50,8 +50,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         bindViews(frg);
         requestPermisions();
 
+
         return frg;
     }
+
+
+
 
 
     private void init() {
@@ -130,11 +134,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             }
         }
 
+
+
     }
 
     public void getAddress(double lat, double lng) {
 
         mStreetAddress = "";
+
 
         try {
             Geocoder geocoder = new Geocoder(mContext, Locale.getDefault());
@@ -155,7 +162,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             mStreetAddress = currAddress;
 
         } catch (IOException e) {
-//            mStreetAddress = "exception" + e.getMessage();
+  //          mStreetAddress = "exception" + e.getMessage();
             e.printStackTrace();
 
         } catch (IndexOutOfBoundsException e) {
@@ -178,6 +185,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
 
             try {
+
                 if (_isCameraAnimationrequired) {
 
                     CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -190,22 +198,26 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     mGoogleMap.setMyLocationEnabled(true);
 
 
-                    Marker marker = mGoogleMap.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .title("Diseases")
-
-                    );
-
                 }
             } catch (Exception e) {
 
             }
 
 
+            mGoogleMap.addMarker(new MarkerOptions()
+                    .position(latLng)
+                    .title("Diseases")
+
+                    .snippet("This is my spot!")
+
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
             mGoogleMap.addMarker(new MarkerOptions().position(latLng).title(mStreetAddress.length() > 0 ? mStreetAddress : DEFAULT_TEXT));
 
 
     }
+
+
 
 
 
