@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shp_rect_rounded_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/text_lay"
+            android:src="@drawable/ic_arrow_down" />
+
+        <LinearLayout
+            android:id="@+id/text_lay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/lay_popup_map_txv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="3dp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black1"
+                android:textSize="@dimen/fontsize_small" />
+
+            <RelativeLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lay_popup_map_txv_mouza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/fontsize_mini" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lay_popup_map_txv_Spice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/fontsize_mini" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lay_popup_map_txv_disease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/fontsize_mini" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lay_popup_map_txv_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/fontsize_mini" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lay_popup_map_txv_sick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/fontsize_mini" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/lay_popup_map_txv_dead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif"
+                    android:padding="3dp"
+                    android:text=""
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/fontsize_mini" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

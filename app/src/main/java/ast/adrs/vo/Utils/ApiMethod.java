@@ -12,6 +12,7 @@ public interface ApiMethod {
     interface POST {
         String signIn = "login";
         String GetDiseaseExecutiveSummary = "DiseaseIntimation/GetDiseaseExecutiveSummary";
+        String GetGPSCordinates = "MIS/GetGPSCordinates";
     }
 
 
