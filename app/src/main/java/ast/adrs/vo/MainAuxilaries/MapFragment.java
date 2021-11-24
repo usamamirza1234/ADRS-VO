@@ -19,6 +19,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -39,6 +40,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     final String DEFAULT_TEXT = "...";
     ArrayList<DModelMap> lstMaps;
     private Context mContext;
+    private Marker marker;
 
 
     @Override
@@ -50,8 +52,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         bindViews(frg);
         requestPermisions();
 
+
+
         return frg;
     }
+
+
+
+
+
 
 
     private void init() {
@@ -67,11 +76,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         lstMaps.add(new DModelMap(29.5204, 68.0479));
 
 
+
+
         setUpMap();
 
     }
 
     private void bindViews(View frg) {
+
     }
 
 
@@ -108,7 +120,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 //            public void onMapClick(LatLng latLng) {
 //               // getAddress(latLng.latitude, latLng.longitude);
 //
-//                Toast.makeText(getContext(), "No Data for this department", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "No Data ", Toast.LENGTH_SHORT).show();
 //
 //            }
 //        });
@@ -116,10 +128,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         for (int i = 0; i < lstMaps.size(); i++) {
             getAddress(lstMaps.get(i).getLat(), lstMaps.get(i).getLon());
         }
+
     }
 
 
     private void setUpMap() {
+
+
         if (mGoogleMap == null) {
             try {
                 SupportMapFragment mapFragment = ((SupportMapFragment) getChildFragmentManager()
@@ -129,6 +144,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 e.printStackTrace();
             }
         }
+
+
 
     }
 
@@ -170,7 +187,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public void locatePointOnMap(LatLng latLng, boolean _isCameraAnimationrequired) {
         if (latLng != null) {
 
-            //to clear marker
+         //   to clear marker
 //            if (mGoogleMap != null)
 //            {
 //                mGoogleMap.clear();
@@ -190,17 +207,22 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     mGoogleMap.setMyLocationEnabled(true);
 
 
-                    Marker marker = mGoogleMap.addMarker(new MarkerOptions()
-                            .position(latLng)
-                            .title("Diseases")
-
-                    );
+//                    Marker marker = mGoogleMap.addMarker(new MarkerOptions()
+//                            .position(latLng)
+//                            .title("Diseases")
+//
+//                    );
 
                 }
             } catch (Exception e) {
 
             }
+            mGoogleMap.addMarker(new MarkerOptions()
+                    .position(latLng)
+                    .title("Diseases")
+                    .snippet("This is my spot!")
 
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
             mGoogleMap.addMarker(new MarkerOptions().position(latLng).title(mStreetAddress.length() > 0 ? mStreetAddress : DEFAULT_TEXT));
 
