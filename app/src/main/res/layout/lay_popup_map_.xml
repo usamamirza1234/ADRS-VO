@@ -34,11 +34,12 @@
                 android:id="@+id/lay_popup_map_txv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
+                
                 android:padding="3dp"
                 android:singleLine="true"
                 android:text=""
                 android:textColor="@color/black1"
+                android:textStyle="bold"
                 android:textSize="@dimen/fontsize_small" />
 
             <RelativeLayout
@@ -52,10 +53,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
-                    android:padding="3dp"
+                    
+                    android:padding="1dp"
                     android:text=""
-                    android:textColor="@color/green"
+                    android:textColor="@color/black1"
                     android:textSize="@dimen/fontsize_mini" />
             </RelativeLayout>
 
@@ -70,10 +71,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
-                    android:padding="3dp"
+                    
+                    android:padding="1dp"
                     android:text=""
-                    android:textColor="@color/green"
+                    android:textColor="@color/black1"
                     android:textSize="@dimen/fontsize_mini" />
             </RelativeLayout>
             <RelativeLayout
@@ -87,10 +88,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
-                    android:padding="3dp"
+                    
+                    android:padding="1dp"
                     android:text=""
-                    android:textColor="@color/green"
+                    android:textColor="@color/black1"
                     android:textSize="@dimen/fontsize_mini" />
             </RelativeLayout>
             <RelativeLayout
@@ -104,10 +105,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
-                    android:padding="3dp"
+                    
+                    android:padding="1dp"
                     android:text=""
-                    android:textColor="@color/green"
+                    android:textColor="@color/black1"
                     android:textSize="@dimen/fontsize_mini" />
             </RelativeLayout>
             <RelativeLayout
@@ -121,10 +122,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
-                    android:padding="3dp"
+                    
+                    android:padding="1dp"
                     android:text=""
-                    android:textColor="@color/green"
+                    android:textColor="@color/black1"
                     android:textSize="@dimen/fontsize_mini" />
             </RelativeLayout>
 
@@ -139,10 +140,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:fontFamily="sans-serif"
-                    android:padding="3dp"
+                    
+                    android:padding="1dp"
                     android:text=""
-                    android:textColor="@color/green"
+                    android:textColor="@color/black1"
                     android:textSize="@dimen/fontsize_mini" />
             </RelativeLayout>
 
