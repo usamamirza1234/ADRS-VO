@@ -607,11 +607,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         yAxisValue_FORIDR = new ArrayList<>();
 
         for (int i = 0; i < lstDiseases.size(); i++) {
-            if (lstDiseases.get(i).getDi() > 0 && lstDiseases.get(i).getDr() > 0) {
+            if (lstDiseases.get(i).getDi() > 0 && lstDiseases.get(i).getDr() <20) {
                 String name = lstDiseases.get(i).getDiseaseName();
                 xAxisValues.add(name);
 //                yAxisValue_FORIDR.add(new BarEntry( (float) (lstDiseases.get(i).getDi()),(float) i*2));
-            }
+            }//        if (lstDiseases.get(i).getDi() > 0 && lstDiseases.get(i).getDi() <20) {
+//            String name = lstDiseases.get(i).getDiseaseName();
+//            xAxisValues.add(name);
+//            yAxisValue_FORIDR.add(new BarEntry( (float) i,(float) lstDiseases.get(i).getDi()));
+//        }
 
         }
 
