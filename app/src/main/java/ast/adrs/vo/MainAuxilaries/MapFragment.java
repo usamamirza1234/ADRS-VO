@@ -107,13 +107,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback
                     dismissDialog();
                     if (Home_WebHit_Post_GetGPSCordinates.responseObject != null &&
                             Home_WebHit_Post_GetGPSCordinates.responseObject.getResult() != null) {
-                        for (int i = 0; i < Home_WebHit_Post_GetGPSCordinates.responseObject.getResult().size(); i++) {
-
-
-                            lstMaps.add(Home_WebHit_Post_GetGPSCordinates.responseObject.getResult().get(i));
-
-
-                        }
+                        lstMaps.addAll(Home_WebHit_Post_GetGPSCordinates.responseObject.getResult());
 
                         PopulateData();
                     }
@@ -241,12 +235,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback
 
             mStreetAddress = currAddress;
 
-        } catch (IOException e) {
+        } catch (IOException | IndexOutOfBoundsException e) {
 //            mStreetAddress = "exception" + e.getMessage();
             e.printStackTrace();
 
-        } catch (IndexOutOfBoundsException e) {
-            e.printStackTrace();
         }
 
 
