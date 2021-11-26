@@ -18,12 +18,13 @@ import androidx.fragment.app.FragmentTransaction;
 import com.armoomragames.denketa.R;
 import com.google.android.material.navigation.NavigationView;
 
-import ast.adrs.vo.Utils.AppConfig;
-import ast.adrs.vo.Utils.AppConstt;
+import ast.adrs.vo.MainAuxilaries.CalendarFragment;
 import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.MainAuxilaries.ImmediateDiseasesReportsIDRFragment;
 import ast.adrs.vo.MainAuxilaries.MapFragment;
 import ast.adrs.vo.MainAuxilaries.PerformanceMonitoringFragment;
+import ast.adrs.vo.Utils.AppConfig;
+import ast.adrs.vo.Utils.AppConstt;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, IBadgeUpdateListener {
@@ -37,10 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentManager fm;
 
     TextView txvTitleBar,btnview;
+
     RelativeLayout rlToolbar, rlMenu ,idr;
     private Dialog progressDialog;
-    RelativeLayout mMap;
-     ;
+    RelativeLayout mMap,mcalendar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         llLogout = findViewById(R.id.lay_navigationview_llLogout);
         mMap = findViewById(R.id.map);
         mMap.setOnClickListener(this);
+
+        mcalendar = findViewById(R.id.btncalendar);
+        mcalendar.setOnClickListener(this);
 
 //        SupportMapFragment MapFragment = (SupportMapFragment).getSupportFragmentManager().findFragmentById(R.id.map);
 //
@@ -138,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearMyBackStack();
         Fragment frg = new HomeFragment();
         // TODO: 09-Nov-21 change frg here
-       // Fragment frg = new ExampleFragment();
+       // Fragment frg = new CalendarFragment();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
         ft.commit();
@@ -151,6 +157,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FragmentTransaction ft = fm.beginTransaction();
         ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_MapFragment);
         ft.addToBackStack(AppConstt.FragTag.FN_MapFragment);
+        hideLastStackFragment(ft);
+        ft.commit();
+    }
+
+    public void navToCalendar() {
+        Fragment frg = new CalendarFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_CalendarFragment);
+        ft.addToBackStack(AppConstt.FragTag.FN_CalendarFragment);
         hideLastStackFragment(ft);
         ft.commit();
     }
@@ -321,6 +336,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.map:
                 navToMapFragment();
+
+                break;
+            case R.id.btncalendar:
+
+                navToCalendar();
                 break;
         }
 

@@ -198,7 +198,7 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
         xAxisValues.add("Rabies (Mad dog disease)");
         xAxisValues.add("Black quarter (black-leg)");
         xAxisValues.add("Foot and mouth disease");
-        xAxisValues.add("Contagious  pleuropneumonia   ");
+        xAxisValues.add("Contagious  pleuropneumonia");
         xAxisValues.add("Brucellosis of sheep.");
         xAxisValues.add("Tetanus");
         xAxisValues.add("Anthrax");
@@ -208,20 +208,29 @@ public class ImmediateDiseasesReportsIDRFragment extends Fragment {
 
         ArrayList<BarEntry> yValueGroup1 = new ArrayList<>();
 
-        yValueGroup1.add(new BarEntry(1f, 11f));
-        yValueGroup1.add(new BarEntry(2f, 12f));
-        yValueGroup1.add(new BarEntry(3f, 13f));
-        yValueGroup1.add(new BarEntry(4f, 14f));
-        yValueGroup1.add(new BarEntry(5f, 15f));
-        yValueGroup1.add(new BarEntry(6f, 11f));
-        yValueGroup1.add(new BarEntry(7f, 11f));
-        yValueGroup1.add(new BarEntry(8f, 12f));
-        yValueGroup1.add(new BarEntry(9f, 13f));
-        yValueGroup1.add(new BarEntry(10f, 14f));
-        yValueGroup1.add(new BarEntry(11f, 15f));
+        yValueGroup1.add(new BarEntry(1f, new float[] { 19f,9f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(2f, new float[] { 20f,10f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(3f, new float[] { 18f,11f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(4f, new float[] { 12f,12f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(5f, new float[] { 13f,13f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(7f, new float[] { 21f,14f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(8f, new float[] { 22f,15f,11f, 12f }));
+        yValueGroup1.add(new BarEntry(9f, new float[] { 10f,17f,11f, 12f }));
+
+//        yValueGroup1.add(new BarEntry(2f, 12f));
+//        yValueGroup1.add(new BarEntry(3f, 13f));
+//        yValueGroup1.add(new BarEntry(4f, 14f));
+//        yValueGroup1.add(new BarEntry(5f, 15f));
+//        yValueGroup1.add(new BarEntry(6f, 11f));
+//        yValueGroup1.add(new BarEntry(7f, 11f));
+//        yValueGroup1.add(new BarEntry(8f, 12f));
+//        yValueGroup1.add(new BarEntry(9f, 13f));
+//        yValueGroup1.add(new BarEntry(10f, 14f));
+//        yValueGroup1.add(new BarEntry(11f, 15f));
 
         BarChartManager barChartManager = new BarChartManager(mBarChartDistrictwiseDiseaseReport, getContext());
-        barChartManager.showBarChart(yValueGroup1, xAxisValues);
+        // TODO: 26-Nov-21 change it into showbarchart and uncomment the values of normal chart 
+        barChartManager.showStackedBarChatHorizontal(yValueGroup1, xAxisValues);
 
         mBarChartDistrictwiseDiseaseReport.setOnChartValueSelectedListener( new OnChartValueSelectedListener() {
 

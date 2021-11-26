@@ -169,6 +169,9 @@ public interface AppConstt {
 
         String FN_ImmediateDiseasesReportsIDR = "FN_ImmediateDiseasesReportsIDR";
         String FN_MapFragment = "FN_MapFragment";
+
+        String FN_CalendarFragment = "FN_CalendarFragment";
+
         String FN_PerformanceMonitoringFragment = "FN_PerformanceMonitoringFragment";
 
         String FN_ElectricityHomeFragment = "ElectricityHomeFragment" ;

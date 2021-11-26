@@ -15,8 +15,6 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.LargeValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.interfaces.datasets.IDataSet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +54,8 @@ public class BarChartManager {
         legend.setTextSize(5f);
         legend.setEnabled(false);
 
+
+
     }
 
 
@@ -66,11 +66,13 @@ public class BarChartManager {
         // draw the graph
         BarDataSet barDataSet1;
         barDataSet1 = new BarDataSet(yValueGroup1, "");
+
         barDataSet1.setColors((context.getResources().getColor(R.color.red)));
         //        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)), (getResources().getColor(R.color.gray)), (getResources().getColor(R.color.orange)), (getResources().getColor(R.color.blue)));
 //        barDataSet1.label = "2016";
         barDataSet1.setDrawIcons(false);
         barDataSet1.setDrawValues(true);
+
 
 
 
@@ -112,6 +114,7 @@ public class BarChartManager {
 
         barChart.setVisibleXRangeMaximum(20f);
         barChart.setVisibleXRangeMinimum(20f);
+
         barChart.setDragEnabled(true);
 
         //Y-axis
@@ -129,7 +132,7 @@ public class BarChartManager {
 
 
         barChart.setMaxVisibleValueCount(50);
-        barChart.setPinchZoom(false);
+        barChart.setPinchZoom(true);
         barChart.setDrawGridBackground(false);
 
         // Display scores inside the bars
@@ -157,7 +160,6 @@ public class BarChartManager {
 //        barDataSet1.label = "2016";
         barDataSet1.setDrawIcons(false);
         barDataSet1.setDrawValues(true);
-
 
 
 
@@ -218,6 +220,7 @@ public class BarChartManager {
 
         barChart.setMaxVisibleValueCount(50);
         barChart.setPinchZoom(false);
+        barChart.setDragEnabled(true);
         barChart.setDrawGridBackground(false);
 
         // Display scores inside the bars
@@ -234,6 +237,100 @@ public class BarChartManager {
         barDataSet1.setValueTextSize(10f);
     }
 
+    public void showStackedBarChatHorizontal(ArrayList<BarEntry> yValueGroup1, List<String> xAxisValues ) {
+        initPieChart();
+
+        // draw the graph
+        BarDataSet barDataSet1;
+        barDataSet1 = new BarDataSet(yValueGroup1, "");
+
+        //barDataSet1.setColors((context.getResources().getColor(R.color.red)));
+        //        barDataSet1.setColors((getResources().getColor(R.color.thm_yellow)), (getResources().getColor(R.color.gray)), (getResources().getColor(R.color.orange)), (getResources().getColor(R.color.blue)));
+//        barDataSet1.label = "2016";
+        barDataSet1.setDrawIcons(false);
+        barDataSet1.setDrawValues(true);
 
 
-}
+
+        int[] colorClassArray = new int[]{Color.RED, Color.LTGRAY,Color.CYAN,Color.GREEN};
+        barDataSet1.setColors(colorClassArray);
+
+        BarData barData = new BarData(barDataSet1);
+
+        barData.setValueFormatter(new PercentFormatter());
+        barChart.setData(barData);
+        barChart.getBarData().setBarWidth(barWidth);
+        barChart.getXAxis().setAxisMinimum(0f);
+        barChart.getXAxis().setAxisMaximum(12f);
+
+        barChart.setFitBars(true);
+        barChart.getData().setHighlightEnabled(true);
+        barChart.invalidate();
+
+        //    to remove decimal point
+        MyDecimalValueFormatter formatter = new MyDecimalValueFormatter();
+        barDataSet1.setValueFormatter(formatter);
+
+
+        XAxis xAxis = barChart.getXAxis();
+        xAxis.setGranularity(1f);
+        xAxis.setGranularityEnabled(true);
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setDrawGridLines(false);
+        xAxis.setTextSize(12f);
+
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
+
+
+        xAxis.setLabelCount(12);
+        xAxis.mAxisMaximum = 12f;
+        xAxis.setCenterAxisLabels(true);
+        xAxis.setAvoidFirstLastClipping(true);
+        xAxis.setSpaceMin(20f);
+        xAxis.setSpaceMax(20f);
+
+        barChart.setVisibleXRangeMaximum(20f);
+        barChart.setVisibleXRangeMinimum(20f);
+
+        barChart.setDragEnabled(true);
+
+        //Y-axis
+        barChart.getAxisRight().setEnabled(false);
+        barChart.setScaleEnabled(true);
+
+        YAxis yAxis = barChart.getAxisLeft();
+        yAxis.setValueFormatter(new LargeValueFormatter());
+        yAxis.setDrawGridLines(false);
+        yAxis.setSpaceTop(1f);
+        yAxis.setAxisMinimum(0f);
+        yAxis.setEnabled(false);
+
+        barChart.setDrawBarShadow(false);
+
+
+        barChart.setMaxVisibleValueCount(50);
+        barChart.setPinchZoom(true);
+        barChart.setDrawGridBackground(false);
+
+        // Display scores inside the bars
+        barChart.setDrawValueAboveBar(false);
+
+        barChart.animateY(2000);
+        barChart.setData(barData);
+        // to select numbers of bars u wanna show
+        barChart.setVisibleXRange(1f, 12f);
+        barChart.getDescription().setEnabled(false);
+
+        barData.setBarWidth(0.8f);
+        barDataSet1.setValueTextColor(Color.BLACK);
+        barDataSet1.setValueTextSize(10f);
+
+    }
+
+
+
+
+
+
+    }

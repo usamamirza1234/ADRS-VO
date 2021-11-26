@@ -615,9 +615,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 //            String name = lstDiseases.get(i).getDiseaseName();
 //            xAxisValues.add(name);
 //            yAxisValue_FORIDR.add(new BarEntry( (float) i,(float) lstDiseases.get(i).getDi()));
-//        }
-
         }
+
+//        }
 
         yAxisValue_FORIDR.add(new BarEntry(1f, 24f));
         yAxisValue_FORIDR.add(new BarEntry(2f, 31f));
@@ -669,7 +669,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             if (lstDiseases.get(i).getDi() > 0 && lstDiseases.get(i).getDr() > 0) {
                 String name = lstDiseases.get(i).getDiseaseName();
                 xAxisValues.add(name);
-//                yAxisValue_FORIDR.add(new BarEntry((float) lstDiseases.get(i).getDr(),(float) i*2));
+             //   yAxisValue_FORIDR.add(new BarEntry((float) lstDiseases.get(i).getDr(),(float) i*2));
             }
 
         }

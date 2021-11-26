@@ -9,7 +9,7 @@
 
     <!--        />-->
 
-    <stroke android:color="@color/thm_yellow_1" android:width="1dp"/>
+    <stroke android:color="@color/blue" android:width="1dp"/>
 
     <corners
         android:topLeftRadius="6dp"
