@@ -107,5 +107,7 @@ dependencies {
 
     // Marker maps util dependency
     implementation 'com.google.maps.android:android-maps-utils:0.5'
+    // for material Calendar
+    implementation'com.google.android.material:material:1.2.0-alpha03'
 
 }

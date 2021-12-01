@@ -479,12 +479,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback
 
     @Override
     public void onPolygonClick(Polygon polygon) {
-        int strokeColor = polygon.getStrokeColor() ^ 0x00ffffff;
+        int strokeColor = polygon.getStrokeColor() ^ 00000;
 
         polygon.setStrokeColor(strokeColor);
+        polygon.setFillColor(Color.RED);
 
-
-        // stylePolygon(polygon);
+         stylePolygon(polygon);
        // countPolygonPoints();
 
         }

@@ -20,32 +20,90 @@
     android:orientation="vertical"
     android:padding="5dp">
 
-    <TextView
-        android:id="@+id/mydate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:gravity="center"
-        android:layout_marginLeft="0dp"
 
-        android:text="My Date"
-        android:textColor="@color/black"
-        android:textSize="@dimen/fontsize_mini"
-        android:textStyle="bold" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
-        android:background="@drawable/shp_rect_rounded_yellow_mini_stoke">
+        android:background="@drawable/shp_rect_rounded_yellow_mini_stoke"
+        android:orientation="vertical">
+
+<RelativeLayout
+    android:visibility="visible"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/in_date"
+            android:layout_marginTop="25dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Date"
+            android:id="@+id/btn_date"
+            android:layout_alignBottom="@+id/in_date"
+            android:layout_toRightOf="@+id/in_date"
+            android:layout_toEndOf="@+id/in_date" />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/in_time"
+            android:layout_below="@+id/in_date"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ending Date"
+            android:id="@+id/btn_time"
+            android:layout_below="@+id/btn_date"
+            android:layout_alignLeft="@+id/btn_date"
+            android:layout_alignStart="@+id/btn_date" />
+
+    </RelativeLayout>
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/mydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp"
+            android:gravity="center"
+            android:layout_marginLeft="0dp"
+
+            android:text="My Date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fontsize_mini"
+            android:textStyle="bold" />
 
         <CalendarView
+            android:visibility="gone"
             android:id="@+id/dlg_reorder_mcv_calndr"
             android:layout_width="match_parent"
             android:layout_height="350dp"
-          />
+            />
+<!--        <DatePicker-->
+<!--            android:id="@+id/simpleDatePicker"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+
+<!--            android:datePickerMode="spinner" />-->
+
 
     </LinearLayout>
 

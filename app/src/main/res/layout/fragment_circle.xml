@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_1"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="0dp"
+            android:layout_weight="10"
+            android:gravity="center"
+
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:layout_width="40dp"
+
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="false"
+                android:layout_marginEnd="0dp"
+                android:elevation="2dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/iccircle1" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="0dp"
+            android:layout_weight="10"
+            android:gravity="center"
+
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:layout_width="40dp"
+
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="false"
+                android:layout_marginEnd="0dp"
+                android:elevation="2dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/iccircle1" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="0dp"
+            android:layout_weight="10"
+            android:gravity="center"
+
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+
+                android:layout_width="40dp"
+
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="false"
+                android:layout_centerVertical="false"
+                android:layout_marginEnd="0dp"
+                android:elevation="2dp"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/iccircle1" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

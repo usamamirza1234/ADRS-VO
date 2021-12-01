@@ -23,6 +23,7 @@ import ast.adrs.vo.MainAuxilaries.HomeFragment;
 import ast.adrs.vo.MainAuxilaries.ImmediateDiseasesReportsIDRFragment;
 import ast.adrs.vo.MainAuxilaries.MapFragment;
 import ast.adrs.vo.MainAuxilaries.PerformanceMonitoringFragment;
+import ast.adrs.vo.MainAuxilaries.circleFragment;
 import ast.adrs.vo.Utils.AppConfig;
 import ast.adrs.vo.Utils.AppConstt;
 import ast.adrs.vo.Utils.IBadgeUpdateListener;
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         clearMyBackStack();
         Fragment frg = new HomeFragment();
         // TODO: 09-Nov-21 change frg here
-       // Fragment frg = new CalendarFragment();
+       // Fragment frg = new ExampleHRUseFragment();
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_HomeFragment);
         ft.commit();
@@ -169,6 +170,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         hideLastStackFragment(ft);
         ft.commit();
     }
+
+
+    public void navToCircle() {
+        Fragment frg = new circleFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.act_main_content_frg, frg, AppConstt.FragTag.FN_CalendarFragment);
+        ft.addToBackStack(AppConstt.FragTag.FN_CalendarFragment);
+        hideLastStackFragment(ft);
+        ft.commit();
+    }
+
+
+
 
 
 
